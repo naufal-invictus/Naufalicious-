@@ -1,0 +1,300 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, ChevronRight, BookOpen, ArrowUpRight } from "lucide-react"
+import { motion } from "framer-motion"
+import { Badge } from "@/components/ui/badge"
+
+// Sample blog posts data (in a real app, this would come from an API or database)
+const recentPosts = [
+  {
+    id: 1,
+    title: "Atomic Habits by James Clear",
+    excerpt: "A comprehensive summary of how small changes can lead to remarkable results.",
+    date: "May 2, 2024",
+    category: "Self-Improvement",
+    slug: "atomic-habits",
+  },
+  {
+    id: 2,
+    title: "Deep Work by Cal Newport",
+    excerpt: "How to develop the superpower of deep focus and concentration in a distracted world.",
+    date: "April 15, 2024",
+    category: "Productivity",
+    slug: "deep-work",
+  },
+  {
+    id: 3,
+    title: "Thinking, Fast and Slow by Daniel Kahneman",
+    excerpt: "Understanding the two systems that drive the way we think and make decisions.",
+    date: "March 28, 2024",
+    category: "Psychology",
+    slug: "thinking-fast-and-slow",
+  },
+]
+
+export default function Home() {
+  const [mounted, setMounted] = useState(false)
+
+  // Handle hydration issues with animations
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
+  return (
+    <div className="bg-white">
+      {/* Hero Section - Simplified Introduction */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="w-full md:w-1/2 mb-10 md:mb-0">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
+                  Naufalicious <span className="text-secondary">Kebab</span>
+                </h1>
+                <p className="text-xl text-gray-700 mb-6">
+                  Driven by my passion for personality psychology, I've created an card generator to make self-discovery
+                  enjoyable.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white">
+                    <Link href="/projects" className="flex items-center">
+                      Explore Tools <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                    <Link href="/blog" className="flex items-center">
+                      Read Book Summaries <BookOpen className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </motion.div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative"
+              >
+                <div className="relative z-10 rounded-lg overflow-hidden">
+                  <img src="https://i.ibb.co.com/Qjcw4yjw/wallpaperflare-com-wallpaper-removebg-preview.png?height=400&width=600" alt="Personality Cards" className="w-full h-auto" />
+                  <div className="absolute"></div>
+                </div>
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/10 rounded-full"></div>
+                <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full"></div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About My Personality Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">About Me</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">My Personality Profile</h2>
+              <div className="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-full md:w-1/3 flex justify-center">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary relative"
+                >
+                  <img
+                    src="https://i.ibb.co.com/Kxp3bc2Y/GRlu4-V5b-MAAAk1-M.jpg?height=200&width=200"
+                    alt="My Photo"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/30 mix-blend-multiply"></div>
+                </motion.div>
+              </div>
+              <div className="w-full md:w-2/3">
+                <div className="flex gap-3 mb-4">
+                  <Badge className="bg-primary text-white">ISFJ</Badge>
+                  <Badge className="bg-secondary text-white">Enneagram 1w2</Badge>
+                </div>
+                <p className="text-lg text-gray-700 mb-4">
+                  I'm Naufal, an ISFJ, 1w2, 125, sp/sx, LVEF, with a passion for self-development books and IT tech. I'm
+                  also an aspiring writer.
+                </p>
+                <p className="text-lg text-gray-700 mb-6">
+                  Driven by my passion for personality psychology, I've created an card generator to make self-discovery
+                  enjoyable.
+                </p>
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                  <Link href="/about" className="flex items-center">
+                    Learn More About Me <ChevronRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Projects</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Featured Projects</h2>
+            <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+            <p className="text-gray-700 max-w-2xl mx-auto">
+              Explore my interactive tools designed to help you share your personality traits.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all"
+            >
+              <div className="h-48 bg-gradient-to-r from-primary to-accent flex items-center justify-center text-white text-xl font-bold relative overflow-hidden">
+                <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
+                  <img
+                    src="/placeholder.svg?height=200&width=300"
+                    alt="MBTI Card Generator"
+                    className="w-full h-full object-cover mix-blend-overlay opacity-50"
+                  />
+                </div>
+                <span className="relative z-10">MBTI Card Generator</span>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-primary">MBTI Card Generator</h3>
+                <p className="text-gray-700 mb-4">
+                  Create personalized MBTI personality cards with custom templates and styling options.
+                </p>
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white">
+                  <Link href="/projects/mbti-generator" className="flex items-center justify-center w-full">
+                    Explore <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all"
+            >
+              <div className="h-48 bg-gradient-to-r from-secondary to-orange-500 flex items-center justify-center text-white text-xl font-bold relative overflow-hidden">
+                <div className="absolute inset-0 bg-secondary/20 flex items-center justify-center">
+                  <img
+                    src="/placeholder.svg?height=200&width=300"
+                    alt="Enneagram Card Generator"
+                    className="w-full h-full object-cover mix-blend-overlay opacity-50"
+                  />
+                </div>
+                <span className="relative z-10">Enneagram Card Generator</span>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-secondary">Enneagram Card Generator</h3>
+                <p className="text-gray-700 mb-4">
+                  Generate custom Enneagram personality cards with wings, subtypes, and tritypes.
+                </p>
+                <Button className="w-full bg-secondary hover:bg-secondary/90 text-white">
+                  <Link href="/projects/enneagram-generator" className="flex items-center justify-center w-full">
+                    Explore <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -10 }}
+              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all"
+            >
+              <div className="h-48 bg-gradient-to-r from-accent to-blue-400 flex items-center justify-center text-white text-xl font-bold relative overflow-hidden">
+                <div className="absolute inset-0 bg-accent/20 flex items-center justify-center">
+                  <img
+                    src="/placeholder.svg?height=200&width=300"
+                    alt="Fast Math Game"
+                    className="w-full h-full object-cover mix-blend-overlay opacity-50"
+                  />
+                </div>
+                <span className="relative z-10">Fast Math Game</span>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-accent">Fast Math Game</h3>
+                <p className="text-gray-700 mb-4">
+                  Test your math skills with this fast-paced game featuring different operations and difficulty levels.
+                </p>
+                <Button className="w-full bg-accent hover:bg-accent/90 text-white">
+                  <Link href="/projects/math-game" className="flex items-center justify-center w-full">
+                    Explore <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
+              <Link href="/projects" className="flex items-center">
+                View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 4: Recent Blog Posts */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">
+              Book Summaries
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Recent Book Summaries</h2>
+            <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+            <p className="text-gray-700 max-w-2xl mx-auto">
+              Explore my collection of concise book summaries to gain insights without reading the entire book.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {recentPosts.map((post) => (
+              <motion.div
+                key={post.id}
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="p-6">
+                  <Badge className="mb-3 bg-primary/10 text-primary hover:bg-primary/20 border-none">
+                    {post.category}
+                  </Badge>
+                  <h3 className="text-xl font-bold mb-2 text-gray-800 line-clamp-2">{post.title}</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-500">by Naufal • {post.date}</span>
+                    <Button variant="ghost" size="sm" className="text-primary hover:text-primary/90 p-0">
+                      <Link href={`/blog/${post.slug}`} className="flex items-center">
+                        Read Summary <ArrowRight className="ml-1 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
+              <Link href="/blog" className="flex items-center">
+                View All Book Summaries <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
