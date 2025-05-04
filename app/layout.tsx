@@ -14,9 +14,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Personal portfolio showcasing my projects and skills",
-    generator: 'v0.dev'
+  title: "NAUFALICIOUS",
 }
 
 export default function RootLayout({
