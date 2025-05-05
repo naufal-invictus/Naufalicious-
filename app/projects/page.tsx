@@ -57,6 +57,17 @@ export default function Projects() {
       hoverBg: "hover:bg-emerald-600/10",
       link: "/projects/text-memory-game",
     },
+        {
+      id: "facebook-cover-generator",
+      title: "Facebook Cover Generator",
+      description:
+        "the developer was too busy coding (or napping) to write a proper description. Just click around, you'll figure it out.",
+      gradient: "from-emerald-600 to-teal-500",
+      textColor: "text-emerald-600",
+      borderColor: "border-emerald-600",
+      hoverBg: "hover:bg-emerald-800/10",
+      link: "https://fb-cover-generator.vercel.app/",
+    },
   ]
 
   return (
