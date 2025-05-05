@@ -17,7 +17,7 @@ export default function Projects() {
     {
       id: "enneagram-generator",
       title: "Enneagram Card Generator",
-      description: "Generate custom Enneagram personality cards with wings, subtypes, and tritypes.",
+      description: "Warning: Entering this website is at your own risk. You may encounter bugs, errors, and existential crisis.",
       gradient: "from-secondary to-orange-500",
       textColor: "text-secondary",
       borderColor: "border-secondary",
