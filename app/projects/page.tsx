@@ -12,7 +12,7 @@ export default function Projects() {
       textColor: "text-primary",
       borderColor: "border-primary",
       hoverBg: "hover:bg-primary/10",
-      link: "/projects/mbti-generator",
+      link: "https://idcard-generator-lyart.vercel.app/mbti",
     },
     {
       id: "enneagram-generator",
