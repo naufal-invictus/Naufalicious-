@@ -18,11 +18,11 @@ export default function Projects() {
       id: "enneagram-generator",
       title: "Enneagram Card Generator",
       description: "Warning: Entering this website is at your own risk. You may encounter bugs, errors, and existential crisis.",
-      gradient: "from-purple-200 to-orange-100",
+      gradient: "from-purple-600 to-orange-600",
       textColor: "text-secondary",
       borderColor: "border-secondary",
       hoverBg: "hover:bg-secondary/10",
-      link: "/projects/pg",
+      link: "/projects/enneagram-generator",
     },
       {
       id: "dev-compass",
@@ -32,7 +32,7 @@ export default function Projects() {
       textColor: "text-secondary",
       borderColor: "border-secondary",
       hoverBg: "hover:bg-secondary/10",
-      link: "/projects/enneagram-generator",
+      link: "/projects/pg",
     },
     {
       id: "math-game",
