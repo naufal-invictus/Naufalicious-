@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
@@ -60,6 +60,8 @@ type LanguageInfo = {
 }
 
 export default function ProgrammingQuiz() {
+  // Add this to the component's styles at the top level
+  const [isMobile, setIsMobile] = useState(false)
   const [screen, setScreen] = useState<"start" | "quiz" | "results">("start")
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [userAnswers, setUserAnswers] = useState<number[]>([])
@@ -89,6 +91,21 @@ export default function ProgrammingQuiz() {
   })
   const [topLanguage, setTopLanguage] = useState<Language>("javascript")
   const { toast } = useToast()
+
+  // Add this useEffect after the other useState declarations
+  useEffect(() => {
+    // Check if the device is likely a mobile device
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+
+    return () => {
+      window.removeEventListener("resize", checkMobile)
+    }
+  }, [])
 
   const questions: Question[] = [
     {
@@ -3438,19 +3455,31 @@ export default function ProgrammingQuiz() {
             <RadioGroup
               value={userAnswers[currentQuestion]?.toString()}
               onValueChange={(value) => handleOptionSelect(Number.parseInt(value))}
+              className="space-y-3"
             >
               {questions[currentQuestion].options.map((option, index) => (
                 <div
                   key={index}
                   className={cn(
-                    "flex items-center p-3 rounded-lg border border-gray-200 hover:border-primary/50 cursor-pointer transition-colors",
+                    "relative flex items-center p-3 rounded-lg border border-gray-200 hover:border-primary/50 transition-colors",
                     userAnswers[currentQuestion] === index ? "bg-primary/10 border-primary/50" : "",
                   )}
+                  onClick={() => handleOptionSelect(index)}
                 >
-                  <RadioGroupItem value={index.toString()} id={`option-${index}`} className="mr-3" />
+                  <RadioGroupItem
+                    value={index.toString()}
+                    id={`option-${index}`}
+                    className={`mr-3 ${isMobile ? "h-5 w-5" : ""}`}
+                  />
                   <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">
                     {option.text}
                   </Label>
+                  {/* Add an invisible overlay to increase clickable area */}
+                  <div
+                    className="absolute inset-0 cursor-pointer"
+                    onClick={() => handleOptionSelect(index)}
+                    aria-hidden="true"
+                  />
                 </div>
               ))}
             </RadioGroup>
