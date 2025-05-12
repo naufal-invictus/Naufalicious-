@@ -3570,9 +3570,6 @@ export default function ProgrammingQuiz() {
                 <Eye className="mr-2 h-4 w-4" /> Lihat Dokumentasi
               </a>
             </Button>
-            <Button variant="outline" className="w-full" onClick={downloadResults}>
-              <Download className="mr-2 h-4 w-4" /> Unduh Hasil
-            </Button>
             <Button variant="outline" className="w-full" onClick={restartQuiz}>
               <RefreshCw className="mr-2 h-4 w-4" /> Ulangi Quiz
             </Button>
