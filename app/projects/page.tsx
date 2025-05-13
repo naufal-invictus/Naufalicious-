@@ -16,8 +16,8 @@ export default function Projects() {
     },
       {
       id: "quote-generator",
-      title: "MBTI Card Generator",
-      description: "Create personalized MBTI personality cards with custom templates and styling options.",
+      title: "Quote Card Generator",
+      description: "Just click around, you'll figure it out..",
       gradient: "from-blue-600 to-accent",
       textColor: "text-primary",
       borderColor: "border-primary",
