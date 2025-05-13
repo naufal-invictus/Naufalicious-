@@ -14,6 +14,16 @@ export default function Projects() {
       hoverBg: "hover:bg-primary/10",
       link: "https://idcard-generator-lyart.vercel.app/mbti",
     },
+      {
+      id: "quote-generator",
+      title: "MBTI Card Generator",
+      description: "Create personalized MBTI personality cards with custom templates and styling options.",
+      gradient: "from-blue-600 to-accent",
+      textColor: "text-primary",
+      borderColor: "border-primary",
+      hoverBg: "hover:bg-primary/10",
+      link: "/projects/quote-generator",
+    },
     {
       id: "enneagram-generator",
       title: "Enneagram Card Generator",
