@@ -1,5 +1,5 @@
 "use client"
-
+import { toPng } from "html-to-image"
 import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
