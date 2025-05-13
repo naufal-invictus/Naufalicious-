@@ -1,7 +1,7 @@
 "use client"
 
-import { toPng } from "html-to-image"
 import { useState, useRef } from "react"
+import { toPng } from "html-to-image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useToast } from "@/hooks/use-toast"
-import { Download, RefreshCw, LayoutTemplate, Type, Palette, Sparkles } from 'lucide-react'
+import { Download, RefreshCw, LayoutTemplate, Type, Palette, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const mbtiTemplates = [
@@ -144,7 +144,7 @@ const mbtiTemplates = [
 ]
 
 const cardLayouts = [
-  { id: "portrait", name: "Portrait", aspectRatio: "aspect-[3/4]", className: "flex flex-col" },
+  { id: "square", name: "Square", aspectRatio: "aspect-square", className: "flex flex-col" },
   { id: "horizontal", name: "Horizontal", aspectRatio: "aspect-[7/3]", className: "flex flex-col" },
 ]
 
@@ -152,7 +152,7 @@ export default function QuoteCardGenerator() {
   const [quote, setQuote] = useState("")
   const [author, setAuthor] = useState("")
   const [selectedTemplate, setSelectedTemplate] = useState("INFJ")
-  const [selectedLayout, setSelectedLayout] = useState("portrait")
+  const [selectedLayout, setSelectedLayout] = useState("square")
   const [cardTitle, setCardTitle] = useState("My Quote Card")
   const [isGenerating, setIsGenerating] = useState(false)
   const { toast } = useToast()
@@ -361,7 +361,7 @@ export default function QuoteCardGenerator() {
             >
               <div
                 className={cn(
-                  "p-4 sm:p-6 border-b border-white/20",
+                  "p-5 sm:p-6 border-b border-white/20",
                   selectedLayout === "horizontal" ? "flex justify-between items-center" : "",
                 )}
               >
@@ -371,13 +371,19 @@ export default function QuoteCardGenerator() {
                 <p className={cn("text-xs sm:text-sm opacity-80", template.textColor)}>{currentDate}</p>
               </div>
 
-              <div className="flex-1 p-4 sm:p-6 flex flex-col justify-center">
+              <div
+                className={cn(
+                  "flex-1 flex flex-col justify-center",
+                  selectedLayout === "square" ? "p-6 sm:p-8" : "p-5 sm:p-6",
+                )}
+              >
                 {quote ? (
                   <p
                     className={cn(
-                      "text-base sm:text-xl mb-4 leading-relaxed whitespace-pre-line",
+                      "mb-4 leading-relaxed whitespace-pre-line",
                       template.textColor,
-                      selectedLayout === "horizontal" ? "text-sm sm:text-base" : "",
+                      selectedLayout === "square" ? "text-base sm:text-xl" : "text-sm sm:text-base",
+                      selectedLayout === "horizontal" ? "text-center max-w-3xl mx-auto" : "",
                     )}
                   >
                     "{quote}"
@@ -385,9 +391,10 @@ export default function QuoteCardGenerator() {
                 ) : (
                   <p
                     className={cn(
-                      "text-base sm:text-xl mb-4 italic opacity-70",
+                      "mb-4 italic opacity-70",
                       template.textColor,
-                      selectedLayout === "horizontal" ? "text-sm sm:text-base" : "",
+                      selectedLayout === "square" ? "text-base sm:text-xl" : "text-sm sm:text-base",
+                      selectedLayout === "horizontal" ? "text-center max-w-3xl mx-auto" : "",
                     )}
                   >
                     "Your quote will appear here..."
@@ -395,15 +402,32 @@ export default function QuoteCardGenerator() {
                 )}
 
                 {author ? (
-                  <p className={cn("text-right font-semibold", template.textColor)}>— {author}</p>
+                  <p
+                    className={cn(
+                      "font-semibold",
+                      template.textColor,
+                      selectedLayout === "horizontal" ? "text-center" : "text-right",
+                    )}
+                  >
+                    — {author}
+                  </p>
                 ) : (
-                  <p className={cn("text-right italic opacity-70", template.textColor)}>— Author name</p>
+                  <p
+                    className={cn(
+                      "italic opacity-70",
+                      template.textColor,
+                      selectedLayout === "horizontal" ? "text-center" : "text-right",
+                    )}
+                  >
+                    — Author name
+                  </p>
                 )}
               </div>
 
               <div
                 className={cn(
-                  "p-3 sm:p-4 border-t border-white/20 flex justify-between items-center",
+                  "border-t border-white/20 flex justify-between items-center",
+                  selectedLayout === "square" ? "p-5 sm:p-6 mt-auto" : "p-4 sm:p-5 mt-auto",
                   selectedLayout === "horizontal" ? "text-xs" : "",
                 )}
               >
