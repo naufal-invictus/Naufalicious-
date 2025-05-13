@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { toPng } from "html-to-image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
