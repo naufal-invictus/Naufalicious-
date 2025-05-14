@@ -314,7 +314,7 @@ const styles = {
       }
       
       .section {
-        margin-bottom: 15pt;
+        margin-bottom: 10pt;
       }
       
       .cv-footer {
@@ -493,7 +493,7 @@ export default function RomanticCVGenerator() {
       // Adjust spacing for more compact layout
       const sections = clonedElement.querySelectorAll(".section")
       sections.forEach((section: HTMLElement) => {
-        section.style.marginBottom = "1.5rem" // Reduce section spacing
+        section.style.marginBottom = "1.2rem" // Reduce section spacing
       })
 
       // Make the footer position relative instead of absolute to prevent cutoff
