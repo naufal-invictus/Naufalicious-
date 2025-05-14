@@ -74,3 +74,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* A4 size in mm */
+.a4 {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 20mm;
+  margin: 0 auto;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .a4 {
+    width: 210mm;
+    height: 297mm;
+    padding: 0;
+    margin: 0;
+  }
+}
+
