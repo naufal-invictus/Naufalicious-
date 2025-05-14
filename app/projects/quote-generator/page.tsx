@@ -145,8 +145,9 @@ const mbtiTemplates = [
 
 const cardLayouts = [
   { id: "square", name: "Square", aspectRatio: "aspect-square", className: "flex flex-col" },
-  { id: "horizontal", name: "Horizontal", aspectRatio: "aspect-[7/3]", className: "flex flex-col" },
+  { id: "horizontal", name: "Horizontal", aspectRatio: "aspect-[7/3] min-h-[240px]", className: "flex flex-col" },
 ]
+
 
 export default function QuoteCardGenerator() {
   const [quote, setQuote] = useState("")
