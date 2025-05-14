@@ -583,7 +583,6 @@ export default function RomanticCVGenerator() {
         >
           <h1 className="text-4xl font-bold text-white mb-2">Romantic CV Generator</h1>
           <p className="text-white text-lg">Create a personalized romantic CV to express your feelings</p>
-          <p className="text-white text-sm mt-2">Pre-filled with Batman Kebab's humorous content</p>
         </div>
 
         <Tabs defaultValue="edit" value={activeTab} onValueChange={setActiveTab} className="w-full">
