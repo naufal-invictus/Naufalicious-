@@ -33,7 +33,7 @@ const mbtiTemplates = {
     accent: "#006064", // Dark Teal
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #e3f2fd 0%, #e0f7fa 100%)",
-    font: "'Montserrat', sans-serif",
+    font: "'Raleway', sans-serif",
     description: "Imaginative, curious, and full of wonder",
   },
   ENTJ: {
@@ -55,7 +55,7 @@ const mbtiTemplates = {
     accent: "#1565c0", // Blue
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #fff3e0 0%, #e3f2fd 100%)",
-    font: "'Lato', sans-serif",
+    font: "'Raleway', sans-serif",
     description: "Witty, adventurous, and endlessly fascinating",
   },
   INFJ: {
@@ -66,7 +66,7 @@ const mbtiTemplates = {
     accent: "#ad1457", // Pink
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #ede7f6 0%, #f8bbd0 100%)",
-    font: "'Cormorant Garamond', serif",
+    font: "'Raleway', sans-serif",
     description: "Deep, empathetic, and profoundly connected",
   },
   INFP: {
@@ -77,7 +77,7 @@ const mbtiTemplates = {
     accent: "#00695c", // Teal
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #f3e5f5 0%, #e0f2f1 100%)",
-    font: "'Crimson Text', serif",
+    font: "'Raleway', sans-serif",
     description: "Gentle, compassionate, and deeply feeling",
   },
   ENFJ: {
@@ -88,7 +88,7 @@ const mbtiTemplates = {
     accent: "#00695c", // Teal
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #fce4ec 0%, #e0f2f1 100%)",
-    font: "'Libre Baskerville', serif",
+    font: "'Raleway', sans-serif",
     description: "Warm, supportive, and passionately committed",
   },
   ENFP: {
@@ -99,7 +99,7 @@ const mbtiTemplates = {
     accent: "#0288d1", // Light Blue
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #fff3e0 0%, #e1f5fe 100%)",
-    font: "'Quicksand', sans-serif",
+    font: "'Raleway', sans-serif",
     description: "Vibrant, spontaneous, and full of joy",
   },
   ISTJ: {
@@ -110,18 +110,18 @@ const mbtiTemplates = {
     accent: "#0277bd", // Light Blue
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #eceff1 0%, #e1f5fe 100%)",
-    font: "'Merriweather', serif",
+    font: "'Raleway', sans-serif",
     description: "Reliable, loyal, and deeply committed",
   },
   ISFJ: {
     name: "Nurturing Guardian",
     gradient: "linear-gradient(135deg, #5d4037 0%, #4e342e 50%, #558b2f 100%)",
-    primary: "#5d4037", // Brown
-    secondary: "#4e342e", // Dark Brown
-    accent: "#558b2f", // Light Green
+    primary: "#4E71FF", // Blue
+    secondary: "#5409DA", // Dark Blue
+    accent: "#8DD8FF", // Light Green
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #efebe9 0%, #f1f8e9 100%)",
-    font: "'Source Serif Pro', serif",
+    font: "'Raleway', sans-serif",
     description: "Caring, attentive, and endlessly supportive",
   },
   ESTJ: {
@@ -132,7 +132,7 @@ const mbtiTemplates = {
     accent: "#b71c1c", // Red
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #e3f2fd 0%, #ffebee 100%)",
-    font: "'Roboto Slab', serif",
+    font: "'Raleway', sans-serif",
     description: "Dependable, structured, and deeply committed",
   },
   ESFJ: {
@@ -143,7 +143,7 @@ const mbtiTemplates = {
     accent: "#ad1457", // Pink
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #e0f2f1 0%, #fce4ec 100%)",
-    font: "'Josefin Sans', sans-serif",
+    font: "'Raleway', sans-serif",
     description: "Warm, social, and genuinely caring",
   },
   ISTP: {
@@ -154,7 +154,7 @@ const mbtiTemplates = {
     accent: "#ff6f00", // Amber
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #eceff1 0%, #fff8e1 100%)",
-    font: "'Fira Sans', sans-serif",
+    font: "'Raleway', sans-serif",
     description: "Skilled, adaptable, and excitingly unpredictable",
   },
   ISFP: {
@@ -165,7 +165,7 @@ const mbtiTemplates = {
     accent: "#00695c", // Teal
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #fce4ec 0%, #e0f2f1 100%)",
-    font: "'Dancing Script', cursive",
+    font: "'Raleway', sans-serif",
     description: "Sensitive, artistic, and deeply appreciative",
   },
   ESTP: {
@@ -176,7 +176,7 @@ const mbtiTemplates = {
     accent: "#0277bd", // Light Blue
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #ffccbc 0%, #e1f5fe 100%)",
-    font: "'Oswald', sans-serif",
+    font: "'Raleway', sans-serif",
     description: "Bold, exciting, and full of passion",
   },
   ESFP: {
@@ -187,7 +187,7 @@ const mbtiTemplates = {
     accent: "#d81b60", // Pink
     text: "#ffffff", // White
     background: "linear-gradient(135deg, #fff8e1 0%, #fce4ec 100%)",
-    font: "'Pacifico', cursive",
+    font: "'Raleway', sans-serif",
     description: "Fun-loving, warm, and irresistibly charming",
   },
 }
