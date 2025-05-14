@@ -570,7 +570,7 @@ export default function RomanticCVGenerator() {
 
   return (
     <>
-      <style jsx global>
+      <style>
         {styles.container}
       </style>
       <div className="container mx-auto py-8 px-4">
