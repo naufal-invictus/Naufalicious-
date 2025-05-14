@@ -28,48 +28,8 @@ export default function About() {
             <ul className="space-y-4 text-gray-700">
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong>Computer Troubleshooting:</strong> Experienced in diagnosing and resolving various computer
-                  issues.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong>Software and Hardware Troubleshooting:</strong> Skilled in identifying and fixing software
-                  bugs and hardware malfunctions.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong>Networking:</strong> Knowledgeable in LAN, WAN, and other networking technologies.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong>Programming:</strong> Proficient in Python and JavaScript.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong>Tech Stack:</strong> Experienced with Svelte or React with Tailwind CSS.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong>Self-development:</strong> Passionate about personal growth and continuous learning.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong>Teamwork:</strong> Excellent collaboration and communication skills in team environments.
-                </span>
-              </li>
+                Experienced in computer troubleshooting, including diagnosing and resolving software bugs and hardware malfunctions. Proficient in networking fundamentals such as LAN and WAN, including router installation and configuration (Mercusys, TP-Link), LAN/WAN administration, network topology, FTP server setup, and remote printing. Skilled in operating system installation (Windows, Linux), virtualization (VMware, VirtualBox), and understanding BIOS/UEFI. Familiar with programming fundamentals in Python and JavaScript, and adept in front-end development using Svelte or React with Tailwind CSS. Certified in Google IT Support (Coursera), 3D Model Drawing CAD (BNSP), and Quality Assurance Bootcamp (Gits.id). Strong soft skills include effective teamwork, adaptability to new environments, stress management under pressure, and critical information filtering. Driven by personal growth and continuous learning.
+               </li>
             </ul>
           </div>
         </div>
