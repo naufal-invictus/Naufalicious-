@@ -203,20 +203,16 @@ const batmanKebabData = {
   location: "Gotham City, Secret Kebab Alley",
   template: "ENFP" as MBTIType,
   romanticBio:
-    "I may not be the hero Gotham deserves, but I'm definitely the one who knows the best late-night food spots.",
+    ".",
   whyChooseMe:
-    "Look, I'm not saying dating me comes with free access to the Batcave, but I'm not NOT saying that either. I've been told my brooding stare can melt hearts faster than my batarangs can disarm villains.",
+    "",
   futureIfYes:
-    "I promise to remember your birthday, even when Joker is threatening the city. And yes, Alfred will make breakfast.",
+    "",
   reasons: [
     { text: "I have a cool car. Like, really cool. It shoots flames and everything." },
-    { text: "I'm financially stable (billionaire by day, remember?)" },
-    { text: "I can do a really impressive gravelly voice that's great for scaring your enemies" },
   ],
   experiences: [
-    { text: "I'd love to take you to my secret island that's definitely not called 'The Bat Island'" },
     { text: "We could fight crime together (or just watch crime shows while eating kebabs)" },
-    { text: "We'll have fancy galas where I'll mysteriously disappear but always return with kebabs" },
   ],
   footerMessage: "With love and justice, Batman Kebab",
 }
@@ -259,7 +255,7 @@ const styles = {
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #f5f5f5 0%, #e8eaf6 50%, #fce4ec 100%);
       color: #333;
-      line-height: 1.6;
+      line-height: 1.4;
     }
     
     .container {
@@ -269,12 +265,12 @@ const styles = {
     }
     
     h1, h2, h3, h4, h5, h6 {
-      margin-bottom: 1rem;
-      line-height: 1.2;
+      margin-bottom: 0.7rem;
+      line-height: 1;
     }
     
     p {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
     
     .a4 {
