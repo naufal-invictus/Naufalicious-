@@ -18,6 +18,18 @@ const config: Config = {
       },
     },
     extend: {
+       fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ["Georgia", "ui-serif", "serif"],
+        mono: ["Menlo", "Monaco", "Consolas", "monospace"],
+        playfair: ["Playfair Display", "serif"],
+        caveat: ["Caveat", "cursive"],
+        cormorant: ["Cormorant Garamond", "serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        lora: ["Lora", "serif"],
+        merriweather: ["Merriweather", "serif"],
+        crimson: ["Crimson Pro", "serif"],
+      },
       colors: {
         primary: {
           DEFAULT: "#1e40af", // Blue-700
