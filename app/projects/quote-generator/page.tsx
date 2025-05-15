@@ -1208,7 +1208,7 @@ export default function QuoteCardGenerator() {
                       <div className="absolute bottom-1 right-1 bg-white/10 backdrop-blur-sm rounded-full p-1 animate-bounce">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className={cn("h-4 w-4", activeTextColor)}
+                          className={cn("h-4 w-4", activeTextColor)} 
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
