@@ -9,11 +9,11 @@ const blogPosts = [
     id: 1,
     title: "Atomic Habits by James Clear",
     excerpt: "A comprehensive summary of how small changes can lead to remarkable results.",
-    date: "May 2, 2023",
+    date: "May 2, 2025",
     category: "Self-Improvement",
     slug: "atomic-habits",
     image: "/placeholder.svg?height=600&width=1200",
-    author: "John Doe",
+    author: "Naufalicious",
     content: `
       <h2>Book Overview</h2>
       <p>In "Atomic Habits," James Clear presents a practical framework for improving every day. The book draws on proven ideas from biology, psychology, and neuroscience to create an easy-to-understand guide for making good habits inevitable and bad habits impossible.</p>
