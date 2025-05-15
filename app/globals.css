@@ -95,4 +95,57 @@
     margin: 0;
   }
 }
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom font classes */
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.font-caveat {
+  font-family: "Caveat", cursive;
+}
+
+.font-cormorant {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-lora {
+  font-family: "Lora", serif;
+}
+
+.font-merriweather {
+  font-family: "Merriweather", serif;
+}
+
+.font-crimson {
+  font-family: "Crimson Pro", serif;
+}
+
+/* Font loading indicator */
+.font-loading {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.font-loaded {
+  opacity: 1;
+}
+
 
