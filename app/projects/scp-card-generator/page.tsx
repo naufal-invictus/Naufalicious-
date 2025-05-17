@@ -244,7 +244,7 @@ export default function SCPIDCardGenerator() {
 
   // Card content state
   const [formData, setFormData] = useState({
-    name: "Dr. Jane Doe",
+    name: "",
     id: "SCP-" + Math.floor(10000 + Math.random() * 90000).toString(),
     department: "research",
     site: "site-19",
@@ -450,7 +450,7 @@ export default function SCPIDCardGenerator() {
                         name="name"
                         value={formData.name}
                         onChange={handleFormChange}
-                        placeholder="Dr. Jane Doe"
+                        placeholder=""
                       />
                     </div>
 
