@@ -94,8 +94,8 @@ const departments = [
   {
     id: "administrative",
     name: "Administrative",
-    primaryColor: "#475569", // slate
-    secondaryColor: "#f8fafc",
+    primaryColor: "#f8fafc", // slate
+    secondaryColor: "#000000",
     accentColor: "#f8fafc",
     fontFamily: "serif",
     borderWidth: 1,
