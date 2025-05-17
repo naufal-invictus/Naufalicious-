@@ -96,7 +96,7 @@ const departments = [
     name: "Administrative",
     primaryColor: "#475569", // slate
     secondaryColor: "#f8fafc",
-    accentColor: "#0f172a",
+    accentColor: "#f8fafc",
     fontFamily: "serif",
     borderWidth: 1,
     borderRadius: 4,
