@@ -13,12 +13,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Hi, I'm John Doe – UI/UX Designer
+              Hi, I'm Naufal – Aspiring Writer
             </h1>
             <p className="text-lg text-gray-700 mb-8">
-              Crafting beautiful and intuitive interfaces that make a difference.
-            </p>
-            <Button size="lg">See My Work</Button>
+A highly motivated and introspective individual with a passion for personal growth and understanding human behavior through the lens of MBTI psychology. As an aspiring writer, I am driven to explore and share insightful perspectives. While inherently introverted, I possess a strong desire to contribute positively to the lives of others. My diverse interests span  self-development web development, design, self-development literature, and strategic gaming, allowing for a multifaceted approach to problem-solving and creative expression.            </p>
           </div>
         </div>
       </section>
@@ -29,19 +27,19 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <img
               src="/placeholder.svg?height=400&width=600"
-              alt="John Doe"
+              alt="A"
               className="rounded-xl shadow-lg object-cover"
             />
             <div>
               <Badge className="mb-4 bg-secondary/10 text-secondary border-none">About Me</Badge>
               <h2 className="text-3xl font-bold text-primary mb-4">
-                More Than Just a Designer
+                More Than Just a Developer
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+My skills extend beyond the realm of coding. I possess an eye for design and a creative mindset that allows me to approach projects with both technical proficiency and aesthetic sensibility. My interest in strategic games cultivates analytical thinking and the ability to plan effectively.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              <p className="text-gray-600 leading-relaxed">
+                Furthermore, I am driven by a desire to share inspiration and philosophical insights drawn from Islamic teachings, Stoicism, and traditional Chinese philosophy, enriching my interactions and contributions with a unique perspective.
               </p>
             </div>
           </div>
@@ -59,21 +57,21 @@ export default function Home() {
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Integrity</h3>
+                <h3 className="font-semibold text-lg text-primary mb-2">Integrity and Wisdom</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Honesty and transparency in all interactions.
+                   Guided by principles of honesty, ethical conduct, and the timeless wisdom found in diverse philosophical traditions.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Innovation</h3>
+                <h3 className="font-semibold text-lg text-primary mb-2">Emphaty and Service</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Constantly seeking new and creative solutions.
+                 A deep-seated belief in the importance of understanding and supporting others.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Collaboration</h3>
+                <h3 className="font-semibold text-lg text-primary mb-2">Continuous Growth</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Working together to achieve common goals.
+                 A commitment to lifelong learning, self-improvement, and the pursuit of knowledge.
                 </p>
               </div>
             </div>
