@@ -7,6 +7,8 @@ import { motion } from "framer-motion"
 
 export default function Home() {
   return (
+        <div className="bg-white text-gray-900">
+
       {/* About My Personality Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
