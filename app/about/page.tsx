@@ -146,6 +146,6 @@ My skills extend beyond the realm of coding. I possess an eye for design and a c
           </div>
         </div>
       </section>
-    </div>
+    </div>  </div>
   )
 }
