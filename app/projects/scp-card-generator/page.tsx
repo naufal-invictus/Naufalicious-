@@ -2216,11 +2216,10 @@ export default function SCPIDCardGenerator() {
                 <span>Test</span>
               </TabsTrigger>
               <TabsTrigger value="content" className="flex items-center gap-2 data-[state=active]:bg-gray-700">
-                <User className="h-4 w-4" />
+          
                 <span>Personnel Info</span>
               </TabsTrigger>
               <TabsTrigger value="photo" className="flex items-center gap-2 data-[state=active]:bg-gray-700">
-                <Camera className="h-4 w-4" />
                 <span>Photo</span>
               </TabsTrigger>
               <TabsTrigger value="style" className="flex items-center gap-2 data-[state=active]:bg-gray-700">
