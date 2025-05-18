@@ -71,7 +71,7 @@ export default function Home() {
             <p className="text-gray-700 mb-10">
               These values drive everything I do, both personally and professionally.
             </p>
-            <div className="grid md:grid-cols-3 gap-8 text-left">
+            <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
                 <h3 className="font-semibold text-lg text-primary mb-2">Integrity and Wisdom</h3>
                 <p className="text-gray-700 leading-relaxed">
