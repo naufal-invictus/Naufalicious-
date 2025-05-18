@@ -55,14 +55,6 @@ export default function Home() {
       {/* About Me Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img
-              src="/placeholder.svg?height=400&width=600"
-              alt="A"
-              className="rounded-xl shadow-lg object-cover"
-            />
-            <div>
-              <Badge className="mb-4 bg-secondary/10 text-secondary border-none">About Me</Badge>
               <h2 className="text-3xl font-bold text-primary mb-4">
                 More Than Just a Developer
               </h2>
@@ -81,7 +73,6 @@ My skills extend beyond the realm of coding. I possess an eye for design and a c
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-secondary/10 text-secondary border-none">Personality</Badge>
             <h2 className="text-3xl font-bold text-primary mb-4">My Core Values</h2>
             <p className="text-gray-700 mb-10">
               These values drive everything I do, both personally and professionally.
@@ -115,7 +106,6 @@ My skills extend beyond the realm of coding. I possess an eye for design and a c
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <Badge className="mb-4 bg-secondary/10 text-secondary border-none">Portfolio</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 My Design Collection
               </h2>
@@ -142,7 +132,6 @@ My skills extend beyond the realm of coding. I possess an eye for design and a c
                       Design Project {item}
                     </h3>
                     <div className="flex items-center justify-between">
-                      <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">UI/UX</Badge>
                       <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
                         <span className="flex items-center text-sm">
                           View <ArrowUpRight className="ml-1 h-3 w-3" />
