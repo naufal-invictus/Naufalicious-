@@ -122,11 +122,6 @@ export default function Home() {
                 <h3 className="font-semibold text-lg text-primary mb-2">PI-1</h3>
                 <div className="flex items-center justify-between">
                   <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
-                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
-                    <span className="flex items-center text-sm">
-                      View <ArrowUpRight className="ml-1 h-3 w-3" />
-                    </span>
-                  </Button>
                 </div>
               </div>
             </motion.div>
@@ -147,11 +142,7 @@ export default function Home() {
                 <h3 className="font-semibold text-lg text-primary mb-2">Design Project 1</h3>
                 <div className="flex items-center justify-between">
                   <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
-                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
-                    <span className="flex items-center text-sm">
-                      View <ArrowUpRight className="ml-1 h-3 w-3" />
-                    </span>
-                  </Button>
+
                 </div>
               </div>
             </motion.div>
@@ -172,11 +163,6 @@ export default function Home() {
                 <h3 className="font-semibold text-lg text-primary mb-2">Design Project 1</h3>
                 <div className="flex items-center justify-between">
                   <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
-                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
-                    <span className="flex items-center text-sm">
-                      View <ArrowUpRight className="ml-1 h-3 w-3" />
-                    </span>
-                  </Button>
                 </div>
               </div>
             </motion.div>
@@ -197,11 +183,6 @@ export default function Home() {
                 <h3 className="font-semibold text-lg text-primary mb-2">Design Project 1</h3>
                 <div className="flex items-center justify-between">
                   <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
-                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
-                    <span className="flex items-center text-sm">
-                      View <ArrowUpRight className="ml-1 h-3 w-3" />
-                    </span>
-                  </Button>
                 </div>
               </div>
             </motion.div>
