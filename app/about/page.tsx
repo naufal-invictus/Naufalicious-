@@ -22,7 +22,6 @@ export default function Home() {
         <div className="w-full md:w-1/3 flex justify-center">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            ,
             className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary relative"
           >
             <img
