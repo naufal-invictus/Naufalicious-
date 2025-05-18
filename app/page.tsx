@@ -141,31 +141,7 @@ export default function Home() {
         </div>
       </section>
 
-           <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Personality</Badge>
-            <h2 className="text-3xl font-bold text-primary mb-4">My Core Values</h2>
-            <p className="text-gray-700 mb-8">
-              These values drive everything I do, both personally and professionally.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Integrity</h3>
-                <p className="text-gray-700">Honesty and transparency in all interactions.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Innovation</h3>
-                <p className="text-gray-700">Constantly seeking new and creative solutions.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Collaboration</h3>
-                <p className="text-gray-700">Working together to achieve common goals.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </div>
   )
 }
