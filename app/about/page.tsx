@@ -9,60 +9,37 @@ export default function Home() {
   return (
     <div className="bg-white text-gray-900">
       {/* Hero Section */}
-<section className="py-16 bg-gray-50">
-  <div className="container mx-auto px-4">
-    <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-12">
-        <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">About Me</Badge>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">My Personality Profile</h2>
-        <div className="w-20 h-1 bg-primary mx-auto"></div>
-      </div>
-
-      <div className="flex flex-col md:flex-row items-center gap-8">
-        <div className="w-full md:w-1/3 flex justify-center">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            ,
-            className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary relative"
-          >
-            <img
-              src="https://i.ibb.co.com/Kxp3bc2Y/GRlu4-V5b-MAAAk1-M.jpg?height=200&width=200"
-              alt="My Photo"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/30 mix-blend-multiply"></div>
-          </motion.div>
-        </div>
-        <div className="w-full md:w-2/3">
-          <div className="flex gap-3 mb-4">
-            <Badge className="bg-primary text-white">ENFP</Badge>
-            <Badge className="bg-secondary text-white">Enneagram 1w2</Badge>
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Hi, I'm John Doe - UI/UX Designer</h1>
+            <p className="text-lg text-gray-700 mb-8">
+              Crafting beautiful and intuitive interfaces that make a difference.
+            </p>
+            <Button size="lg">See My Work</Button>
           </div>
-          <p className="text-lg text-gray-700 mb-4">
-            I'm Naufal, with a passion for self-development books and IT tech. I'm
-            also an aspiring writer.
-          </p>
-          <p className="text-lg text-gray-700 mb-6">
-            Driven by my passion for personality psychology, I've created an card generator to make self-discovery
-            enjoyable.
-          </p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* About Me Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
+              <img src="/placeholder.svg?height=400&width=600" alt="John Doe" className="rounded-lg shadow-lg" />
+            </div>
+            <div>
+              <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">About Me</Badge>
               <h2 className="text-3xl font-bold text-primary mb-4">More Than Just a Designer</h2>
               <p className="text-gray-700 mb-6">
-My skills extend beyond the realm of coding. I possess an eye for design and a creative mindset that allows me to approach projects with both technical proficiency and aesthetic sensibility. My interest in strategic games cultivates analytical thinking and the ability to plan effectively.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
               </p>
               <p className="text-gray-700">
-                Furthermore, I am driven by a desire to share inspiration and philosophical insights drawn from Islamic teachings, Stoicism, and traditional Chinese philosophy, enriching my interactions and contributions with a unique perspective.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
               </p>
             </div>
           </div>
@@ -70,37 +47,31 @@ My skills extend beyond the realm of coding. I possess an eye for design and a c
       </section>
 
       {/* About My Personality */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Personality</Badge>
             <h2 className="text-3xl font-bold text-primary mb-4">My Core Values</h2>
-            <p className="text-gray-700 mb-10">
+            <p className="text-gray-700 mb-8">
               These values drive everything I do, both personally and professionally.
             </p>
-            <div className="grid md:grid-cols-3 gap-8 text-left">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Integrity and Wisdom</h3>
-                <p className="text-gray-700 leading-relaxed">
-                   Guided by principles of honesty, ethical conduct, and the timeless wisdom found in diverse philosophical traditions.
-                </p>
+                <h3 className="font-semibold text-lg text-primary mb-2">Integrity</h3>
+                <p className="text-gray-700">Honesty and transparency in all interactions.</p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Emphaty and Service</h3>
-                <p className="text-gray-700 leading-relaxed">
-                 A deep-seated belief in the importance of understanding and supporting others.
-                </p>
+                <h3 className="font-semibold text-lg text-primary mb-2">Innovation</h3>
+                <p className="text-gray-700">Constantly seeking new and creative solutions.</p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Continuous Growth</h3>
-                <p className="text-gray-700 leading-relaxed">
-                 A commitment to lifelong learning, self-improvement, and the pursuit of knowledge.
-                </p>
+                <h3 className="font-semibold text-lg text-primary mb-2">Collaboration</h3>
+                <p className="text-gray-700">Working together to achieve common goals.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
 
       {/* My Design Collection Section */}
       <section className="py-16">
