@@ -132,13 +132,13 @@ export default function Home() {
                 <div className="relative aspect-video overflow-hidden">
                   <img
                     src="https://i.ibb.co/ZzD50xHs/pi2.jpg" // Replace with your image path
-                    alt="Design Project 2"
+                    alt="PI-2"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">Design Project 2</h3>
+                  <h3 className="font-semibold text-lg text-primary mb-2">PI-2</h3>
                   <div className="flex items-center justify-between">
                     <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
                   </div>
@@ -151,13 +151,13 @@ export default function Home() {
                 <div className="relative aspect-video overflow-hidden">
                   <img
                     src="https://i.ibb.co/fYd9rZ0W/pi3.jpg" // Replace with your image path
-                    alt="Design Project 3"
+                    alt="PI-3"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">Design Project 3</h3>
+                  <h3 className="font-semibold text-lg text-primary mb-2">PI-3</h3>
                   <div className="flex items-center justify-between">
                     <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
                   </div>
@@ -170,13 +170,13 @@ export default function Home() {
                 <div className="relative aspect-video overflow-hidden">
                   <img
                     src="https://i.ibb.co/35NS6DNv/pi4.jpg" // Replace with your image path
-                    alt="Design Project 4"
+                    alt="PI-3"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">Design Project 4</h3>
+                  <h3 className="font-semibold text-lg text-primary mb-2">PI-4</h3>
                   <div className="flex items-center justify-between">
                     <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
                   </div>
