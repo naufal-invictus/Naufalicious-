@@ -100,7 +100,6 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Portfolio</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">My Design Collection</h2>
               <div className="w-20 h-1 bg-primary mx-auto"></div>
             </div>
