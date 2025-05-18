@@ -54,10 +54,10 @@ export default function Home() {
     <h2 className="text-3xl text-center font-bold text-primary mb-4">
       More Than Just a Developer
     </h2>
-    <p className="text-gray-700 mb-4 leading-relaxed">
+    <p className="text-gray-700 mb-4 leading-relaxed  text-center">
       My skills extend beyond the realm of coding. I possess an eye for design and a creative mindset that allows me to approach projects with both technical proficiency and aesthetic sensibility. 
     </p>
-    <p className="text-gray-600 leading-relaxed">
+    <p className="text-gray-600 leading-relaxed  text-center">
       Furthermore, I bring a unique perspective by sharing philosophical insights from Islamic, Stoic, and Chinese traditions.
     </p>
   </div>
