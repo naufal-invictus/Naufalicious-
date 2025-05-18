@@ -95,48 +95,95 @@ export default function Home() {
         </div>
       </section>
 
-      {/* My Design Collection Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Portfolio</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">My Design Collection</h2>
-              <div className="w-20 h-1 bg-primary mx-auto"></div>
-            </div>
+  {/* My Design Collection Section */}
+    <section className="py-16">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Portfolio</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">My Design Collection</h2>
+            <div className="w-20 h-1 bg-primary mx-auto"></div>
+          </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
-                <motion.div
-                  key={item}
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="relative aspect-video overflow-hidden">
-                    <img
-                      src={`/placeholder.svg?height=200&width=400`}
-                      alt={`Design Project ${item}`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg text-primary mb-2">Design Project {item}</h3>
-                    <div className="flex items-center justify-between">
-                      <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">UI/UX</Badge>
-                      <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
-                        <span className="flex items-center text-sm">
-                          View <ArrowUpRight className="ml-1 h-3 w-3" />
-                        </span>
-                      </Button>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src="https://i.ibb.co/1t2HRrPW/pi1.jpg" // Replace with your image path
+                  alt="Design Project 1"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg text-primary mb-2">Design Project 1</h3>
+                <div className="flex items-center justify-between">
+                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">UI/UX</Badge>
+                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
+                    <span className="flex items-center text-sm">
+                      View <ArrowUpRight className="ml-1 h-3 w-3" />
+                    </span>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src="https://i.ibb.co/NnyGnDfW/D1.jpg" // Replace with your image path
+                  alt="Design Project 2"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg text-primary mb-2">Design Project 2</h3>
+                <div className="flex items-center justify-between">
+                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
+                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
+                    <span className="flex items-center text-sm">
+                      View <ArrowUpRight className="ml-1 h-3 w-3" />
+                    </span>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src="https://i.ibb.co/35rgTLrH/D2.jpg" // Replace with your image path
+                  alt="Design Project 3"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg text-primary mb-2">Design Project 3</h3>
+                <div className="flex items-center justify-between">
+                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Mobile App</Badge>
+                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
+                    <span className="flex items-center text-sm">
+                      View <ArrowUpRight className="ml-1 h-3 w-3" />
+                    </span>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   )
 }
