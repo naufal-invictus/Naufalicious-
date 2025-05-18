@@ -94,7 +94,45 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+<section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto text-center">
+      <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">My Principles</Badge>
+      <h2 className="text-3xl font-bold text-primary mb-4">Philosophy I Live By</h2>
+      <p className="text-gray-700 mb-8 italic">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod feugiat risus, nec ullamcorper felis.
+      </p>
+      php-template
+CopyEdit
+      <div className="space-y-6 text-gray-700 leading-relaxed text-base md:text-lg">
+        <p>
+          Lorem ipsum dolor sit amet, velum lumen ante <br />
+          Tempus fugit inter silvas, in corde manet cantus <br />
+          Amet amoris flamma, in caelo scribo fidem <br />
+          Vitae via candida, meum iter sine timor
+        </p>
+        <p>
+          Nox silentium fert verba non dicta <br />
+          Spem tenet in oculis, dum tenebrae scripta <br />
+          Pulchra sunt momenta quae animam tangunt <br />
+          Et lux invenitur, etiam inter plangunt
+        </p>
+        <p>
+          Fortitudo nascitur in fluctibus animi <br />
+          Et veritas est amicus qui nunquam fallit <br />
+          Cresco in silentio, in prudentia tuta <br />
+          Virtus in actis, non solum in voce
+        </p>
+        <p>
+          Iter poeticum, in corde humani <br />
+          Amor verus non quaerit gloriam vana <br />
+          Principia manent, dum mundus se vertit <br />
+          Et ego sto, firmus in lumine pacis
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* My Design Collection Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
