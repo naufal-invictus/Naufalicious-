@@ -97,7 +97,8 @@ export default function Home() {
 <section className="py-16 bg-gray-50">
   <div className="container mx-auto px-4">
     <div className="max-w-4xl mx-auto text-center">
-      <h2 className="text-3xl font-bold text-primary mb-4">Philosophy I Live By</h2>
+      <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">My Principles</Badge>
+      <h2 className="text-3xl font-bold text-primary mb-4">The Noble Wound</h2>
       <p className="text-gray-700 mb-8 italic">
 I find a strange solace in the consistent presence of my solitude and suffering.      </p>
       <div className="space-y-6 text-gray-700 leading-relaxed text-base md:text-lg">
