@@ -2213,7 +2213,7 @@ export default function SCPIDCardGenerator() {
             <TabsList className="grid grid-cols-5 mb-4 bg-gray-800">
               <TabsTrigger value="test" className="flex items-center gap-2 data-[state=active]:bg-gray-700">
                 <FileText className="h-4 w-4" />
-                <span>Personality Test</span>
+                <span>Test</span>
               </TabsTrigger>
               <TabsTrigger value="content" className="flex items-center gap-2 data-[state=active]:bg-gray-700">
                 <User className="h-4 w-4" />
