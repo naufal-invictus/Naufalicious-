@@ -188,7 +188,7 @@ export default function Home() {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
-                    src="https://i.ibb.co/35rgTLrH/D2.jpg" // Replace with your image path
+                    src="https://i.ibb.co/NnyGnDfW/D1.jpg" // Replace with your image path
                     alt="Affinity Design Soviet & Japan"
                     className="w-full h-full object-cover"
                   />
