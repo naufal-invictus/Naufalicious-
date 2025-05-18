@@ -31,7 +31,7 @@ export default function Home() {
               </div>
               <div className="w-full md:w-2/3">
                 <div className="flex gap-3 mb-4">
-                  <Badge className="bg-primary text-white">ENFP</Badge>
+                  <Badge className="bg-primary text-white">ISFJ</Badge>
                   <Badge className="bg-secondary text-white">Enneagram 1w2</Badge>
                 </div>
                 <p className="text-lg text-gray-700 mb-4">
