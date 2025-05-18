@@ -119,9 +119,9 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-lg text-primary mb-2">Design Project 1</h3>
+                <h3 className="font-semibold text-lg text-primary mb-2">PI-1</h3>
                 <div className="flex items-center justify-between">
-                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">UI/UX</Badge>
+                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
                   <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
                     <span className="flex items-center text-sm">
                       View <ArrowUpRight className="ml-1 h-3 w-3" />
@@ -130,7 +130,81 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src="https://i.ibb.co/ZzD50xHs/pi2.jpg" // Replace with your image path
+                  alt="Design Project 1"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg text-primary mb-2">Design Project 1</h3>
+                <div className="flex items-center justify-between">
+                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
+                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
+                    <span className="flex items-center text-sm">
+                      View <ArrowUpRight className="ml-1 h-3 w-3" />
+                    </span>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src="https://i.ibb.co/fYd9rZ0W/pi3.jpg" // Replace with your image path
+                  alt="Design Project 1"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg text-primary mb-2">Design Project 1</h3>
+                <div className="flex items-center justify-between">
+                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
+                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
+                    <span className="flex items-center text-sm">
+                      View <ArrowUpRight className="ml-1 h-3 w-3" />
+                    </span>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src="https://i.ibb.co/35NS6DNv/pi4.jpg" // Replace with your image path
+                  alt="Design Project 1"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg text-primary mb-2">Design Project 1</h3>
+                <div className="flex items-center justify-between">
+                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
+                  <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
+                    <span className="flex items-center text-sm">
+                      View <ArrowUpRight className="ml-1 h-3 w-3" />
+                    </span>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
             <motion.div
               whileHover={{ y: -5 }}
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
@@ -138,15 +212,15 @@ export default function Home() {
               <div className="relative aspect-video overflow-hidden">
                 <img
                   src="https://i.ibb.co/NnyGnDfW/D1.jpg" // Replace with your image path
-                  alt="Design Project 2"
+                  alt="Affinity Design"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-lg text-primary mb-2">Design Project 2</h3>
+                <h3 className="font-semibold text-lg text-primary mb-2">Soviet & Japan</h3>
                 <div className="flex items-center justify-between">
-                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
+                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Affinity Designe</Badge>
                   <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
                     <span className="flex items-center text-sm">
                       View <ArrowUpRight className="ml-1 h-3 w-3" />
@@ -169,9 +243,9 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-lg text-primary mb-2">Design Project 3</h3>
+                <h3 className="font-semibold text-lg text-primary mb-2">Game Card Design</h3>
                 <div className="flex items-center justify-between">
-                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Mobile App</Badge>
+                  <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Affinity Designer</Badge>
                   <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
                     <span className="flex items-center text-sm">
                       View <ArrowUpRight className="ml-1 h-3 w-3" />
