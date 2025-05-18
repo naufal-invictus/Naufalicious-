@@ -52,24 +52,16 @@ export default function Home() {
 </section>
 
       {/* About Me Section */}
-      <section className="py-16 bg-gray-50">
+       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <img src="/placeholder.svg?height=400&width=600" alt="John Doe" className="rounded-lg shadow-lg" />
-            </div>
-            <div>
-              <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">About Me</Badge>
-              <h2 className="text-3xl font-bold text-primary mb-4">More Than Just a Designer</h2>
-              <p className="text-gray-700 mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
+              <h2 className="text-3xl font-bold text-primary mb-4">
+                More Than Just a Developer
+              </h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+My skills extend beyond the realm of coding. I possess an eye for design and a creative mindset that allows me to approach projects with both technical proficiency and aesthetic sensibility. My interest in strategic games cultivates analytical thinking and the ability to plan effectively.
               </p>
-              <p className="text-gray-700">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.
+              <p className="text-gray-600 leading-relaxed">
+                Furthermore, I am driven by a desire to share inspiration and philosophical insights drawn from Islamic teachings, Stoicism, and traditional Chinese philosophy, enriching my interactions and contributions with a unique perspective.
               </p>
             </div>
           </div>
@@ -77,26 +69,31 @@ export default function Home() {
       </section>
 
       {/* About My Personality */}
-      <section className="py-16">
+       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Personality</Badge>
             <h2 className="text-3xl font-bold text-primary mb-4">My Core Values</h2>
-            <p className="text-gray-700 mb-8">
+            <p className="text-gray-700 mb-10">
               These values drive everything I do, both personally and professionally.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-8 text-left">
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Integrity</h3>
-                <p className="text-gray-700">Honesty and transparency in all interactions.</p>
+                <h3 className="font-semibold text-lg text-primary mb-2">Integrity and Wisdom</h3>
+                <p className="text-gray-700 leading-relaxed">
+                   Guided by principles of honesty, ethical conduct, and the timeless wisdom found in diverse philosophical traditions.
+                </p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Innovation</h3>
-                <p className="text-gray-700">Constantly seeking new and creative solutions.</p>
+                <h3 className="font-semibold text-lg text-primary mb-2">Emphaty and Service</h3>
+                <p className="text-gray-700 leading-relaxed">
+                 A deep-seated belief in the importance of understanding and supporting others.
+                </p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Collaboration</h3>
-                <p className="text-gray-700">Working together to achieve common goals.</p>
+                <h3 className="font-semibold text-lg text-primary mb-2">Continuous Growth</h3>
+                <p className="text-gray-700 leading-relaxed">
+                 A commitment to lifelong learning, self-improvement, and the pursuit of knowledge.
+                </p>
               </div>
             </div>
           </div>
