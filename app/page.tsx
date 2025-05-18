@@ -119,11 +119,11 @@ export default function Home() {
               </div>
               <div className="w-full md:w-2/3">
                 <div className="flex gap-3 mb-4">
-                  <Badge className="bg-primary text-white">ISFJ</Badge>
+                  <Badge className="bg-primary text-white">ENFP</Badge>
                   <Badge className="bg-secondary text-white">Enneagram 1w2</Badge>
                 </div>
                 <p className="text-lg text-gray-700 mb-4">
-                  I'm Naufal, an ISFJ, 1w2, 125, sp/sx, LVEF, with a passion for self-development books and IT tech. I'm
+                  I'm Naufal, with a passion for self-development books and IT tech. I'm
                   also an aspiring writer.
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
