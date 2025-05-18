@@ -2616,51 +2616,6 @@ export default function SCPIDCardGenerator() {
                 </CardContent>
               </Card>
             </TabsContent>
-            {/* Department Logos Tab */}
-            <TabsContent value="logos" className="space-y-4">
-              <Card className="border border-gray-800 bg-gray-900 text-gray-100">
-                <CardHeader className="bg-gray-800 border-b border-gray-700">
-                  <CardTitle className="flex items-center gap-2">
-                    <Shield className="h-5 w-5" />
-                    Department Logos
-                  </CardTitle>
-                  <CardDescription className="text-gray-300">
-                    View the logos for each SCP Foundation department
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4 pt-6">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {departments.map((dept) => (
-                      <div
-                        key={dept.id}
-                        className={`p-4 border border-gray-700 rounded-md ${formData.department === dept.id ? "bg-gray-800 border-gray-500" : ""}`}
-                        onClick={() => handleSelectChange("department", dept.id)}
-                      >
-                        <div className="flex items-center gap-3 mb-2">
-                          <div
-                            className="w-10 h-10 rounded-full flex items-center justify-center text-2xl"
-                            style={{ backgroundColor: dept.primaryColor }}
-                          >
-                            {dept.id in departmentLogos
-                              ? departmentLogos[dept.id as keyof typeof departmentLogos]
-                              : "🏢"}
-                          </div>
-                          <div>
-                            <p className="font-semibold text-sm">{dept.name}</p>
-                            <p className="text-xs text-gray-400">{dept.tagline}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 p-4 bg-gray-800 rounded-md">
-                    <p className="text-sm text-gray-300">
-                      Click on a department to select it for your ID card. The department logo will appear on your card.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
           </Tabs>
 
           <div className="mt-6 flex flex-wrap gap-4">
@@ -2672,40 +2627,7 @@ export default function SCPIDCardGenerator() {
               Download ID Card
             </Button>
 
-            <Button
-              variant="outline"
-              onClick={resetDefaults}
-              className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-100 border-gray-700"
-            >
-              <RefreshCw className="h-4 w-4" />
-              Reset to Defaults
-            </Button>
-
-            <Button
-              variant="outline"
-              className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-100 border-gray-700"
-              asChild
-            >
-              <a
-                href="https://naufalicious.vercel.app/projects/scp-card-generator"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="h-4 w-4" />
-                SCP Card Generator
-              </a>
-            </Button>
-          </div>
-
-          <div className="mt-6 p-4 bg-gray-800 border border-yellow-600 rounded-md flex items-start gap-3">
-            <AlertTriangle className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-semibold text-yellow-500">SECURITY NOTICE</h3>
-              <p className="text-sm text-gray-300">
-                All personnel classification data is subject to security protocols. Unauthorized access or distribution
-                of classification results is a violation of Foundation policy and may result in disciplinary action.
-              </p>
-            </div>
+    
           </div>
         </div>
 
