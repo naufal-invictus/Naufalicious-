@@ -1,176 +1,132 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { ArrowUpRight } from "lucide-react"
+import { motion } from "framer-motion"
 
-export default function About() {
+export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-12 space-y-20">
-
-      {/* Section: About Me */}
-      <section>
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8 text-primary text-left">About Me</h1>
-          <p className="text-lg mb-6 text-gray-700 text-left">
-            Hello! I'm Naufal, a developer passionate about creating interactive and user-friendly applications.
-          </p>
+    <div className="bg-white text-gray-900">
+      {/* Hero Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              Hi, I'm John Doe – UI/UX Designer
+            </h1>
+            <p className="text-lg text-gray-700 mb-8">
+              Crafting beautiful and intuitive interfaces that make a difference.
+            </p>
+            <Button size="lg">See My Work</Button>
+          </div>
         </div>
       </section>
 
-            {/* Section: Core Values */}
-      <section className="py-16">
+      {/* About Me Section */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-left">
-            <h2 className="text-2xl font-bold mb-4 text-secondary text-left">My Core Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Integrity</h3>
-                <p className="text-gray-700">Honesty and transparency in all interactions.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Innovation</h3>
-                <p className="text-gray-700">Constantly seeking new and creative solutions.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Collaboration</h3>
-                <p className="text-gray-700">Working together to achieve common goals.</p>
-              </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <img
+              src="/placeholder.svg?height=400&width=600"
+              alt="John Doe"
+              className="rounded-xl shadow-lg object-cover"
+            />
+            <div>
+              <Badge className="mb-4 bg-secondary/10 text-secondary border-none">About Me</Badge>
+              <h2 className="text-3xl font-bold text-primary mb-4">
+                More Than Just a Designer
+              </h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section: What I Stand For */}
-      <section>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 text-secondary text-left">What I Stand For</h2>
-          <p className="text-gray-700 text-left">
-            I strive to be someone who not only builds great software, but also uplifts those around me through kindness,
-            resilience, and ethical conduct. My approach is guided by a balance of critical thinking, compassion, and continuous improvement.
-          </p>
-        </div>
-      </section>
-
-      {/* Section: My Interests */}
-      <section>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 text-secondary text-left">My Interests</h2>
-          <p className="text-gray-700 text-left">
-            I'm particularly interested in personality psychology, which is reflected in my projects like the MBTI and
-            Enneagram card generators. I believe that understanding personality types can help people better understand
-            themselves and others.
-          </p>
-        </div>
-      </section>
-
-      {/* Section: My Journey */}
-      <section>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 text-secondary text-left">My Journey</h2>
-          <p className="text-gray-700 text-left">
-            My journey in web development started with a curiosity about how websites work. Over time, I've developed a
-            passion for creating tools that help people express themselves and share their unique personalities with
-            others.
-          </p>
-        </div>
-      </section>
-
-      {/* Section: My Skills & Expertise */}
-      <section>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 text-secondary text-left">My Skills & Expertise</h2>
-          <div className="bg-white rounded-lg p-6 shadow-sm mt-4">
-            <ul className="space-y-4 text-gray-700 text-left">
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                Experienced in computer troubleshooting, networking (LAN/WAN), router setup (Mercusys, TP-Link), FTP servers, remote printing, OS installation, virtualization, and BIOS/UEFI. Proficient in Python & JavaScript; front-end using Svelte/React + Tailwind CSS. Certified in Google IT Support, 3D CAD Drawing (BNSP), and QA Bootcamp (Gits.id). Strong soft skills: teamwork, adaptability, critical thinking, stress management.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Section: Achievements */}
-      <section>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 text-secondary text-left">Achievements</h2>
-          <ul className="list-disc pl-5 text-gray-700 space-y-2 text-left">
-            <li>Built and published multiple personality-based tools used by hundreds of users.</li>
-            <li>Completed multiple certifications from Coursera, BNSP, and industry-recognized bootcamps.</li>
-            <li>Led collaborative community projects focused on mental wellness and tech education.</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Section: Continuous Learning */}
-      <section>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 text-secondary text-left">Continuous Learning</h2>
-          <p className="text-gray-700 text-left">
-            I'm a firm believer in lifelong learning. Whether it's reading philosophy, exploring new frameworks, or improving my problem-solving mindset through Stoicism and Islamic values, I always aim to grow a little every day.
-          </p>
-        </div>
-      </section>
-
-      {/* Section: Core Values */}
-      <section className="py-16">
+      {/* Core Values Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-left">
-            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Personality</Badge>
+          <div className="max-w-4xl mx-auto text-center">
+            <Badge className="mb-4 bg-secondary/10 text-secondary border-none">Personality</Badge>
             <h2 className="text-3xl font-bold text-primary mb-4">My Core Values</h2>
-            <p className="text-gray-700 mb-8">
+            <p className="text-gray-700 mb-10">
               These values drive everything I do, both personally and professionally.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-8 text-left">
               <div>
                 <h3 className="font-semibold text-lg text-primary mb-2">Integrity</h3>
-                <p className="text-gray-700">Honesty and transparency in all interactions.</p>
+                <p className="text-gray-700 leading-relaxed">
+                  Honesty and transparency in all interactions.
+                </p>
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-primary mb-2">Innovation</h3>
-                <p className="text-gray-700">Constantly seeking new and creative solutions.</p>
+                <p className="text-gray-700 leading-relaxed">
+                  Constantly seeking new and creative solutions.
+                </p>
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-primary mb-2">Collaboration</h3>
-                <p className="text-gray-700">Working together to achieve common goals.</p>
+                <p className="text-gray-700 leading-relaxed">
+                  Working together to achieve common goals.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-{/* Section: Gallery */}
-<section>
-  <div className="max-w-4xl mx-auto px-4">
-    <h2 className="text-2xl font-bold mb-4 text-secondary text-left">Gallery</h2>
-    <p className="text-gray-700 mb-6 text-left">A glimpse into some of my activities and creations.</p>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="/images/gallery1.jpg" alt="Gallery 1" className="rounded-lg shadow-md object-cover w-full h-64" />
-      <img src="/images/gallery2.jpg" alt="Gallery 2" className="rounded-lg shadow-md object-cover w-full h-64" />
-      <img src="/images/gallery3.jpg" alt="Gallery 3" className="rounded-lg shadow-md object-cover w-full h-64" />
-    </div>
-  </div>
-</section>
+      {/* Design Collection Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-secondary/10 text-secondary border-none">Portfolio</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                My Design Collection
+              </h2>
+              <div className="w-16 h-1 bg-primary mx-auto mt-2 rounded-full"></div>
+            </div>
 
-{/* Section: My Certificates */}
-<section>
-  <div className="max-w-3xl mx-auto px-4">
-    <h2 className="text-2xl font-bold mb-4 text-secondary text-left">My Certificates</h2>
-    <ul className="list-disc pl-5 space-y-3 text-gray-700 text-left">
-      <li>
-        <strong>Google IT Support Certificate</strong> – Coursera
-        <br /><span className="text-sm text-gray-500">Issued: 2024</span>
-      </li>
-      <li>
-        <strong>3D Model Drawing CAD Certification</strong> – BNSP
-        <br /><span className="text-sm text-gray-500">Issued: 2023</span>
-      </li>
-      <li>
-        <strong>Quality Assurance Bootcamp</strong> – Gits.id
-        <br /><span className="text-sm text-gray-500">Issued: 2022</span>
-      </li>
-    </ul>
-  </div>
-</section>
-
-
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <motion.div
+                  key={item}
+                  whileHover={{ y: -5 }}
+                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow"
+                >
+                  <div className="relative aspect-video">
+                    <img
+                      src={`/placeholder.svg?height=200&width=400`}
+                      alt={`Design Project ${item}`}
+                      className="w-full h-full object-cover rounded-t-xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-xl"></div>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-semibold text-lg text-primary mb-2">
+                      Design Project {item}
+                    </h3>
+                    <div className="flex items-center justify-between">
+                      <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">UI/UX</Badge>
+                      <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
+                        <span className="flex items-center text-sm">
+                          View <ArrowUpRight className="ml-1 h-3 w-3" />
+                        </span>
+                      </Button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
