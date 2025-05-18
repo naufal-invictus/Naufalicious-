@@ -96,36 +96,47 @@ export default function Home() {
       </section>
 <section className="py-16 bg-gray-50">
   <div className="container mx-auto px-4">
-    <div className="max-w-4xl mx-auto text-center">
-      <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">My Principles</Badge>
+    <div className="max-w-4xl mx-auto text-left">
+      <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">
+        My Principles
+      </Badge>
       <h2 className="text-3xl font-bold text-primary mb-4">The Noble Wound</h2>
       <p className="text-gray-700 mb-8 italic">
-I find a strange solace in the consistent presence of my solitude and suffering.      </p>
-      <div className="space-y-6 text-gray-700 leading-relaxed text-base md:text-lg">
-        <p>
-I suffer, yet I utter no sound, <br />
-For this wound is solely mine, unbound. <br />
-I let not the world taste my sacred pain, <br />
-For this sorrow is a holy reign.
-        </p>
-        <p>
-I am lonely, yet I seek no replacement, <br />
-No soul I invite to my spirit's vacant space, <br />
-It never departs though the world may fall, <br />
-Faithful as a shadow without a body's thrall.
-        </p>
-        <p>
-Suffering will never demand of anyone,<br />
-It only wishes to be remembered in silence spun.<br />
-Suffering never betrays or takes its flight,<br />
-It remains when even laughter bids goodnight.
-        </p>
-        <p>
-Loneliness is no foe, but a steadfast friend,<br />
-In solitude, I learn to love this unending trend.<br />
-It stays when all others disappear,<br />
-As if it's the only one truly held dear.
-        </p>
+        I find a strange solace in the consistent presence of my solitude and suffering.
+      </p>
+
+      <div className="space-y-8 text-gray-800 leading-relaxed text-base md:text-lg">
+        <div className="space-y-1">
+          <p>I suffer, yet I utter no sound,</p>
+          <p>For this wound is solely mine, unbound.</p>
+          <p>I let not the world taste my sacred pain,</p>
+          <p>For this sorrow is a holy reign.</p>
+        </div>
+
+        <div className="space-y-1">
+          <p>I am lonely, yet I seek no replacement,</p>
+          <p>No soul I invite to my spirit's vacant space.</p>
+          <p>It never departs though the world may fall,</p>
+          <p>Faithful as a shadow without a body's thrall.</p>
+        </div>
+
+        <div className="space-y-1">
+          <p>Suffering will never demand of anyone,</p>
+          <p>It only wishes to be remembered in silence spun.</p>
+          <p>Suffering never betrays or takes its flight,</p>
+          <p>It remains when even laughter bids goodnight.</p>
+        </div>
+
+        <div className="space-y-1">
+          <p>Loneliness is no foe, but a steadfast friend,</p>
+          <p>In solitude, I learn to love this unending trend.</p>
+          <p>It stays when all others disappear,</p>
+          <p>As if it's the only one truly held dear.</p>
+        </div>
+      </div>
+
+      <div className="mt-10 text-right text-sm text-gray-500 italic">
+        — Naufalicious
       </div>
     </div>
   </div>
