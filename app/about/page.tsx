@@ -113,6 +113,41 @@ export default function About() {
         </div>
       </section>
 
+{/* Section: Gallery */}
+<section>
+  <div className="max-w-4xl mx-auto px-4">
+    <h2 className="text-2xl font-bold mb-4 text-secondary text-left">Gallery</h2>
+    <p className="text-gray-700 mb-6 text-left">A glimpse into some of my activities and creations.</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="/images/gallery1.jpg" alt="Gallery 1" className="rounded-lg shadow-md object-cover w-full h-64" />
+      <img src="/images/gallery2.jpg" alt="Gallery 2" className="rounded-lg shadow-md object-cover w-full h-64" />
+      <img src="/images/gallery3.jpg" alt="Gallery 3" className="rounded-lg shadow-md object-cover w-full h-64" />
+    </div>
+  </div>
+</section>
+
+{/* Section: My Certificates */}
+<section>
+  <div className="max-w-3xl mx-auto px-4">
+    <h2 className="text-2xl font-bold mb-4 text-secondary text-left">My Certificates</h2>
+    <ul className="list-disc pl-5 space-y-3 text-gray-700 text-left">
+      <li>
+        <strong>Google IT Support Certificate</strong> – Coursera
+        <br /><span className="text-sm text-gray-500">Issued: 2024</span>
+      </li>
+      <li>
+        <strong>3D Model Drawing CAD Certification</strong> – BNSP
+        <br /><span className="text-sm text-gray-500">Issued: 2023</span>
+      </li>
+      <li>
+        <strong>Quality Assurance Bootcamp</strong> – Gits.id
+        <br /><span className="text-sm text-gray-500">Issued: 2022</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
     </div>
   )
 }
