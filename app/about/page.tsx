@@ -55,13 +55,13 @@ export default function Home() {
       More Than Just a Developer
     </h2>
     <p className="text-gray-700 mb-4 leading-relaxed">
-      My skills extend beyond the realm of coding...
+      My skills extend beyond the realm of coding. I possess an eye for design and a creative mindset that allows me to approach projects with both technical proficiency and aesthetic sensibility. 
     </p>
     <p className="text-gray-600 leading-relaxed">
-      Furthermore, I am driven by a desire to share inspiration...
+      Furthermore, I bring a unique perspective by sharing philosophical insights from Islamic, Stoic, and Chinese traditions.
     </p>
   </div>
-</section> {/* <-- Ini penutup yang benar */}
+</section> 
 
       {/* About My Personality */}
        <section className="py-20">
