@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 export default function Home() {
   return (
     <div className="bg-white text-gray-900">
-
+      {/* Hero Section */}
 <section className="py-16 bg-gray-50">
   <div className="container mx-auto px-4">
     <div className="max-w-4xl mx-auto">
@@ -51,16 +51,17 @@ export default function Home() {
     </div>
   </div>
 </section>
+
       {/* About Me Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-              <h2 className="text-3xl font-bold text-primary mb-4">
-                More Than Just a Developer
-              </h2>
-              <p className="text-gray-700 mb-4 leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-primary mb-4">More Than Just a Designer</h2>
+              <p className="text-gray-700 mb-6">
 My skills extend beyond the realm of coding. I possess an eye for design and a creative mindset that allows me to approach projects with both technical proficiency and aesthetic sensibility. My interest in strategic games cultivates analytical thinking and the ability to plan effectively.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-700">
                 Furthermore, I am driven by a desire to share inspiration and philosophical insights drawn from Islamic teachings, Stoicism, and traditional Chinese philosophy, enriching my interactions and contributions with a unique perspective.
               </p>
             </div>
@@ -68,7 +69,7 @@ My skills extend beyond the realm of coding. I possess an eye for design and a c
         </div>
       </section>
 
-      {/* Core Values Section */}
+      {/* About My Personality */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -100,37 +101,36 @@ My skills extend beyond the realm of coding. I possess an eye for design and a c
         </div>
       </section>
 
-      {/* Design Collection Section */}
-      <section className="py-20 bg-gray-50">
+
+      {/* My Design Collection Section */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                My Design Collection
-              </h2>
-              <div className="w-16 h-1 bg-primary mx-auto mt-2 rounded-full"></div>
+              <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Portfolio</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">My Design Collection</h2>
+              <div className="w-20 h-1 bg-primary mx-auto"></div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[1, 2, 3, 4, 5, 6].map((item) => (
                 <motion.div
                   key={item}
                   whileHover={{ y: -5 }}
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow"
+                  className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
                 >
-                  <div className="relative aspect-video">
+                  <div className="relative aspect-video overflow-hidden">
                     <img
                       src={`/placeholder.svg?height=200&width=400`}
                       alt={`Design Project ${item}`}
-                      className="w-full h-full object-cover rounded-t-xl"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <div className="p-5">
-                    <h3 className="font-semibold text-lg text-primary mb-2">
-                      Design Project {item}
-                    </h3>
+                  <div className="p-4">
+                    <h3 className="font-semibold text-lg text-primary mb-2">Design Project {item}</h3>
                     <div className="flex items-center justify-between">
+                      <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">UI/UX</Badge>
                       <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
                         <span className="flex items-center text-sm">
                           View <ArrowUpRight className="ml-1 h-3 w-3" />
@@ -144,6 +144,6 @@ My skills extend beyond the realm of coding. I possess an eye for design and a c
           </div>
         </div>
       </section>
-    </div> 
+    </div>
   )
 }
