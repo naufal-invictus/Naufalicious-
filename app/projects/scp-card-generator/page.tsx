@@ -2227,10 +2227,7 @@ export default function SCPIDCardGenerator() {
                 <Type className="h-4 w-4" />
                 <span>Typography</span>
               </TabsTrigger>
-              <TabsTrigger value="logos" className="flex items-center gap-2 data-[state=active]:bg-gray-700">
-                <Shield className="h-4 w-4" />
-                <span>Logos</span>
-              </TabsTrigger>
+      
             </TabsList>
 
             {/* Personality Test Tab */}
