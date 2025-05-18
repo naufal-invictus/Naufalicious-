@@ -15,6 +15,33 @@ export default function About() {
         </div>
       </section>
 
+            {/* Section: Core Values */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Personality</Badge>
+            <h2 className="text-3xl font-bold text-primary mb-4">My Core Values</h2>
+            <p className="text-gray-700 mb-8">
+              These values drive everything I do, both personally and professionally.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <h3 className="font-semibold text-lg text-primary mb-2">Integrity</h3>
+                <p className="text-gray-700">Honesty and transparency in all interactions.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-primary mb-2">Innovation</h3>
+                <p className="text-gray-700">Constantly seeking new and creative solutions.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-primary mb-2">Collaboration</h3>
+                <p className="text-gray-700">Working together to achieve common goals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section: My Interests */}
       <section>
         <div className="max-w-3xl mx-auto">
@@ -46,7 +73,6 @@ export default function About() {
           <div className="bg-white rounded-lg p-6 shadow-sm mt-4">
             <ul className="space-y-4 text-gray-700">
               <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
                 Experienced in computer troubleshooting, including diagnosing and resolving software bugs and hardware malfunctions. Proficient in networking fundamentals such as LAN and WAN, including router installation and configuration (Mercusys, TP-Link), LAN/WAN administration, network topology, FTP server setup, and remote printing. Skilled in operating system installation (Windows, Linux), virtualization (VMware, VirtualBox), and understanding BIOS/UEFI. Familiar with programming fundamentals in Python and JavaScript, and adept in front-end development using Svelte or React with Tailwind CSS. Certified in Google IT Support (Coursera), 3D Model Drawing CAD (BNSP), and Quality Assurance Bootcamp (Gits.id). Strong soft skills include effective teamwork, adaptability to new environments, stress management under pressure, and critical information filtering. Driven by personal growth and continuous learning.
               </li>
             </ul>
@@ -54,32 +80,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Section: Core Values */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">Personality</Badge>
-            <h2 className="text-3xl font-bold text-primary mb-4">My Core Values</h2>
-            <p className="text-gray-700 mb-8">
-              These values drive everything I do, both personally and professionally.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Integrity</h3>
-                <p className="text-gray-700">Honesty and transparency in all interactions.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Innovation</h3>
-                <p className="text-gray-700">Constantly seeking new and creative solutions.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Collaboration</h3>
-                <p className="text-gray-700">Working together to achieve common goals.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
     </div>
   )
