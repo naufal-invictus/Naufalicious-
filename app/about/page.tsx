@@ -51,7 +51,7 @@ export default function Home() {
       {/* About Me Section */}
 <section className="py-20 bg-gray-50">
   <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold text-primary mb-4">
+    <h2 className="text-3xl text-center font-bold text-primary mb-4">
       More Than Just a Developer
     </h2>
     <p className="text-gray-700 mb-4 leading-relaxed">
