@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 
 export default function Home() {
   return (
+    <div className="bg-white text-gray-900">
 
 <section className="py-16 bg-gray-50">
   <div className="container mx-auto px-4">
@@ -143,6 +144,6 @@ My skills extend beyond the realm of coding. I possess an eye for design and a c
           </div>
         </div>
       </section>
-    </div>  </div>
+    </div> 
   )
 }
