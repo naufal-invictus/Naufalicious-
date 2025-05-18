@@ -2754,54 +2754,9 @@ export default function SCPIDCardGenerator() {
             <p>Click "Download ID Card" to save your customized SCP ID card</p>
           </div>
 
-          {/* Site and Department Info */}
-          <div className="mt-6 w-full">
-            <Card className="border border-gray-800 bg-gray-900 text-gray-100">
-              <CardHeader className="py-3 bg-gray-800 border-b border-gray-700">
-                <CardTitle className="text-sm">Selected Department & Site Info</CardTitle>
-              </CardHeader>
-              <CardContent className="py-3 text-sm">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xl">
-                        {formData.department in departmentLogos
-                          ? departmentLogos[formData.department as keyof typeof departmentLogos]
-                          : "🏢"}
-                      </span>
-                      <p className="font-semibold">
-                        {departments.find((d) => d.id === formData.department)?.name} Department
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-500">
-                      {departments.find((d) => d.id === formData.department)?.tagline}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-semibold">{sites.find((s) => s.id === formData.site)?.name}</p>
-                    <p className="text-xs text-gray-500">{sites.find((s) => s.id === formData.site)?.description}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+        
 
-          {/* Clearance Level Info */}
-          <div className="mt-4 w-full">
-            <Card className="border border-gray-800 bg-gray-900 text-gray-100">
-              <CardHeader className="py-3 bg-gray-800 border-b border-gray-700">
-                <CardTitle className="text-sm">Clearance Level Information</CardTitle>
-              </CardHeader>
-              <CardContent className="py-3 text-sm">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className={`inline-block w-3 h-3 rounded-full ${getClearanceLevelColor()}`}></span>
-                  <p className="font-semibold">{getClearanceLevelLabel()}</p>
-                  <span>{getClearanceLevelIcon()}</span>
-                </div>
-                <p className="text-xs text-gray-500">{getClearanceLevelDescription()}</p>
-              </CardContent>
-            </Card>
-          </div>
+      
         </div>
       </div>
     </div>
