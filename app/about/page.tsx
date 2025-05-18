@@ -49,21 +49,19 @@ export default function Home() {
 </section>
 
       {/* About Me Section */}
-       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-              <h2 className="text-3xl font-bold text-primary mb-4">
-                More Than Just a Developer
-              </h2>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-My skills extend beyond the realm of coding. I possess an eye for design and a creative mindset that allows me to approach projects with both technical proficiency and aesthetic sensibility. My interest in strategic games cultivates analytical thinking and the ability to plan effectively.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Furthermore, I am driven by a desire to share inspiration and philosophical insights drawn from Islamic teachings, Stoicism, and traditional Chinese philosophy, enriching my interactions and contributions with a unique perspective.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+<section className="py-20 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-primary mb-4">
+      More Than Just a Developer
+    </h2>
+    <p className="text-gray-700 mb-4 leading-relaxed">
+      My skills extend beyond the realm of coding...
+    </p>
+    <p className="text-gray-600 leading-relaxed">
+      Furthermore, I am driven by a desire to share inspiration...
+    </p>
+  </div>
+</section> {/* <-- Ini penutup yang benar */}
 
       {/* About My Personality */}
        <section className="py-20">
