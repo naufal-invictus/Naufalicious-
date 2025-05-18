@@ -112,7 +112,7 @@ export default function Home() {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
-                    src="https://i.ibb.co/1t2HRrP/pi1.jpg" // Replace with your image path
+                    src="https://i.ibb.co/1t2HRrPW/pi1.jpg" // Replace with your image path
                     alt="Design Project 1"
                     className="w-full h-full object-cover"
                   />
@@ -131,7 +131,7 @@ export default function Home() {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
-                    src="https://i.ibb.co/ZzD50xH/pi2.jpg" // Replace with your image path
+                    src="https://i.ibb.co/ZzD50xHs/pi2.jpg" // Replace with your image path
                     alt="Design Project 2"
                     className="w-full h-full object-cover"
                   />
@@ -150,7 +150,7 @@ export default function Home() {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
-                    src="https://i.ibb.co/fYd9rZ0/pi3.jpg" // Replace with your image path
+                    src="https://i.ibb.co/fYd9rZ0W/pi3.jpg" // Replace with your image path
                     alt="Design Project 3"
                     className="w-full h-full object-cover"
                   />
@@ -169,7 +169,7 @@ export default function Home() {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
-                    src="https://i.ibb.co/35NS6DN/pi4.jpg" // Replace with your image path
+                    src="https://i.ibb.co/35NS6DNv/pi4.jpg" // Replace with your image path
                     alt="Design Project 4"
                     className="w-full h-full object-cover"
                   />
@@ -188,7 +188,7 @@ export default function Home() {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
-                    src="https://i.ibb.co/NnyGnDf/D1.jpg" // Replace with your image path
+                    src="https://i.ibb.co/35rgTLrH/D2.jpg" // Replace with your image path
                     alt="Affinity Design Soviet & Japan"
                     className="w-full h-full object-cover"
                   />
@@ -197,12 +197,8 @@ export default function Home() {
                 <div className="p-4">
                   <h3 className="font-semibold text-lg text-primary mb-2">Soviet & Japan</h3>
                   <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Affinity Designe</Badge>
-                    <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
-                      <span className="flex items-center text-sm">
-                        View <ArrowUpRight className="ml-1 h-3 w-3" />
-                      </span>
-                    </Button>
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Affinity Designer</Badge>
+
                   </div>
                 </div>
               </motion.div>
@@ -213,7 +209,7 @@ export default function Home() {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
-                    src="https://i.ibb.co/35rgTLr/D2.jpg" // Replace with your image path
+                    src="https://i.ibb.co/35rgTLrH/D2.jpg" // Replace with your image path
                     alt="Game Card Design"
                     className="w-full h-full object-cover"
                   />
@@ -223,11 +219,7 @@ export default function Home() {
                   <h3 className="font-semibold text-lg text-primary mb-2">Game Card Design</h3>
                   <div className="flex items-center justify-between">
                     <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Affinity Designer</Badge>
-                    <Button variant="ghost" size="sm" className="text-secondary p-0 h-auto">
-                      <span className="flex items-center text-sm">
-                        View <ArrowUpRight className="ml-1 h-3 w-3" />
-                      </span>
-                    </Button>
+
                   </div>
                 </div>
               </motion.div>
