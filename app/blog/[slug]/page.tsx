@@ -120,7 +120,7 @@ const blogPosts: BlogPost[] = [
     <h2>Tips Visual</h2>
     <ul>
       <li>Gunakan <em>shape</em> berbeda: lingkaran untuk nilai, kotak untuk aksi, belah ketupat untuk keputusan.</li>
-      <li>Panah menunjukkan alur. Jangan buat terlalu rumit—cukup logis dan mudah dipahami dirimu sendiri.</li>
+      <li>Panah menunjukkan alur. Jangan buat terlalu rumit, cukup logis dan mudah dipahami dirimu sendiri.</li>
     </ul>
 
     <h2>Penutup</h2>
