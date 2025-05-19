@@ -444,6 +444,8 @@ export default function Home() {
         <div className="bg-white rounded-md shadow-sm p-4">
           <h4 className="text-lg font-semibold text-gray-800 mb-1">May 19, 2025</h4>
           <ul className="list-disc list-inside text-gray-600">
+                        <li><span className="font-semibold">Performance:</span> I enhanced the website’s performance by Optimizing several Next.js components.</li>
+
             <li><span className="font-semibold">Project SCP ID Card Generator:</span> Implemented bug fixes and expanded the project list.</li>
           </ul>
         </div>
