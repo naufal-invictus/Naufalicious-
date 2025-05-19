@@ -77,16 +77,16 @@ export default function Home() {
       <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
         <div className="aspect-w-16 aspect-h-9">
           <img
-            src="https://i.ibb.co/BpZQxTC/winter-frost-horizontal-custom-sans-quote-card.png"
+            src="https://i.ibb.co/zhc2RRyh/TANKY-TENSHI-Dev-Card.png"
             alt="Quote Generator"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="p-6 flex flex-col justify-between flex-grow">
           <div>
-            <h3 className="font-semibold text-lg text-gray-800 mb-2">Quote Generator</h3>
+            <h3 className="font-semibold text-lg text-gray-800 mb-2">Programmer ID Card</h3>
             <p className="text-gray-600 text-sm mb-4">
-              Generate personalized Quote with custom colors or based on your MBTI personality.
+              Generate personalized Card with custom colors or based on your Language.
             </p>
           </div>
           <Button
@@ -94,7 +94,7 @@ export default function Home() {
             className="border-primary text-primary hover:bg-primary/10 w-full mt-4"
           >
             <Link
-              href="https://naufalicious.vercel.app/projects/quote-generator"
+              href="https://idcard-generator-lyart.vercel.app/pg"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center"
