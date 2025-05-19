@@ -334,7 +334,7 @@ export default function Home() {
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">What Users Say</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Hear from people who have discovered new insights about themselves with our personality cards.
+              Hear from people who have discovered new Cards about themselves with our personality ID cards.
             </p>
           </motion.div>
 
@@ -347,15 +347,15 @@ export default function Home() {
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-primary font-bold">..</span>
+                  <span className="text-primary font-bold">IK</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold">No Name</h4>
-                  <p className="text-sm text-gray-500">Role</p>
+                  <h4 className="font-semibold">Ikh-san</h4>
+                  <p className="text-sm text-gray-500">ISFP</p>
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "Kosong."
+                "This was surprisingly fun. I thought it’d be some generic stuff, but the card nailed a bunch of things about me. Love the clean design too."
               </p>
             </motion.div>
 
@@ -370,12 +370,12 @@ export default function Home() {
                   <span className="text-secondary font-bold">MJ</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold">No Name 2.</h4>
-                  <p className="text-sm text-gray-500">Role</p>
+                  <h4 className="font-semibold">Bags</h4>
+                  <p className="text-sm text-gray-500">Student</p>
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "Review Kosong"
+                "It's user-friendly, well-designed, and delivers value in just a few minutes."
               </p>
             </motion.div>
 
@@ -387,15 +387,15 @@ export default function Home() {
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-primary font-bold">..</span>
+                  <span className="text-primary font-bold">AM</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold">Manusia</h4>
-                  <p className="text-sm text-gray-500">Teacher</p>
+                  <h4 className="font-semibold">Anomaly</h4>
+                  <p className="text-sm text-gray-500">Anomaly</p>
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "Review Kosong"
+                "No login, no tracking, no BS. I respect that. Just generate and go."
               </p>
             </motion.div>
           </div>
