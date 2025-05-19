@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useRef, useEffect } from "react"
 import { toPng } from "html-to-image"
 import { Button } from "@/components/ui/button"
@@ -28,10 +27,10 @@ import {
 import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
 
-// Font loader component
+// Komponen untuk memuat font
 const FontLoader = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    // Load custom fonts
+    // Memuat font kustom
     const fontLinks = [
       "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap",
       "https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap",
@@ -52,7 +51,7 @@ const FontLoader = ({ children }: { children: React.ReactNode }) => {
       links.push(link)
     })
 
-    // Add custom font classes to the document
+    // Menambahkan kelas font kustom ke dokumen
     const style = document.createElement("style")
     style.textContent = `
       .font-bebas { font-family: 'Bebas Neue', sans-serif; }
@@ -74,7 +73,7 @@ const FontLoader = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>
 }
 
-// Design templates
+// Templat desain
 const designTemplates = [
   {
     id: "warlord",
@@ -82,7 +81,7 @@ const designTemplates = [
     gradient: "from-red-950 via-red-900 to-black",
     textColor: "text-red-50",
     accent: "border-red-600",
-    description: "Brutal, commanding, and uncompromising",
+    description: "Brutal, penuh perintah, dan tanpa kompromi",
     icon: <Swords className="h-6 w-6 text-red-500" />,
     borderStyle: "border-t-4 border-red-600",
     numberStyle: "text-red-600 font-bold",
@@ -93,7 +92,7 @@ const designTemplates = [
     gradient: "from-cyan-950 via-purple-900 to-black",
     textColor: "text-cyan-50",
     accent: "border-cyan-400",
-    description: "Digital, futuristic, and rebellious",
+    description: "Digital, futuristik, dan pemberontak",
     icon: <Skull className="h-6 w-6 text-cyan-400" />,
     borderStyle: "border-l-4 border-cyan-400",
     numberStyle: "text-cyan-400 font-bold",
@@ -104,7 +103,7 @@ const designTemplates = [
     gradient: "from-orange-950 via-amber-900 to-red-950",
     textColor: "text-orange-50",
     accent: "border-orange-500",
-    description: "Fiery, intense, and unstoppable",
+    description: "Berapi-api, intens, dan tak terhentikan",
     icon: <Flame className="h-6 w-6 text-orange-500" />,
     borderStyle: "border-b-4 border-orange-500",
     numberStyle: "text-orange-500 font-bold",
@@ -115,7 +114,7 @@ const designTemplates = [
     gradient: "from-zinc-950 via-zinc-900 to-black",
     textColor: "text-zinc-200",
     accent: "border-zinc-500",
-    description: "Stealthy, mysterious, and unforgiving",
+    description: "Tersembunyi, misterius, dan tanpa ampun",
     icon: <Shield className="h-6 w-6 text-zinc-400" />,
     borderStyle: "border-r-4 border-zinc-500",
     numberStyle: "text-zinc-400 font-bold",
@@ -126,14 +125,14 @@ const designTemplates = [
     gradient: "from-stone-950 via-amber-950 to-stone-900",
     textColor: "text-amber-100",
     accent: "border-amber-600",
-    description: "Forged in fire, hardened by struggle",
+    description: "Ditempa dalam api, dikeraskan oleh perjuangan",
     icon: <Hammer className="h-6 w-6 text-amber-600" />,
     borderStyle: "border-y-4 border-amber-600",
     numberStyle: "text-amber-600 font-bold",
   },
 ]
 
-// Font options
+// Opsi font
 const fontOptions = [
   { id: "bebas", name: "Bebas Neue", fontFamily: "font-bebas" },
   { id: "marker", name: "Marker", fontFamily: "font-marker" },
@@ -145,7 +144,7 @@ const fontOptions = [
   { id: "mono", name: "Monospace", fontFamily: "font-mono" },
 ]
 
-// Card layouts
+// Tata letak kartu
 const cardLayouts = [
   {
     id: "manifesto",
@@ -167,7 +166,7 @@ const cardLayouts = [
   },
 ]
 
-// Size options
+// Opsi ukuran
 const sizeOptions = {
   manifesto: [
     { id: "small", name: "Small", width: 500, height: 667 },
@@ -189,7 +188,7 @@ const sizeOptions = {
   ],
 }
 
-// Font size scaling based on card size
+// Penskalaan ukuran font berdasarkan ukuran kartu
 const fontSizeScales = {
   small: {
     title: "text-2xl",
@@ -221,7 +220,7 @@ const fontSizeScales = {
   },
 }
 
-// Padding scaling based on card size
+// Penskalaan padding berdasarkan ukuran kartu
 const paddingScales = {
   small: {
     header: "p-4",
@@ -256,18 +255,17 @@ export default function PrinciplesGenerator() {
   const [fontLoaded, setFontLoaded] = useState(false)
   const [displayMode, setDisplayMode] = useState<"single" | "numbered">("numbered")
 
-  // Size options state
+  // State opsi ukuran
   const [selectedSize, setSelectedSize] = useState("medium")
   const [customWidth, setCustomWidth] = useState(600)
   const [customHeight, setCustomHeight] = useState(800)
   const [previewScale, setPreviewScale] = useState(1)
 
-  // Font selection state
+  // State pemilihan font
   const [selectedFont, setSelectedFont] = useState("bebas")
 
-  // Content overflow state
+  // State overflow konten
   const [contentOverflow, setContentOverflow] = useState(false)
-
   const [useCustomColors, setUseCustomColors] = useState(false)
   const [gradientStart, setGradientStart] = useState("#1a0505")
   const [gradientMiddle, setGradientMiddle] = useState("#7a1e1e")
@@ -290,40 +288,40 @@ export default function PrinciplesGenerator() {
   const layout = cardLayouts.find((l) => l.id === selectedLayout) || cardLayouts[0]
   const font = fontOptions.find((f) => f.id === selectedFont) || fontOptions[0]
 
-  // Get the appropriate size options based on the selected layout
+  // Mendapatkan opsi ukuran yang sesuai berdasarkan tata letak yang dipilih
   const availableSizes = sizeOptions[selectedLayout as keyof typeof sizeOptions]
   const selectedSizeOption = availableSizes.find((size) => size.id === selectedSize) || availableSizes[1]
 
-  // Get the current dimensions based on selected size
+  // Mendapatkan dimensi saat ini berdasarkan ukuran yang dipilih
   const currentWidth = selectedSize === "custom" ? customWidth : selectedSizeOption.width
   const currentHeight = selectedSize === "custom" ? customHeight : selectedSizeOption.height
 
-  // Get font size and padding scales based on selected size
+  // Mendapatkan skala ukuran font dan padding berdasarkan ukuran yang dipilih
   const fontScale = fontSizeScales[selectedSize as keyof typeof fontSizeScales]
   const paddingScale = paddingScales[selectedSize as keyof typeof paddingScales]
 
-  // Process principles into an array if in numbered mode
+  // Memproses prinsip menjadi array jika dalam mode bernomor
   const principlesArray =
     displayMode === "numbered" ? principles.split("\n").filter((line) => line.trim() !== "") : [principles]
 
-  // Check if fonts are loaded
+  // Memeriksa apakah font sudah dimuat
   useEffect(() => {
     if (typeof document !== "undefined" && "fonts" in document) {
-      // Create a test element to check if the font is loaded
+      // Membuat elemen uji untuk memeriksa apakah font sudah dimuat
       const testFont = async () => {
         try {
           await document.fonts.ready
           setFontLoaded(true)
         } catch (e) {
           console.error("Error loading fonts:", e)
-          // Set as loaded anyway to prevent UI from being stuck
+          // Tetapkan sebagai dimuat untuk mencegah UI macet
           setFontLoaded(true)
         }
       }
 
       testFont()
     } else {
-      // Fallback for browsers without font loading API
+      // Fallback untuk browser tanpa API pemuatan font
       const timer = setTimeout(() => {
         setFontLoaded(true)
       }, 1000)
@@ -332,14 +330,14 @@ export default function PrinciplesGenerator() {
     }
   }, [])
 
-  // Calculate preview scale when layout, size, or container changes
+  // Menghitung skala pratinjau saat tata letak, ukuran, atau kontainer berubah
   useEffect(() => {
     const updatePreviewScale = () => {
       if (previewContainerRef.current) {
         const containerWidth = previewContainerRef.current.clientWidth
         const cardWidth = currentWidth
 
-        // Calculate scale to fit the preview container (with some margin)
+        // Hitung skala agar sesuai dengan kontainer pratinjau (dengan margin)
         const newScale = Math.min(1, (containerWidth - 40) / cardWidth)
         setPreviewScale(newScale)
       }
@@ -347,12 +345,12 @@ export default function PrinciplesGenerator() {
 
     updatePreviewScale()
 
-    // Add resize listener
+    // Tambahkan listener resize
     window.addEventListener("resize", updatePreviewScale)
     return () => window.removeEventListener("resize", updatePreviewScale)
   }, [currentWidth, selectedLayout, selectedSize])
 
-  // Add an effect to check for content overflow
+  // Tambahkan efek untuk memeriksa overflow konten
   useEffect(() => {
     const checkOverflow = () => {
       if (contentRef.current) {
@@ -361,10 +359,10 @@ export default function PrinciplesGenerator() {
       }
     }
 
-    // Check after render and whenever content changes
+    // Periksa setelah render dan setiap kali konten berubah
     checkOverflow()
 
-    // Use ResizeObserver to detect changes in the content area
+    // Gunakan ResizeObserver untuk mendeteksi perubahan di area konten
     const resizeObserver = new ResizeObserver(checkOverflow)
     if (contentRef.current) {
       resizeObserver.observe(contentRef.current)
@@ -378,15 +376,15 @@ export default function PrinciplesGenerator() {
     }
   }, [principles, author, selectedSize, currentWidth, currentHeight, fontScale, displayMode])
 
-  // Function to validate word count based on layout
+  // Fungsi untuk memvalidasi jumlah kata berdasarkan tata letak
   const validateFooterText = (text: string) => {
     const wordCount = text.trim().split(/\s+/).filter(Boolean).length
     const wordLimit = selectedLayout === "creed" ? 6 : 20
 
     if (wordCount > wordLimit) {
       toast({
-        title: `Word limit exceeded`,
-        description: `Please limit your footer text to ${wordLimit} words for this layout.`,
+        title: `Batas kata terlampaui`,
+        description: `Harap batasi teks footer Anda hingga ${wordLimit} kata untuk tata letak ini.`,
         variant: "destructive",
       })
       return false
@@ -394,14 +392,14 @@ export default function PrinciplesGenerator() {
     return true
   }
 
-  // Handle layout change
+  // Tangani perubahan tata letak
   const handleLayoutChange = (newLayout: string) => {
     setSelectedLayout(newLayout)
 
-    // Reset to medium size when changing layouts to ensure proper aspect ratio
+    // Reset ke ukuran sedang saat mengubah tata letak untuk memastikan rasio aspek yang benar
     setSelectedSize("medium")
 
-    // Set default custom dimensions based on the new layout
+    // Setel dimensi kustom default berdasarkan tata letak baru
     const defaultSize = sizeOptions[newLayout as keyof typeof sizeOptions].find((s) => s.id === "medium")
     if (defaultSize) {
       setCustomWidth(defaultSize.width)
@@ -409,18 +407,18 @@ export default function PrinciplesGenerator() {
     }
   }
 
-  // Handle font change with verification
+  // Tangani perubahan font dengan verifikasi
   const handleFontChange = (fontId: string) => {
     setSelectedFont(fontId)
 
-    // Verify the font is loaded
+    // Verifikasi font telah dimuat
     const selectedFontOption = fontOptions.find((f) => f.id === fontId)
     if (selectedFontOption) {
-      // For custom fonts, show a loading toast
+      // Untuk font kustom, tampilkan toast pemuatan
       const fontName = selectedFontOption.name
       toast({
-        title: `Loading ${fontName} font...`,
-        description: "Please wait while we prepare your selected font.",
+        title: `Memuat font ${fontName}...`,
+        description: "Harap tunggu sementara kami menyiapkan font yang Anda pilih.",
       })
     }
   }
@@ -428,8 +426,8 @@ export default function PrinciplesGenerator() {
   const handleDownload = async () => {
     if (!principles.trim()) {
       toast({
-        title: "Validation Error",
-        description: "Please enter your principles before downloading.",
+        title: "Kesalahan Validasi",
+        description: "Harap masukkan prinsip Anda sebelum mengunduh.",
         variant: "destructive",
       })
       return
@@ -439,9 +437,9 @@ export default function PrinciplesGenerator() {
       try {
         setIsGenerating(true)
 
-        // Ensure fonts are loaded before generating the image
+        // Pastikan font dimuat sebelum membuat gambar
         if (typeof document !== "undefined" && "fonts" in document) {
-          await document.fonts.ready
+          await document.fonts.ready;
         }
 
         const dataUrl = await toPng(cardRef.current, {
@@ -450,8 +448,11 @@ export default function PrinciplesGenerator() {
           skipFonts: false,
           width: currentWidth,
           height: currentHeight,
-          fontEmbedCSS: window.document.styleSheets[0].href, // Include font CSS
-        })
+          fontEmbedCSS: Array.from(document.styleSheets)
+            .map(sheet => sheet.href)
+            .filter(href => href) // Remove null or undefined hrefs
+            .join(' '), // Join all CSS URLs
+        });
 
         const link = document.createElement("a")
         link.download = `${selectedTemplate}-${selectedLayout}-principles.png`
@@ -459,13 +460,13 @@ export default function PrinciplesGenerator() {
         link.click()
 
         toast({
-          title: "Success!",
-          description: "Your principles have been downloaded.",
+          title: "Berhasil!",
+          description: "Prinsip Anda telah diunduh.",
         })
       } catch (error) {
         toast({
-          title: "Error",
-          description: "Failed to generate image. Please try again.",
+          title: "Kesalahan",
+          description: "Gagal membuat gambar. Silakan coba lagi.",
           variant: "destructive",
         })
         console.error("Error generating image:", error)
@@ -475,12 +476,12 @@ export default function PrinciplesGenerator() {
     }
   }
 
-  // Generate custom gradient class
+  // Hasilkan kelas gradien kustom
   const customGradient = `bg-gradient-to-br from-[${gradientStart}] via-[${gradientMiddle}] to-[${gradientEnd}]`
   const customTextColorClass = `text-[${customTextColor}]`
   const customAccentBorder = `border-[${customAccentColor}]`
 
-  // Determine which styling to use based on whether custom colors are enabled
+  // Tentukan gaya mana yang akan digunakan berdasarkan apakah warna kustom diaktifkan
   const activeGradient = useCustomColors ? customGradient : template.gradient
   const activeTextColor = useCustomColors ? customTextColorClass : template.textColor
   const activeAccent = useCustomColors ? customAccentBorder : template.accent
@@ -519,96 +520,53 @@ export default function PrinciplesGenerator() {
                       <span className="hidden sm:inline">LAYOUT</span>
                     </TabsTrigger>
                   </TabsList>
-
                   <TabsContent value="content" className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="card-title">TITLE</Label>
-                      <Input
-                        id="card-title"
-                        value={cardTitle}
-                        onChange={(e) => setCardTitle(e.target.value)}
-                        placeholder="MY PRINCIPLES"
-                        className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
-                      />
+                      <Input id="card-title" value={cardTitle} onChange={(e) => setCardTitle(e.target.value)} placeholder="MY PRINCIPLES" className="bg-zinc-800 border-zinc-700 focus:border-zinc-600" />
                     </div>
-
                     <div className="space-y-2">
                       <div className="flex justify-between items-center">
                         <Label htmlFor="display-mode">DISPLAY MODE</Label>
                         <div className="flex items-center space-x-4">
                           <div className="flex items-center space-x-2">
-                            <input
-                              type="radio"
-                              id="single-mode"
-                              checked={displayMode === "single"}
-                              onChange={() => setDisplayMode("single")}
-                              className="text-red-600 focus:ring-red-600"
-                            />
-                            <Label htmlFor="single-mode" className="cursor-pointer text-sm">
-                              SINGLE
-                            </Label>
+                            <input type="radio" id="single-mode" checked={displayMode === "single"} onChange={() => setDisplayMode("single")} className="text-red-600 focus:ring-red-600" />
+                            <Label htmlFor="single-mode" className="cursor-pointer text-sm"> SINGLE </Label>
                           </div>
                           <div className="flex items-center space-x-2">
-                            <input
-                              type="radio"
-                              id="numbered-mode"
-                              checked={displayMode === "numbered"}
-                              onChange={() => setDisplayMode("numbered")}
-                              className="text-red-600 focus:ring-red-600"
-                            />
-                            <Label htmlFor="numbered-mode" className="cursor-pointer text-sm">
-                              NUMBERED
-                            </Label>
+                            <input type="radio" id="numbered-mode" checked={displayMode === "numbered"} onChange={() => setDisplayMode("numbered")} className="text-red-600 focus:ring-red-600" />
+                            <Label htmlFor="numbered-mode" className="cursor-pointer text-sm"> NUMBERED </Label>
                           </div>
                         </div>
                       </div>
-
                       <Label htmlFor="principles" className="text-sm text-zinc-400">
-                        {displayMode === "numbered" ? "ENTER EACH PRINCIPLE ON A NEW LINE" : "ENTER YOUR PRINCIPLE"}
+                        {displayMode === "numbered"
+                          ? "ENTER EACH PRINCIPLE ON A NEW LINE"
+                          : "ENTER YOUR PRINCIPLE"}
                       </Label>
-                      <Textarea
-                        id="principles"
-                        value={principles}
-                        onChange={(e) => setPrinciples(e.target.value)}
-                        placeholder={
-                          displayMode === "numbered"
-                            ? "NEVER BACK DOWN.\nSHOW NO WEAKNESS.\nTRUST NO ONE."
-                            : "STRENGTH THROUGH DISCIPLINE. DISCIPLINE THROUGH WILL. WILL THROUGH POWER."
-                        }
-                        className="min-h-[150px] bg-zinc-800 border-zinc-700 focus:border-zinc-600"
-                      />
+                      <Textarea id="principles" value={principles} onChange={(e) => setPrinciples(e.target.value)} placeholder={
+                        displayMode === "numbered"
+                          ? "NEVER BACK DOWN.\nSHOW NO WEAKNESS.\nTRUST NO ONE."
+                          : "STRENGTH THROUGH DISCIPLINE. DISCIPLINE THROUGH WILL. WILL THROUGH POWER."
+                      } className="min-h-[150px] bg-zinc-800 border-zinc-700 focus:border-zinc-600" />
                     </div>
-
                     <div className="space-y-2">
                       <Label htmlFor="author">AUTHOR (OPTIONAL)</Label>
-                      <Input
-                        id="author"
-                        value={author}
-                        onChange={(e) => setAuthor(e.target.value)}
-                        placeholder="YOUR NAME"
-                        className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
-                      />
+                      <Input id="author" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="YOUR NAME" className="bg-zinc-800 border-zinc-700 focus:border-zinc-600" />
                     </div>
-
                     <div className="space-y-2">
                       <Label htmlFor="footer-text">
+                        {" "}
                         FOOTER TEXT {selectedLayout === "creed" ? "(MAX 6 WORDS)" : "(MAX 20 WORDS)"}
                       </Label>
-                      <Input
-                        id="footer-text"
-                        value={footerText}
-                        onChange={(e) => {
-                          const newValue = e.target.value
-                          if (validateFooterText(newValue)) {
-                            setFooterText(newValue)
-                          }
-                        }}
-                        placeholder="NO MERCY. NO SURRENDER."
-                        className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
-                      />
+                      <Input id="footer-text" value={footerText} onChange={(e) => {
+                        const newValue = e.target.value
+                        if (validateFooterText(newValue)) {
+                          setFooterText(newValue)
+                        }
+                      }} placeholder="NO MERCY. NO SURRENDER." className="bg-zinc-800 border-zinc-700 focus:border-zinc-600" />
                     </div>
                   </TabsContent>
-
                   <TabsContent value="design" className="space-y-4">
                     <div className="space-y-2">
                       <Label>DESIGN TEMPLATE</Label>
@@ -617,350 +575,149 @@ export default function PrinciplesGenerator() {
                           <div
                             key={template.id}
                             className={cn(
-                              "cursor-pointer rounded-md overflow-hidden h-32 flex flex-col border-2 transition-all",
-                              selectedTemplate === template.id ? template.accent : "border-transparent",
-                              selectedTemplate === template.id ? "ring-2 ring-offset-2 ring-offset-zinc-900" : "",
+                              "flex flex-col items-center justify-center p-3 rounded-lg cursor-pointer transition-all duration-200",
+                              "border-2 border-transparent",
+                              selectedTemplate === template.id
+                                ? "ring-2 ring-offset-2 ring-zinc-500 bg-zinc-800/80"
+                                : "bg-zinc-900/90 hover:bg-zinc-800/50 hover:border-zinc-700",
                             )}
                             onClick={() => setSelectedTemplate(template.id)}
                           >
-                            <div
-                              className={cn(
-                                "flex-1 bg-gradient-to-br w-full h-full flex flex-col items-center justify-center gap-2",
-                                template.gradient,
-                              )}
-                            >
-                              {template.icon}
-                              <span className={cn("text-sm font-bold", template.textColor)}>{template.name}</span>
-                            </div>
-                            <div className="bg-zinc-800 py-1 px-2">
-                              <div className="text-center text-[10px] text-zinc-300 truncate">
-                                {template.description}
-                              </div>
-                            </div>
+                            <div className="mb-2">{template.icon}</div>
+                            <p className="text-sm font-medium text-center">{template.name}</p>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="space-y-2 mt-4">
-                      <Label>FONT STYLE</Label>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-h-[300px] overflow-y-auto p-2">
+                    <div className="space-y-2">
+                      <Label>FONT</Label>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-[400px] overflow-y-auto p-2">
                         {fontOptions.map((fontOption) => (
                           <div
                             key={fontOption.id}
                             className={cn(
-                              "cursor-pointer rounded-md overflow-hidden border-2 transition-all",
+                              "flex items-center justify-center p-3 rounded-lg cursor-pointer transition-all duration-200",
+                              "border-2 border-transparent",
                               selectedFont === fontOption.id
-                                ? "border-red-600 ring-2 ring-offset-2 ring-offset-zinc-900 ring-red-600"
-                                : "border-zinc-700",
+                                ? "ring-2 ring-offset-2 ring-zinc-500 bg-zinc-800/80"
+                                : "bg-zinc-900/90 hover:bg-zinc-800/50 hover:border-zinc-700",
                             )}
                             onClick={() => handleFontChange(fontOption.id)}
                           >
-                            <div className="bg-zinc-800 w-full flex items-center justify-center p-2">
-                              <div
-                                className={cn(
-                                  "bg-zinc-900 border border-zinc-700 w-full py-3 flex items-center justify-center",
-                                  fontOption.fontFamily,
-                                )}
-                              >
-                                <span className="text-sm uppercase">{fontOption.name}</span>
-                              </div>
-                            </div>
+                            <p className={cn("text-sm font-medium", fontOption.fontFamily)}>
+                              {fontOption.name}
+                            </p>
                           </div>
                         ))}
                       </div>
                     </div>
                   </TabsContent>
-
                   <TabsContent value="colors" className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <Label>COLOR CUSTOMIZATION</Label>
-                      <div className="flex items-center space-x-2">
-                        <Label htmlFor="use-custom-colors" className="text-sm cursor-pointer">
-                          USE CUSTOM COLORS
-                        </Label>
-                        <input
-                          type="checkbox"
-                          id="use-custom-colors"
-                          checked={useCustomColors}
-                          onChange={() => setUseCustomColors(!useCustomColors)}
-                          className="rounded border-zinc-700 text-red-600 focus:ring-red-600"
+                    <div className="flex items-center space-x-4">
+                      <input
+                        type="checkbox"
+                        id="use-custom-colors"
+                        checked={useCustomColors}
+                        onChange={(e) => setUseCustomColors(e.target.checked)}
+                        className="h-5 w-5 text-red-600 focus:ring-red-600 rounded border-zinc-700"
+                      />
+                      <Label htmlFor="use-custom-colors">USE CUSTOM COLORS</Label>
+                    </div>
+                    <div className="space-y-4">
+                      <div>
+                        <Label>GRADIENT START</Label>
+                        <Input
+                          type="color"
+                          value={gradientStart}
+                          onChange={(e) => setGradientStart(e.target.value)}
+                          className="w-full h-10 mt-1"
+                          disabled={!useCustomColors}
+                        />
+                      </div>
+                      <div>
+                        <Label>GRADIENT MIDDLE</Label>
+                        <Input
+                          type="color"
+                          value={gradientMiddle}
+                          onChange={(e) => setGradientMiddle(e.target.value)}
+                          className="w-full h-10 mt-1"
+                          disabled={!useCustomColors}
+                        />
+                      </div>
+                      <div>
+                        <Label>GRADIENT END</Label>
+                        <Input
+                          type="color"
+                          value={gradientEnd}
+                          onChange={(e) => setGradientEnd(e.target.value)}
+                          className="w-full h-10 mt-1"
+                          disabled={!useCustomColors}
+                        />
+                      </div>
+                      <div>
+                        <Label>TEXT COLOR</Label>
+                        <Input
+                          type="color"
+                          value={customTextColor}
+                          onChange={(e) => setCustomTextColor(e.target.value)}
+                          className="w-full h-10 mt-1"
+                          disabled={!useCustomColors}
+                        />
+                      </div>
+                      <div>
+                        <Label>ACCENT COLOR</Label>
+                        <Input
+                          type="color"
+                          value={customAccentColor}
+                          onChange={(e) => setCustomAccentColor(e.target.value)}
+                          className="w-full h-10 mt-1"
+                          disabled={!useCustomColors}
                         />
                       </div>
                     </div>
-
-                    <div
-                      className={cn(
-                        "space-y-4 p-4 border rounded-md border-zinc-800",
-                        useCustomColors ? "opacity-100" : "opacity-50",
-                      )}
-                    >
-                      <h3 className="font-medium mb-2">BACKGROUND GRADIENT</h3>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="gradient-start" className="flex justify-between">
-                          <span>START COLOR</span>
-                          <span className="text-xs text-zinc-400">{gradientStart}</span>
-                        </Label>
-                        <div className="flex gap-2">
-                          <input
-                            type="color"
-                            id="gradient-start"
-                            value={gradientStart}
-                            onChange={(e) => setGradientStart(e.target.value)}
-                            className="w-10 h-10 rounded border border-zinc-700 cursor-pointer"
-                            disabled={!useCustomColors}
-                          />
-                          <Input
-                            value={gradientStart}
-                            onChange={(e) => setGradientStart(e.target.value)}
-                            className="bg-zinc-800 border-zinc-700 focus:border-zinc-600 font-mono"
-                            disabled={!useCustomColors}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="gradient-middle" className="flex justify-between">
-                          <span>MIDDLE COLOR</span>
-                          <span className="text-xs text-zinc-400">{gradientMiddle}</span>
-                        </Label>
-                        <div className="flex gap-2">
-                          <input
-                            type="color"
-                            id="gradient-middle"
-                            value={gradientMiddle}
-                            onChange={(e) => setGradientMiddle(e.target.value)}
-                            className="w-10 h-10 rounded border border-zinc-700 cursor-pointer"
-                            disabled={!useCustomColors}
-                          />
-                          <Input
-                            value={gradientMiddle}
-                            onChange={(e) => setGradientMiddle(e.target.value)}
-                            className="bg-zinc-800 border-zinc-700 focus:border-zinc-600 font-mono"
-                            disabled={!useCustomColors}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="gradient-end" className="flex justify-between">
-                          <span>END COLOR</span>
-                          <span className="text-xs text-zinc-400">{gradientEnd}</span>
-                        </Label>
-                        <div className="flex gap-2">
-                          <input
-                            type="color"
-                            id="gradient-end"
-                            value={gradientEnd}
-                            onChange={(e) => setGradientEnd(e.target.value)}
-                            className="w-10 h-10 rounded border border-zinc-700 cursor-pointer"
-                            disabled={!useCustomColors}
-                          />
-                          <Input
-                            value={gradientEnd}
-                            onChange={(e) => setGradientEnd(e.target.value)}
-                            className="bg-zinc-800 border-zinc-700 focus:border-zinc-600 font-mono"
-                            disabled={!useCustomColors}
-                          />
-                        </div>
-                      </div>
-
-                      <div
-                        className="h-16 rounded-md mt-4 border border-zinc-700"
-                        style={{
-                          background: `linear-gradient(to bottom right, ${gradientStart}, ${gradientMiddle}, ${gradientEnd})`,
-                        }}
-                      ></div>
-
-                      <h3 className="font-medium mb-2 mt-6">TEXT & ACCENT COLORS</h3>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="text-color" className="flex justify-between">
-                          <span>TEXT COLOR</span>
-                          <span className="text-xs text-zinc-400">{customTextColor}</span>
-                        </Label>
-                        <div className="flex gap-2">
-                          <input
-                            type="color"
-                            id="text-color"
-                            value={customTextColor}
-                            onChange={(e) => setCustomTextColor(e.target.value)}
-                            className="w-10 h-10 rounded border border-zinc-700 cursor-pointer"
-                            disabled={!useCustomColors}
-                          />
-                          <Input
-                            value={customTextColor}
-                            onChange={(e) => setCustomTextColor(e.target.value)}
-                            className="bg-zinc-800 border-zinc-700 focus:border-zinc-600 font-mono"
-                            disabled={!useCustomColors}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="accent-color" className="flex justify-between">
-                          <span>ACCENT COLOR</span>
-                          <span className="text-xs text-zinc-400">{customAccentColor}</span>
-                        </Label>
-                        <div className="flex gap-2">
-                          <input
-                            type="color"
-                            id="accent-color"
-                            value={customAccentColor}
-                            onChange={(e) => setCustomAccentColor(e.target.value)}
-                            className="w-10 h-10 rounded border border-zinc-700 cursor-pointer"
-                            disabled={!useCustomColors}
-                          />
-                          <Input
-                            value={customAccentColor}
-                            onChange={(e) => setCustomAccentColor(e.target.value)}
-                            className="bg-zinc-800 border-zinc-700 focus:border-zinc-600 font-mono"
-                            disabled={!useCustomColors}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex gap-4 mt-4">
-                        <div
-                          className="flex-1 p-4 rounded-md border border-zinc-700 flex items-center justify-center"
-                          style={{
-                            background: `linear-gradient(to bottom right, ${gradientStart}, ${gradientMiddle}, ${gradientEnd})`,
-                            borderColor: customAccentColor,
-                          }}
-                        >
-                          <span style={{ color: customTextColor }}>TEXT PREVIEW</span>
-                        </div>
-                        <div
-                          className="flex-1 p-4 rounded-md border-4 flex items-center justify-center"
-                          style={{
-                            borderColor: customAccentColor,
-                          }}
-                        >
-                          <span>ACCENT PREVIEW</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2 mt-6">
-                      <Label>PRESET COLOR SCHEMES</Label>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-[200px] overflow-y-auto p-2">
-                        {[
-                          {
-                            name: "BLOOD & STEEL",
-                            start: "#2d0a0a",
-                            middle: "#8b0000",
-                            end: "#000000",
-                            text: "#ffffff",
-                            accent: "#ff2a2a",
-                          },
-                          {
-                            name: "CYBER NEON",
-                            start: "#000428",
-                            middle: "#004e92",
-                            end: "#000000",
-                            text: "#00ffff",
-                            accent: "#00ccff",
-                          },
-                          {
-                            name: "TOXIC WASTE",
-                            start: "#1F1300",
-                            middle: "#5F4B00",
-                            end: "#000000",
-                            text: "#c0ff00",
-                            accent: "#9acd32",
-                          },
-                          {
-                            name: "MOLTEN CORE",
-                            start: "#330000",
-                            middle: "#aa3300",
-                            end: "#000000",
-                            text: "#ffcc00",
-                            accent: "#ff6600",
-                          },
-                          {
-                            name: "SHADOW OPS",
-                            start: "#000000",
-                            middle: "#1a1a1a",
-                            end: "#000000",
-                            text: "#cccccc",
-                            accent: "#444444",
-                          },
-                          {
-                            name: "ROYAL POWER",
-                            start: "#13005A",
-                            middle: "#3E00FF",
-                            end: "#000000",
-                            text: "#ffffff",
-                            accent: "#a020f0",
-                          },
-                        ].map((scheme, index) => (
+                  </TabsContent>
+                  <TabsContent value="layout" className="space-y-4">
+                    <div className="space-y-2">
+                      <Label>CARD LAYOUT</Label>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-2">
+                        {cardLayouts.map((layoutOption) => (
                           <div
-                            key={index}
-                            className="cursor-pointer rounded-md overflow-hidden h-16 flex flex-col border-2 border-transparent hover:border-zinc-600"
-                            onClick={() => {
-                              if (!useCustomColors) setUseCustomColors(true)
-                              setGradientStart(scheme.start)
-                              setGradientMiddle(scheme.middle)
-                              setGradientEnd(scheme.end)
-                              setCustomTextColor(scheme.text)
-                              setCustomAccentColor(scheme.accent)
-                            }}
+                            key={layoutOption.id}
+                            className={cn(
+                              "flex flex-col items-center justify-center p-4 rounded-lg cursor-pointer transition-all duration-200",
+                              "border-2 border-transparent",
+                              selectedLayout === layoutOption.id
+                                ? "ring-2 ring-offset-2 ring-zinc-500 bg-zinc-800/80"
+                                : "bg-zinc-900/90 hover:bg-zinc-800/50 hover:border-zinc-700",
+                            )}
+                            onClick={() => handleLayoutChange(layoutOption.id)}
                           >
                             <div
-                              className="flex-1 w-full h-full flex items-center justify-center"
-                              style={{
-                                background: `linear-gradient(to bottom right, ${scheme.start}, ${scheme.middle}, ${scheme.end})`,
-                                borderBottom: `2px solid ${scheme.accent}`,
-                              }}
-                            >
-                              <span style={{ color: scheme.text }}>{scheme.name}</span>
-                            </div>
+                              className={cn(
+                                "w-24 h-24 mb-2 rounded-md border-2 border-dashed border-zinc-500",
+                                layoutOption.aspectRatio,
+                              )}
+                            ></div>
+                            <p className="text-sm font-medium text-center">
+                              {layoutOption.name}
+                            </p>
                           </div>
                         ))}
                       </div>
                     </div>
-                  </TabsContent>
 
-                  <TabsContent value="layout" className="space-y-4">
-                    <Label>CARD LAYOUT</Label>
-                    <div className="grid grid-cols-3 gap-4">
-                      {cardLayouts.map((layout) => (
-                        <div
-                          key={layout.id}
-                          className={cn(
-                            "cursor-pointer rounded-md overflow-hidden border-2 transition-all",
-                            selectedLayout === layout.id
-                              ? "border-red-600 ring-2 ring-offset-2 ring-offset-zinc-900 ring-red-600"
-                              : "border-zinc-700",
-                          )}
-                          onClick={() => handleLayoutChange(layout.id)}
-                        >
-                          <div
-                            className={cn(
-                              "bg-zinc-800 w-full flex items-center justify-center p-2",
-                              layout.aspectRatio,
-                            )}
-                          >
-                            <div className="bg-zinc-900 border border-zinc-700 w-full h-full flex items-center justify-center">
-                              <span className="text-xs font-medium uppercase">{layout.name}</span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-6">
-                      <Label className="mb-3 block">CARD SIZE</Label>
+                    <div className="space-y-2">
+                      <Label>CARD SIZE</Label>
                       <RadioGroup
-                        value={selectedSize}
-                        onValueChange={setSelectedSize}
-                        className="grid grid-cols-2 sm:grid-cols-4 gap-3"
+                        defaultValue={selectedSize}
+                        className="flex items-center space-x-4"
+                        onValueChange={(value) => setSelectedSize(value)}
                       >
                         {availableSizes.map((size) => (
                           <div key={size.id} className="flex items-center space-x-2">
-                            <RadioGroupItem value={size.id} id={`size-${size.id}`} className="text-red-600" />
-                            <Label htmlFor={`size-${size.id}`} className="cursor-pointer uppercase">
+                            <RadioGroupItem value={size.id} id={`size-${size.id}`} className="text-red-600 focus:ring-red-600" />
+                            <Label htmlFor={`size-${size.id}`} className="cursor-pointer text-sm">
                               {size.name}
                             </Label>
                           </div>
@@ -969,60 +726,79 @@ export default function PrinciplesGenerator() {
                     </div>
 
                     {selectedSize === "custom" && (
-                      <div className="space-y-4 p-4 border rounded-md border-zinc-800 bg-zinc-800/30">
-                        <h3 className="font-medium">CUSTOM DIMENSIONS</h3>
-
+                      <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <div className="flex justify-between">
-                            <Label htmlFor="custom-width">WIDTH: {customWidth}px</Label>
-                            <span className="text-xs text-zinc-400">300-1200px</span>
-                          </div>
-                          <Slider
+                          <Label htmlFor="custom-width">CUSTOM WIDTH (px)</Label>
+                          <Input
                             id="custom-width"
-                            min={300}
-                            max={1200}
-                            step={10}
-                            value={[customWidth]}
-                            onValueChange={(value) => setCustomWidth(value[0])}
-                            className="py-2"
+                            type="number"
+                            value={customWidth}
+                            onChange={(e) => setCustomWidth(parseInt(e.target.value, 10))}
+                            className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
                           />
                         </div>
-
                         <div className="space-y-2">
-                          <div className="flex justify-between">
-                            <Label htmlFor="custom-height">HEIGHT: {customHeight}px</Label>
-                            <span className="text-xs text-zinc-400">300-1200px</span>
-                          </div>
-                          <Slider
+                          <Label htmlFor="custom-height">CUSTOM HEIGHT (px)</Label>
+                          <Input
                             id="custom-height"
-                            min={300}
-                            max={1200}
-                            step={10}
-                            value={[customHeight]}
-                            onValueChange={(value) => setCustomHeight(value[0])}
-                            className="py-2"
+                            type="number"
+                            value={customHeight}
+                            onChange={(e) => setCustomHeight(parseInt(e.target.value, 10))}
+                            className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
                           />
                         </div>
                       </div>
                     )}
+                    <div className="space-y-2">
+                      <Label>PREVIEW SCALE</Label>
+                      <Slider
+                        defaultValue={[1]}
+                        max={1}
+                        min={0.2}
+                        step={0.01}
+                        onValueChange={(value) => setPreviewScale(value[0])}
+                        className="w-full"
+                      />
+                      <p className="text-sm text-zinc-400 text-center">
+                        {Math.round(previewScale * 100)}%
+                      </p>
+                    </div>
                   </TabsContent>
                 </Tabs>
               </CardContent>
-              <CardFooter className="border-t border-zinc-800 pt-6">
+              <CardFooter className="flex justify-between items-center border-t border-zinc-800">
+                <Button variant="outline" className="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 border-zinc-700" onClick={() => {
+                  setPrinciples("")
+                  setAuthor("")
+                  setCardTitle("MY PRINCIPLES")
+                  setFooterText("NO MERCY. NO SURRENDER.")
+                  setSelectedTemplate("warlord")
+                  setSelectedLayout("manifesto")
+                  setSelectedSize("medium")
+                  setCustomWidth(600)
+                  setCustomHeight(800)
+                  setUseCustomColors(false)
+                  setGradientStart("#1a0505")
+                  setGradientMiddle("#7a1e1e")
+                  setGradientEnd("#000000")
+                  setCustomTextColor("#ffffff")
+                  setCustomAccentColor("#ff4040")
+                }}>
+                  <RefreshCw className="mr-2 h-4 w-4" />
+                  RESET
+                </Button>
                 <Button
+                  variant="default"
+                  className="bg-red-600 hover:bg-red-700 text-white"
                   onClick={handleDownload}
-                  disabled={isGenerating || !principles.trim()}
-                  className="w-full bg-red-700 hover:bg-red-600 text-white"
+                  disabled={isGenerating}
                 >
                   {isGenerating ? (
-                    <>
-                      <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
-                      GENERATING...
-                    </>
+                    <>Generating...</>
                   ) : (
                     <>
                       <Download className="mr-2 h-4 w-4" />
-                      DOWNLOAD AS PNG
+                      DOWNLOAD
                     </>
                   )}
                 </Button>
@@ -1030,199 +806,106 @@ export default function PrinciplesGenerator() {
             </Card>
           </div>
 
-          <div>
-            <h2 className="text-2xl font-bold mb-4 font-bebas tracking-wider">PREVIEW</h2>
+          <div className="space-y-6">
             <div
               ref={previewContainerRef}
-              className="relative w-full overflow-hidden bg-zinc-900/50 rounded-lg border border-zinc-800 p-4 flex items-center justify-center min-h-[500px]"
+              className="w-full flex justify-center items-center"
             >
               <div
-                className="relative transition-all duration-300"
+                ref={cardRef}
                 style={{
                   transform: `scale(${previewScale})`,
+                  transformOrigin: "top left",
                   width: `${currentWidth}px`,
                   height: `${currentHeight}px`,
                 }}
+                className={cn(
+                  "bg-cover bg-center rounded-xl shadow-2xl transition-all duration-300",
+                  "overflow-hidden flex flex-col justify-between",
+                  layout.className,
+                  activeGradient,
+                  font.fontFamily,
+                  `w-[${currentWidth}px] h-[${currentHeight}px]`,
+                )}
               >
+                {/* Header section */}
                 <div
-                  ref={cardRef}
-                  data-layout={selectedLayout}
-                  data-size={selectedSize}
-                  data-font={selectedFont}
                   className={cn(
-                    "w-full h-full rounded-lg overflow-hidden shadow-lg flex flex-col",
-                    activeGradient,
-                    font.fontFamily,
-                    !fontLoaded && "opacity-80", // Show slightly faded if fonts aren't loaded yet
+                    "flex-shrink-0 flex items-center justify-between",
+                    paddingScale.header,
                   )}
-                  style={{
-                    width: `${currentWidth}px`,
-                    height: `${currentHeight}px`,
-                  }}
                 >
-                  {/* Header section */}
-                  <div
-                    className={cn(
-                      "flex-shrink-0 flex items-center justify-between",
-                      useCustomColors ? `border-t-4 ${customAccentBorder}` : template.borderStyle,
-                      paddingScale.header,
-                    )}
-                  >
-                    <h3 className={cn("font-bold tracking-wider uppercase", activeTextColor, fontScale.title)}>
-                      {cardTitle || "MY PRINCIPLES"}
-                    </h3>
-                    <div className="flex items-center gap-2">
-                      {template.icon}
-                      <span className={cn("opacity-80 text-sm", activeTextColor)}>{currentDate}</span>
-                    </div>
-                  </div>
+                  <h2 className={cn("uppercase tracking-wider", activeTextColor, fontScale.title)}>
+                    {cardTitle}
+                  </h2>
+                  <p className={cn("text-xs text-zinc-400")}>{currentDate}</p>
+                </div>
 
-                  {/* Content section */}
-                  <div
-                    ref={contentRef}
-                    className={cn(
-                      "flex-1 flex flex-col justify-center overflow-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent relative",
-                      paddingScale.content,
-                      "min-h-0", // This is crucial for flex child to respect parent constraints
-                    )}
-                  >
-                    {principles ? (
-                      <div className="space-y-4">
-                        {displayMode === "numbered" ? (
-                          <div className="space-y-4">
-                            {principlesArray.map((principle, index) => (
-                              <div key={index} className="flex gap-4 items-start">
-                                <span
-                                  className={cn(
-                                    "font-bold",
-                                    useCustomColors ? customAccentBorder : template.numberStyle,
-                                    fontScale.number,
-                                  )}
-                                >
-                                  {index + 1}.
-                                </span>
-                                <p className={cn("leading-tight tracking-wide", activeTextColor, fontScale.principle)}>
-                                  {principle}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                        ) : (
-                          <p
-                            className={cn(
-                              "leading-tight tracking-wide",
-                              activeTextColor,
-                              fontScale.principle,
-                              selectedLayout === "commandment" ? "text-center max-w-3xl mx-auto" : "",
-                            )}
-                          >
-                            {principles}
-                          </p>
-                        )}
-                      </div>
-                    ) : (
-                      <div className="space-y-4">
-                        {displayMode === "numbered" ? (
-                          <div className="space-y-4 opacity-70">
-                            <div className="flex gap-4 items-start">
-                              <span
-                                className={cn(
-                                  "font-bold",
-                                  useCustomColors ? customAccentBorder : template.numberStyle,
-                                  fontScale.number,
-                                )}
-                              >
-                                1.
-                              </span>
-                              <p className={cn("leading-tight tracking-wide", activeTextColor, fontScale.principle)}>
-                                NEVER BACK DOWN.
-                              </p>
-                            </div>
-                            <div className="flex gap-4 items-start">
-                              <span
-                                className={cn(
-                                  "font-bold",
-                                  useCustomColors ? customAccentBorder : template.numberStyle,
-                                  fontScale.number,
-                                )}
-                              >
-                                2.
-                              </span>
-                              <p className={cn("leading-tight tracking-wide", activeTextColor, fontScale.principle)}>
-                                SHOW NO WEAKNESS.
-                              </p>
-                            </div>
-                            <div className="flex gap-4 items-start">
-                              <span
-                                className={cn(
-                                  "font-bold",
-                                  useCustomColors ? customAccentBorder : template.numberStyle,
-                                  fontScale.number,
-                                )}
-                              >
-                                3.
-                              </span>
-                              <p className={cn("leading-tight tracking-wide", activeTextColor, fontScale.principle)}>
-                                TRUST NO ONE.
-                              </p>
-                            </div>
-                          </div>
-                        ) : (
-                          <p
-                            className={cn(
-                              "leading-tight tracking-wide opacity-70",
-                              activeTextColor,
-                              fontScale.principle,
-                              selectedLayout === "commandment" ? "text-center max-w-3xl mx-auto" : "",
-                            )}
-                          >
-                            STRENGTH THROUGH DISCIPLINE. DISCIPLINE THROUGH WILL. WILL THROUGH POWER.
-                          </p>
-                        )}
-                      </div>
-                    )}
-
-                    {author && (
-                      <p
+                {/* Main content section */}
+                <div
+                  ref={contentRef}
+                  className={cn(
+                    "flex-grow flex flex-col justify-center items-center text-center",
+                    paddingScale.content,
+                    "relative overflow-hidden",
+                  )}
+                >
+                  {displayMode === "numbered" ? (
+                    principlesArray.map((principle, index) => (
+                      <div
+                        key={index}
                         className={cn(
-                          "font-semibold mt-6",
+                          "mb-4 last:mb-0 flex items-start gap-3",
+                          "w-full",
                           activeTextColor,
-                          fontScale.author,
-                          selectedLayout === "commandment" ? "text-center" : "text-right",
+                          fontScale.principle,
                         )}
                       >
-                        — {author}
-                      </p>
-                    )}
-
-                    {/* Content overflow indicator */}
-                    {contentOverflow && (
-                      <div className="absolute bottom-1 right-1 bg-white/10 backdrop-blur-sm rounded-full p-1 animate-bounce">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className={cn("h-4 w-4", activeTextColor)}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+                        <span className={cn(template.numberStyle, fontScale.number)}>
+                          {index + 1}.
+                        </span>
+                        <p className="text-left">{principle.trim()}</p>
                       </div>
-                    )}
-                  </div>
-
-                  {/* Footer section */}
-                  <div
-                    className={cn(
-                      "flex-shrink-0 flex items-center justify-center",
-                      useCustomColors ? `border-b-4 ${customAccentBorder}` : template.borderStyle,
-                      paddingScale.footer,
-                    )}
-                  >
-                    <p className={cn("text-center uppercase tracking-wider", activeTextColor, fontScale.footer)}>
-                      {footerText}
+                    ))
+                  ) : (
+                    <p className={cn("leading-relaxed", activeTextColor, fontScale.principle)}>
+                      {principles}
                     </p>
-                  </div>
+                  )}
+
+                  {author && (
+                    <p className={cn("absolute bottom-4 right-4 text-sm italic", activeTextColor, fontScale.author)}>
+                      - {author}
+                    </p>
+                  )}
+
+                  {/* Overflow indicator */}
+                  {contentOverflow && (
+                    <div className="absolute bottom-1 right-1 bg-white/10 backdrop-blur-sm rounded-full p-1 animate-bounce">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={cn("h-4 w-4", activeTextColor)}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+
+                {/* Bagian footer */}
+                <div
+                  className={cn(
+                    "flex-shrink-0 flex items-center justify-center",
+                    useCustomColors ? `border-b-4 ${customAccentBorder}` : template.borderStyle,
+                    paddingScale.footer,
+                  )}
+                >
+                  <p className={cn("text-center uppercase tracking-wider", activeTextColor, fontScale.footer)}>
+                    {footerText}
+                  </p>
                 </div>
               </div>
             </div>
@@ -1232,3 +915,4 @@ export default function PrinciplesGenerator() {
     </FontLoader>
   )
 }
+
