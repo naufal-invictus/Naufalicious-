@@ -247,6 +247,17 @@ function PostMetadata({ icon, children }: { icon: React.ReactNode; children: Rea
   )
 }
 
+// Component for the article slug/URL display
+function ArticleSlug({ slug }: { slug: string }) {
+  return (
+    <div className="mb-4 mt-2">
+      <div className="inline-flex items-center px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700">
+        <span className="text-sm font-mono text-gray-500 dark:text-gray-400 select-all">blog/{slug}</span>
+      </div>
+    </div>
+  )
+}
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   // Find the post by slug
   const post = blogPosts.find((post) => post.slug === params.slug)
@@ -264,7 +275,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
           {/* Back button */}
-          <div className="mb-8">
+          <div className="mb-6">
             <Button variant="ghost" className="text-primary hover:text-primary/90 p-0" asChild>
               <Link href="/blog" className="flex items-center">
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
@@ -272,24 +283,27 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </Button>
           </div>
 
+          {/* Display the slug in a visually appealing way */}
+          <ArticleSlug slug={post.slug} />
+
           {/* Post header */}
-          <header className="mb-8">
+          <header className="mb-10">
             <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 border-none">{post.category}</Badge>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
-            <div className="flex flex-wrap items-center text-gray-600 gap-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">{post.title}</h1>
+            <div className="flex flex-wrap items-center text-gray-600 gap-5">
               <PostMetadata icon={<Calendar className="h-4 w-4 mr-1" />}>{post.date}</PostMetadata>
               <PostMetadata icon={<BookOpen className="h-4 w-4 mr-1" />}>{readTime}</PostMetadata>
               <PostMetadata icon={<User className="h-4 w-4 mr-1" />}>{post.author}</PostMetadata>
             </div>
           </header>
 
-          {/* Post content */}
-          <div className="prose max-w-none prose-blue prose-headings:text-primary prose-a:text-secondary">
+          {/* Post content with enhanced typography */}
+          <div className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-semibold prose-a:text-secondary prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-800 prose-strong:font-semibold prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-li:leading-relaxed prose-hr:border-gray-200">
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
 
           {/* Share section */}
-          <div className="mt-12 pt-6 border-t border-gray-200">
+          <div className="mt-16 pt-6 border-t border-gray-200">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-medium text-gray-900">Share this post</h3>
               <div className="flex space-x-2">
