@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Slider } from "@/components/ui/slider"
-import { useToast } from "@/hooks/use-toast"
+// import { useToast } from "@/hooks/use-toast" // Dihapus
 import {
   Download,
   RefreshCw,
@@ -256,16 +256,12 @@ export default function PrinciplesGenerator() {
   const [fontLoaded, setFontLoaded] = useState(false)
   const [displayMode, setDisplayMode] = useState<"single" | "numbered">("numbered")
 
-  // State opsi ukuran tetap sama
   const [selectedSize, setSelectedSize] = useState("medium")
   const [customWidth, setCustomWidth] = useState(600)
   const [customHeight, setCustomHeight] = useState(800)
   const [previewScale, setPreviewScale] = useState(1)
 
-  // State pemilihan font tetap sama
   const [selectedFont, setSelectedFont] = useState("bebas")
-
-  // State content overflow tetap sama
   const [contentOverflow, setContentOverflow] = useState(false)
 
   const [useCustomColors, setUseCustomColors] = useState(false)
@@ -275,7 +271,7 @@ export default function PrinciplesGenerator() {
   const [customTextColor, setCustomTextColor] = useState("#ffffff")
   const [customAccentColor, setCustomAccentColor] = useState("#ff4040")
 
-  const { toast } = useToast()
+  // const { toast } = useToast() // Dihapus
   const cardRef = useRef<HTMLDivElement>(null)
   const previewContainerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
@@ -302,7 +298,6 @@ export default function PrinciplesGenerator() {
   const principlesArray =
     displayMode === "numbered" ? principles.split("\n").filter((line) => line.trim() !== "") : [principles]
 
-  // useEffect untuk memuat font tetap sama
   useEffect(() => {
     if (typeof document !== "undefined" && "fonts" in document) {
       const testFont = async () => {
@@ -311,26 +306,24 @@ export default function PrinciplesGenerator() {
           setFontLoaded(true)
         } catch (e) {
           console.error("Error loading fonts:", e)
-          setFontLoaded(true) // Tetap set true untuk menghindari UI macet
+          setFontLoaded(true) 
         }
       }
       testFont()
     } else {
-      // Fallback untuk browser tanpa font loading API
       const timer = setTimeout(() => {
         setFontLoaded(true)
-      }, 1000) // Tunggu 1 detik
+      }, 1000) 
       return () => clearTimeout(timer)
     }
   }, [])
 
-  // useEffect untuk skala pratinjau tetap sama
   useEffect(() => {
     const updatePreviewScale = () => {
       if (previewContainerRef.current) {
         const containerWidth = previewContainerRef.current.clientWidth
         const cardWidth = currentWidth
-        const newScale = Math.min(1, (containerWidth - 40) / cardWidth) // -40 untuk padding
+        const newScale = Math.min(1, (containerWidth - 40) / cardWidth) 
         setPreviewScale(newScale)
       }
     }
@@ -339,7 +332,6 @@ export default function PrinciplesGenerator() {
     return () => window.removeEventListener("resize", updatePreviewScale)
   }, [currentWidth, selectedLayout, selectedSize])
 
-  // useEffect untuk content overflow tetap sama
   useEffect(() => {
     const checkOverflow = () => {
       if (contentRef.current) {
@@ -347,7 +339,7 @@ export default function PrinciplesGenerator() {
         setContentOverflow(isOverflowing)
       }
     }
-    checkOverflow() // Cek saat render awal dan perubahan dependensi
+    checkOverflow() 
     const resizeObserver = new ResizeObserver(checkOverflow)
     if (contentRef.current) {
       resizeObserver.observe(contentRef.current)
@@ -360,25 +352,24 @@ export default function PrinciplesGenerator() {
     }
   }, [principles, author, selectedSize, currentWidth, currentHeight, fontScale, displayMode])
 
-  // Fungsi validasi footer text tetap sama
   const validateFooterText = (text: string) => {
     const wordCount = text.trim().split(/\s+/).filter(Boolean).length
     const wordLimit = selectedLayout === "creed" ? 6 : 20
     if (wordCount > wordLimit) {
-      toast({
-        title: `Word limit exceeded`,
-        description: `Please limit your footer text to ${wordLimit} words for this layout.`,
-        variant: "destructive",
-      })
+      // toast({ // Dihapus
+      //   title: `Word limit exceeded`,
+      //   description: `Please limit your footer text to ${wordLimit} words for this layout.`,
+      //   variant: "destructive",
+      // })
+      console.warn(`Word limit exceeded for footer text. Limit is ${wordLimit} words.`);
       return false
     }
     return true
   }
 
-  // Fungsi handleLayoutChange tetap sama
   const handleLayoutChange = (newLayout: string) => {
     setSelectedLayout(newLayout)
-    setSelectedSize("medium") // Reset ke medium saat ganti layout
+    setSelectedSize("medium") 
     const defaultSize = sizeOptions[newLayout as keyof typeof sizeOptions].find((s) => s.id === "medium")
     if (defaultSize) {
       setCustomWidth(defaultSize.width)
@@ -386,26 +377,28 @@ export default function PrinciplesGenerator() {
     }
   }
 
-  // Fungsi handleFontChange tetap sama
   const handleFontChange = (fontId: string) => {
     setSelectedFont(fontId)
     const selectedFontOption = fontOptions.find((f) => f.id === fontId)
     if (selectedFontOption) {
       const fontName = selectedFontOption.name
-      toast({
-        title: `Loading ${fontName} font...`,
-        description: "Please wait while we prepare your selected font.",
-      })
+      // toast({ // Dihapus
+      //   title: `Loading ${fontName} font...`,
+      //   description: "Please wait while we prepare your selected font.",
+      // })
+      console.log(`Loading ${fontName} font...`);
     }
   }
 
   const handleDownload = async () => {
     if (!principles.trim()) {
-      toast({
-        title: "Validation Error",
-        description: "Please enter your principles before downloading.",
-        variant: "destructive",
-      })
+      // toast({ // Dihapus
+      //   title: "Validation Error",
+      //   description: "Please enter your principles before downloading.",
+      //   variant: "destructive",
+      // })
+      console.error("Validation Error: Please enter your principles before downloading.");
+      alert("Validation Error: Please enter your principles before downloading."); // Menggunakan alert sebagai pengganti toast
       return
     }
 
@@ -413,17 +406,16 @@ export default function PrinciplesGenerator() {
       try {
         setIsGenerating(true)
 
-        // Pastikan font sudah dimuat sebelum membuat gambar
         if (typeof document !== "undefined" && "fonts" in document) {
           await document.fonts.ready
         }
 
         const dataUrl = await toPng(cardRef.current, {
-          pixelRatio: 2, // Meningkatkan resolusi gambar
-          width: currentWidth, // Lebar eksplisit untuk gambar keluaran
-          height: currentHeight, // Tinggi eksplisit untuk gambar keluaran
-          backgroundColor: 'rgba(0,0,0,0)', // Eksplisit transparan, agar gradien kartu yang jadi background
-          cacheBust: true, // Untuk menghindari masalah caching
+          pixelRatio: 2, 
+          width: currentWidth, 
+          height: currentHeight, 
+          backgroundColor: 'rgba(0,0,0,0)', 
+          cacheBust: true, 
         })
 
         const link = document.createElement("a")
@@ -431,24 +423,27 @@ export default function PrinciplesGenerator() {
         link.href = dataUrl
         link.click()
 
-        toast({
-          title: "Success!",
-          description: "Your principles have been downloaded.",
-        })
+        // toast({ // Dihapus
+        //   title: "Success!",
+        //   description: "Your principles have been downloaded.",
+        // })
+        console.log("Success! Your principles have been downloaded.");
+        alert("Success! Your principles have been downloaded."); // Menggunakan alert sebagai pengganti toast
+
       } catch (error) {
-        toast({
-          title: "Error",
-          description: "Failed to generate image. Please try again.",
-          variant: "destructive",
-        })
+        // toast({ // Dihapus
+        //   title: "Error",
+        //   description: "Failed to generate image. Please try again.",
+        //   variant: "destructive",
+        // })
         console.error("Error generating image:", error)
+        alert("Error: Failed to generate image. Please try again."); // Menggunakan alert sebagai pengganti toast
       } finally {
         setIsGenerating(false)
       }
     }
   }
 
-  // Logika gradient kustom dan styling aktif tetap sama
   const customGradient = `bg-gradient-to-br from-[${gradientStart}] via-[${gradientMiddle}] to-[${gradientEnd}]`
   const customTextColorClass = `text-[${customTextColor}]`
   const customAccentBorder = `border-[${customAccentColor}]`
@@ -456,12 +451,9 @@ export default function PrinciplesGenerator() {
   const activeGradient = useCustomColors ? customGradient : template.gradient
   const activeTextColor = useCustomColors ? customTextColorClass : template.textColor
   const activeBorderStyle = useCustomColors
-    ? `border-${["t", "l", "b", "r", "y", "x"][Math.floor(Math.random() * 6)]}-4 ${customAccentBorder}` // Gaya border kustom acak
+    ? `border-${["t", "l", "b", "r", "y", "x"][Math.floor(Math.random() * 6)]}-4 ${customAccentBorder}` 
     : template.borderStyle
 
-
-  // JSX (Return statement) tetap sama seperti pada kode asli Anda.
-  // Saya hanya menampilkan bagian yang relevan di atas, namun seluruh JSX akan disertakan dalam output.
   return (
     <FontLoader>
       <div className="container mx-auto px-4 py-8 bg-zinc-950 text-zinc-100 min-h-screen">
@@ -514,7 +506,7 @@ export default function PrinciplesGenerator() {
                             <input
                               type="radio"
                               id="single-mode"
-                              name="displayMode" // Tambahkan name untuk grup radio yang benar
+                              name="displayMode" 
                               checked={displayMode === "single"}
                               onChange={() => setDisplayMode("single")}
                               className="text-red-600 focus:ring-red-600"
@@ -527,7 +519,7 @@ export default function PrinciplesGenerator() {
                             <input
                               type="radio"
                               id="numbered-mode"
-                              name="displayMode" // Tambahkan name untuk grup radio yang benar
+                              name="displayMode" 
                               checked={displayMode === "numbered"}
                               onChange={() => setDisplayMode("numbered")}
                               className="text-red-600 focus:ring-red-600"
@@ -802,13 +794,13 @@ export default function PrinciplesGenerator() {
                           className="flex-1 p-4 rounded-md border border-zinc-700 flex items-center justify-center"
                           style={{
                             background: `linear-gradient(to bottom right, ${gradientStart}, ${gradientMiddle}, ${gradientEnd})`,
-                            borderColor: customAccentColor, // Ini seharusnya border color
+                            borderColor: customAccentColor, 
                           }}
                         >
                           <span style={{ color: customTextColor }}>TEXT PREVIEW</span>
                         </div>
                         <div
-                          className="flex-1 p-4 rounded-md border-4 flex items-center justify-center" // Ini sudah benar border-4
+                          className="flex-1 p-4 rounded-md border-4 flex items-center justify-center" 
                           style={{
                             borderColor: customAccentColor,
                           }}
