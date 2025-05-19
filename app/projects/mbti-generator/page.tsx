@@ -664,9 +664,16 @@ export default function MBTICardGenerator() {
                     <div className="text-xs opacity-70">{creationDate}</div>
                   </div>
 
-                  {/* Bottom decorative line */}
-                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-32 h-[1px] bg-white/30"></div>
-                </div>
+                     {/* Decorative line */}
+                      <div className="w-full h-[1px] bg-white/30 mt-1"></div>
+
+                      {/* Decorative dots */}
+                      <div className="flex mt-3 space-x-2">
+                        <p class="text-[8px] text-white/80 italic">Unlocking potential through typology.</p>
+                      </div>   
+                                      <div className="flex mt-3 space-x-2">
+                        <p class="text-[8px] text-white/80 italic">Unlocking potential through typology.</p>
+                      </div>   
 
                 <div className="mt-4 flex justify-center">
                   <Button onClick={() => downloadCard("template2")} disabled={!name || !mbti || isGenerating}>
