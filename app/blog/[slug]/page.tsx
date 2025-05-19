@@ -48,7 +48,7 @@ const blogPosts = [
   category: "Psychology",
   slug: "pengelompokkan-enneagram",
   image: "/placeholder.svg?height=600&width=1200",
-  author: "Naufalicious",
+  author: "Rifa",
   content: `
     <h2>Pendahuluan</h2>
     <p>Enneagram bukan hanya sekadar sembilan tipe kepribadian. Ia adalah peta kompleks yang memiliki lapisan-lapisan dalam. Tiga di antaranya—<em>Harmonic Groups</em>, <em>Hornevian Groups</em>, dan <em>Object Relations</em>—memberikan dimensi tambahan yang membantu kita memahami bagaimana masing-masing tipe berinteraksi dengan konflik, orang lain, dan kebutuhan batin mereka.</p>
