@@ -20,43 +20,9 @@ interface BlogPost {
 
 // Sample blog posts data (in a real app, this would come from an API or database)
 const blogPosts: BlogPost[] = [
+ 
   {
     id: 1,
-    title: "Atomic Habits by James Clear",
-    excerpt: "A comprehensive summary of how small changes can lead to remarkable results.",
-    date: "May 2, 2025",
-    category: "Self-Improvement",
-    slug: "atomic-habits",
-    author: "Naufalicious",
-    readTime: "5 min read",
-    content: `
-      <h2>Book Overview</h2>
-      <p>In "Atomic Habits," James Clear presents a practical framework for improving every day. The book draws on proven ideas from biology, psychology, and neuroscience to create an easy-to-understand guide for making good habits inevitable and bad habits impossible.</p>
-      
-      <h2>Key Takeaways</h2>
-      <ul>
-        <li><strong>Habits are the compound interest of self-improvement</strong>: Small changes often appear to make no difference until you cross a critical threshold. The most powerful outcomes are the result of many small decisions over time.</li>
-        <li><strong>Focus on your identity, not outcomes</strong>: The most effective way to change your habits is to focus on who you want to become, not what you want to achieve.</li>
-        <li><strong>The Four Laws of Behavior Change</strong>: Make it obvious, make it attractive, make it easy, and make it satisfying.</li>
-        <li><strong>Environment is the invisible hand that shapes human behavior</strong>: The most practical way to change your habits is to change your environment.</li>
-        <li><strong>The Goldilocks Rule</strong>: Humans experience peak motivation when working on tasks that are right on the edge of their current abilities not too hard, not too easy.</li>
-      </ul>
-      
-      <h2>Practical Applications</h2>
-      <p>Here are some practical ways to apply the concepts from Atomic Habits:</p>
-      <ol>
-        <li><strong>Habit Stacking</strong>: Identify a current habit you already do each day and then stack your new behavior on top.</li>
-        <li><strong>Implementation Intentions</strong>: "I will [BEHAVIOR] at [TIME] in [LOCATION]."</li>
-        <li><strong>Habit Tracking</strong>: Don't break the chain of successful days.</li>
-        <li><strong>The Two-Minute Rule</strong>: When you start a new habit, it should take less than two minutes to do.</li>
-      </ol>
-      
-      <h2>Conclusion</h2>
-      <p>Atomic Habits provides a proven framework for improving every day. By focusing on small changes and building better habits, you can make remarkable progress over time. The key is to focus on systems rather than goals, identity rather than outcomes, and the process rather than the results.</p>
-    `,
-  },
-  {
-    id: 2,
     title: "Mengenal Pengelompokkan Enneagram: Harmonic, Hornevian, dan Objek Relasi",
     excerpt: "Pemetaan kepribadian dari tiga perspektif yang menyibak pola tersembunyi dalam dinamika Enneagram.",
     date: "May 19, 2025",
@@ -130,7 +96,7 @@ const blogPosts: BlogPost[] = [
     `,
   },
   {
-  id: 3,
+  id: 2,
   title: "Flowchart Tujuan Hidup: Panduan Singkat Menemukan Arah",
   excerpt: "Cara praktis menyusun flowchart tujuan hidup agar lebih terarah dan bermakna.",
   date: "May 19, 2025",
