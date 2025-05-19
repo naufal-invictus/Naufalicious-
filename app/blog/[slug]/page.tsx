@@ -39,7 +39,7 @@ const blogPosts: BlogPost[] = [
         <li><strong>Focus on your identity, not outcomes</strong>: The most effective way to change your habits is to focus on who you want to become, not what you want to achieve.</li>
         <li><strong>The Four Laws of Behavior Change</strong>: Make it obvious, make it attractive, make it easy, and make it satisfying.</li>
         <li><strong>Environment is the invisible hand that shapes human behavior</strong>: The most practical way to change your habits is to change your environment.</li>
-        <li><strong>The Goldilocks Rule</strong>: Humans experience peak motivation when working on tasks that are right on the edge of their current abilities—not too hard, not too easy.</li>
+        <li><strong>The Goldilocks Rule</strong>: Humans experience peak motivation when working on tasks that are right on the edge of their current abilities not too hard, not too easy.</li>
       </ul>
       
       <h2>Practical Applications</h2>
@@ -65,35 +65,28 @@ const blogPosts: BlogPost[] = [
     author: "Rifa",
     readTime: "8 min read",
     content: `
-      <h2>Pendahuluan</h2>
-      <p>Enneagram bukan hanya sekadar sembilan tipe kepribadian. Ia adalah peta kompleks yang memiliki lapisan-lapisan dalam. Tiga di antaranya—<em>Harmonic Groups</em>, <em>Hornevian Groups</em>, dan <em>Object Relations</em>—memberikan dimensi tambahan yang membantu kita memahami bagaimana masing-masing tipe berinteraksi dengan konflik, orang lain, dan kebutuhan batin mereka.</p>
-
       <h2>1. Harmonic Groups</h2>
-      <p><strong>Bagaimana tipe kepribadian menghadapi konflik dan masalah hidup.</strong></p>
       <ul>
-        <li><strong>Competency (1, 3, 5):</strong> Fokus pada logika dan tanggung jawab. Cenderung mengandalkan kecakapan dan standar pribadi.</li>
-        <li><strong>Positive Outlook (2, 7, 9):</strong> Mengandalkan optimisme dan harapan. Emosi negatif cenderung dihindari atau diredam.</li>
-        <li><strong>Reactive (4, 6, 8):</strong> Sangat responsif terhadap ketegangan dan konflik. Ekspresif, kadang konfrontatif.</li>
+        <li><strong>Competency (1, 3, 5):</strong></li>
+        <li><strong>Positive Outlook (2, 7, 9):</strong></li>
+        <li><strong>Reactive (4, 6, 8):</strong></li>
       </ul>
 
       <h2>2. Hornevian Groups</h2>
-      <p><strong>Bagaimana tipe-tipe mencari perhatian atau pemenuhan sosial.</strong></p>
       <ul>
-        <li><strong>Compliant (1, 2, 6):</strong> Ingin diterima melalui kesesuaian dengan otoritas atau norma. Loyal dan taat.</li>
-        <li><strong>Assertive (3, 7, 8):</strong> Menuntut tempatnya di dunia. Tegas, mandiri, dan seringkali dominan.</li>
-        <li><strong>Withdrawn (4, 5, 9):</strong> Menarik diri ke dalam. Reflektif, mandiri, dan kadang terasing.</li>
+        <li><strong>Compliant (1, 2, 6):</strong></li>
+        <li><strong>Assertive (3, 7, 8):</strong></li>
+        <li><strong>Withdrawn (4, 5, 9):</strong></li>
       </ul>
 
       <h2>3. Object Relations</h2>
-      <p><strong>Pola hubungan bawah sadar yang dibentuk sejak kecil.</strong></p>
       <ul>
-        <li><strong>Frustration (1, 4, 7):</strong> Mengejar ideal yang sering tidak terpenuhi. Kekecewaan mendalam atas ketidaksempurnaan dunia.</li>
-        <li><strong>Rejection (2, 5, 8):</strong> Menghindari ketergantungan. Percaya bahwa cinta harus diperoleh, bukan diberikan tanpa syarat.</li>
-        <li><strong>Attachment (3, 6, 9):</strong> Merindukan keterikatan emosional. Mudah membaur, tetapi rentan kehilangan identitas sendiri.</li>
+        <li><strong>Frustration (1, 4, 7):</strong></li>
+        <li><strong>Rejection (2, 5, 8):</strong></li>
+        <li><strong>Attachment (3, 6, 9):</strong></li>
       </ul>
 
-      <h2>Kombinasi Unik Setiap Tipe</h2>
-      <p>Dengan menyatukan ketiga kategori di atas, setiap tipe memiliki kombinasi khas yang memperkaya pemahaman kita terhadapnya.</p>
+      <h2>Kombinasi masing-masing tipe Enneagram berdasarkan 3 jenis pengelompokkan enneagram dari Harmonic, Hornevian dan Objek Relasi secara berturut-turut</h2>
       <ul>
         <li><strong>Tipe 1:</strong> Competency, Compliant, Frustration</li>
         <li><strong>Tipe 2:</strong> Positive Outlook, Compliant, Rejection</li>
@@ -105,10 +98,27 @@ const blogPosts: BlogPost[] = [
         <li><strong>Tipe 8:</strong> Reactive, Assertive, Rejection</li>
         <li><strong>Tipe 9:</strong> Positive Outlook, Withdrawn, Attachment</li>
       </ul>
-
-      <h2>Penutup</h2>
-      <p>Jika kita selama ini melihat Enneagram hanya dari satu dimensi, maka ketiga klasifikasi ini bagaikan prisma yang membelokkan cahaya menjadi spektrum warna. Mereka menantang kita untuk tidak puas hanya dengan label "tipe", tapi menelusuri bagaimana kita bereaksi, menjalin hubungan, dan bertumbuh. Maka, pertanyaannya: apakah kita cukup jujur pada diri sendiri untuk mengenali pola kita sendiri?</p>
-
+      
+     <h2>Garis besar dari masing-masing istilah diatas</h2>
+     <h3>Harmonic </h3>
+     <ul>
+        <li><strong>Competency (1, 3, 5):</strong> Kompeten, Bertanggungjawab. </li>
+        <li><strong>Positive Outlook (2, 7, 9):</strong> Positif thinking adalah jalan ninjaku, sering optimis dan ceria.</li>
+        <li><strong>Reactive (4, 6, 8):</strong> Reaktif, cepat tanggap. </li>
+      </ul>
+      <h3>Hornevian </h3>
+     <ul>
+        <li><strong>Compliant (1, 2, 6):</strong> Setia, Loyalist.</li>
+        <li><strong>Assertive (3, 7, 8):</strong> Tegas, To the point. </li>
+        <li><strong>Withdrawn (4, 5, 9):</strong> Menjauhi sosial, fokus ke dunianya sendiri.</li>
+      </ul>
+      <h3>Objek Relasi  </h3>
+      <ul>
+        <li><strong>Frustration (1, 4, 7):</strong> Idealis, Perfeksionis </li>
+        <li><strong>Rejection (2, 5, 8):</strong> Mandiri, Tidak suka ketergantungan, merasa dirinya bisa selalu </li>
+        <li><strong>Attachment (3, 6, 9):</strong> Ketergantungan, mudah bucin</li>
+      </ul>
+      
       <hr />
       <p><strong>Referensi:</strong></p>
       <ol>
