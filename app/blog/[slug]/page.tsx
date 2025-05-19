@@ -40,6 +40,70 @@ const blogPosts = [
       <p>Atomic Habits provides a proven framework for improving every day. By focusing on small changes and building better habits, you can make remarkable progress over time. The key is to focus on systems rather than goals, identity rather than outcomes, and the process rather than the results.</p>
     `,
   },
+  {
+  id: 2,
+  title: "Mengenal Pengelompokkan Enneagram: Harmonic, Hornevian, dan Objek Relasi",
+  excerpt: "Pemetaan kepribadian dari tiga perspektif yang menyibak pola tersembunyi dalam dinamika Enneagram.",
+  date: "May 19, 2025",
+  category: "Psychology",
+  slug: "pengelompokkan-enneagram",
+  image: "/placeholder.svg?height=600&width=1200",
+  author: "Naufalicious",
+  content: `
+    <h2>Pendahuluan</h2>
+    <p>Enneagram bukan hanya sekadar sembilan tipe kepribadian. Ia adalah peta kompleks yang memiliki lapisan-lapisan dalam. Tiga di antaranya—<em>Harmonic Groups</em>, <em>Hornevian Groups</em>, dan <em>Object Relations</em>—memberikan dimensi tambahan yang membantu kita memahami bagaimana masing-masing tipe berinteraksi dengan konflik, orang lain, dan kebutuhan batin mereka.</p>
+
+    <h2>1. Harmonic Groups</h2>
+    <p><strong>Bagaimana tipe kepribadian menghadapi konflik dan masalah hidup.</strong></p>
+    <ul>
+      <li><strong>Competency (1, 3, 5):</strong> Fokus pada logika dan tanggung jawab. Cenderung mengandalkan kecakapan dan standar pribadi.</li>
+      <li><strong>Positive Outlook (2, 7, 9):</strong> Mengandalkan optimisme dan harapan. Emosi negatif cenderung dihindari atau diredam.</li>
+      <li><strong>Reactive (4, 6, 8):</strong> Sangat responsif terhadap ketegangan dan konflik. Ekspresif, kadang konfrontatif.</li>
+    </ul>
+
+    <h2>2. Hornevian Groups</h2>
+    <p><strong>Bagaimana tipe-tipe mencari perhatian atau pemenuhan sosial.</strong></p>
+    <ul>
+      <li><strong>Compliant (1, 2, 6):</strong> Ingin diterima melalui kesesuaian dengan otoritas atau norma. Loyal dan taat.</li>
+      <li><strong>Assertive (3, 7, 8):</strong> Menuntut tempatnya di dunia. Tegas, mandiri, dan seringkali dominan.</li>
+      <li><strong>Withdrawn (4, 5, 9):</strong> Menarik diri ke dalam. Reflektif, mandiri, dan kadang terasing.</li>
+    </ul>
+
+    <h2>3. Object Relations</h2>
+    <p><strong>Pola hubungan bawah sadar yang dibentuk sejak kecil.</strong></p>
+    <ul>
+      <li><strong>Frustration (1, 4, 7):</strong> Mengejar ideal yang sering tidak terpenuhi. Kekecewaan mendalam atas ketidaksempurnaan dunia.</li>
+      <li><strong>Rejection (2, 5, 8):</strong> Menghindari ketergantungan. Percaya bahwa cinta harus diperoleh, bukan diberikan tanpa syarat.</li>
+      <li><strong>Attachment (3, 6, 9):</strong> Merindukan keterikatan emosional. Mudah membaur, tetapi rentan kehilangan identitas sendiri.</li>
+    </ul>
+
+    <h2>Kombinasi Unik Setiap Tipe</h2>
+    <p>Dengan menyatukan ketiga kategori di atas, setiap tipe memiliki kombinasi khas yang memperkaya pemahaman kita terhadapnya.</p>
+    <ul>
+      <li><strong>Tipe 1:</strong> Competency, Compliant, Frustration</li>
+      <li><strong>Tipe 2:</strong> Positive Outlook, Compliant, Rejection</li>
+      <li><strong>Tipe 3:</strong> Competency, Assertive, Attachment</li>
+      <li><strong>Tipe 4:</strong> Reactive, Withdrawn, Frustration</li>
+      <li><strong>Tipe 5:</strong> Competency, Withdrawn, Rejection</li>
+      <li><strong>Tipe 6:</strong> Reactive, Compliant, Attachment</li>
+      <li><strong>Tipe 7:</strong> Positive Outlook, Assertive, Frustration</li>
+      <li><strong>Tipe 8:</strong> Reactive, Assertive, Rejection</li>
+      <li><strong>Tipe 9:</strong> Positive Outlook, Withdrawn, Attachment</li>
+    </ul>
+
+    <h2>Penutup</h2>
+    <p>Jika kita selama ini melihat Enneagram hanya dari satu dimensi, maka ketiga klasifikasi ini bagaikan prisma yang membelokkan cahaya menjadi spektrum warna. Mereka menantang kita untuk tidak puas hanya dengan label "tipe", tapi menelusuri bagaimana kita bereaksi, menjalin hubungan, dan bertumbuh. Maka, pertanyaannya: apakah kita cukup jujur pada diri sendiri untuk mengenali pola kita sendiri?</p>
+
+    <hr />
+    <p><strong>Referensi:</strong></p>
+    <ol>
+      <li><a href="https://enneagramexplained.com/enneagram-harmonic-groups/" target="_blank">Harmonic Groups</a></li>
+      <li><a href="https://enneagramexplained.com/enneagram-hornevian-groups/" target="_blank">Hornevian Groups</a></li>
+      <li><a href="https://notmytypeenneagram.com/object-relations" target="_blank">Object Relations</a></li>
+      <li><a href="https://docs.google.com/presentation/d/1b8cY9G8uLvz8z7adz3xUBLHsySpOQxblBtN9TM9Q150/edit?usp=drivesdk" target="_blank">Slide Kombinasi</a></li>
+    </ol>
+  `
+},
   // More blog posts would be defined here
 ]
 
