@@ -311,14 +311,15 @@ export default function PrinciplesGenerator() {
           setFontLoaded(true)
         } catch (e) {
           console.error("Error loading fonts:", e)
-          setFontLoaded(true)
+          setFontLoaded(true) // Tetap set true untuk menghindari UI macet
         }
       }
       testFont()
     } else {
+      // Fallback untuk browser tanpa font loading API
       const timer = setTimeout(() => {
         setFontLoaded(true)
-      }, 1000)
+      }, 1000) // Tunggu 1 detik
       return () => clearTimeout(timer)
     }
   }, [])
@@ -329,7 +330,7 @@ export default function PrinciplesGenerator() {
       if (previewContainerRef.current) {
         const containerWidth = previewContainerRef.current.clientWidth
         const cardWidth = currentWidth
-        const newScale = Math.min(1, (containerWidth - 40) / cardWidth)
+        const newScale = Math.min(1, (containerWidth - 40) / cardWidth) // -40 untuk padding
         setPreviewScale(newScale)
       }
     }
@@ -346,7 +347,7 @@ export default function PrinciplesGenerator() {
         setContentOverflow(isOverflowing)
       }
     }
-    checkOverflow()
+    checkOverflow() // Cek saat render awal dan perubahan dependensi
     const resizeObserver = new ResizeObserver(checkOverflow)
     if (contentRef.current) {
       resizeObserver.observe(contentRef.current)
@@ -377,7 +378,7 @@ export default function PrinciplesGenerator() {
   // Fungsi handleLayoutChange tetap sama
   const handleLayoutChange = (newLayout: string) => {
     setSelectedLayout(newLayout)
-    setSelectedSize("medium")
+    setSelectedSize("medium") // Reset ke medium saat ganti layout
     const defaultSize = sizeOptions[newLayout as keyof typeof sizeOptions].find((s) => s.id === "medium")
     if (defaultSize) {
       setCustomWidth(defaultSize.width)
@@ -418,12 +419,11 @@ export default function PrinciplesGenerator() {
         }
 
         const dataUrl = await toPng(cardRef.current, {
-          // quality: 4, // Dihapus - kemungkinan untuk JPEG atau salah paham
           pixelRatio: 2, // Meningkatkan resolusi gambar
-          // skipFonts: false, // Defaultnya false, jadi akan mencoba menyematkan font
           width: currentWidth, // Lebar eksplisit untuk gambar keluaran
           height: currentHeight, // Tinggi eksplisit untuk gambar keluaran
-          // fontEmbedCSS: window.document.styleSheets[0].href, // Dihapus - biarkan pustaka menangani font secara default
+          backgroundColor: 'rgba(0,0,0,0)', // Eksplisit transparan, agar gradien kartu yang jadi background
+          cacheBust: true, // Untuk menghindari masalah caching
         })
 
         const link = document.createElement("a")
@@ -455,16 +455,13 @@ export default function PrinciplesGenerator() {
 
   const activeGradient = useCustomColors ? customGradient : template.gradient
   const activeTextColor = useCustomColors ? customTextColorClass : template.textColor
-  // const activeAccent = useCustomColors ? customAccentBorder : template.accent; // Tidak terpakai secara langsung di cardRef styling
   const activeBorderStyle = useCustomColors
-    ? `border-${["t", "l", "b", "r", "y", "x"][Math.floor(Math.random() * 6)]}-4 ${customAccentBorder}`
+    ? `border-${["t", "l", "b", "r", "y", "x"][Math.floor(Math.random() * 6)]}-4 ${customAccentBorder}` // Gaya border kustom acak
     : template.borderStyle
 
 
-  // JSX (Return statement) tetap sama seperti pada kode asli Anda
-  // Tidak perlu menyalin ulang seluruh JSX di sini karena perubahannya hanya pada handleDownload
-  // Pastikan untuk menggunakan JSX yang sama persis dari file Anda.
-  // ... (seluruh JSX dari <FontLoader> hingga </FontLoader>)
+  // JSX (Return statement) tetap sama seperti pada kode asli Anda.
+  // Saya hanya menampilkan bagian yang relevan di atas, namun seluruh JSX akan disertakan dalam output.
   return (
     <FontLoader>
       <div className="container mx-auto px-4 py-8 bg-zinc-950 text-zinc-100 min-h-screen">
@@ -517,9 +514,10 @@ export default function PrinciplesGenerator() {
                             <input
                               type="radio"
                               id="single-mode"
+                              name="displayMode" // Tambahkan name untuk grup radio yang benar
                               checked={displayMode === "single"}
                               onChange={() => setDisplayMode("single")}
-                              className="text-red-600 focus:ring-red-600" // Tailwind custom radio
+                              className="text-red-600 focus:ring-red-600"
                             />
                             <Label htmlFor="single-mode" className="cursor-pointer text-sm">
                               SINGLE
@@ -529,9 +527,10 @@ export default function PrinciplesGenerator() {
                             <input
                               type="radio"
                               id="numbered-mode"
+                              name="displayMode" // Tambahkan name untuk grup radio yang benar
                               checked={displayMode === "numbered"}
                               onChange={() => setDisplayMode("numbered")}
-                              className="text-red-600 focus:ring-red-600" // Tailwind custom radio
+                              className="text-red-600 focus:ring-red-600"
                             />
                             <Label htmlFor="numbered-mode" className="cursor-pointer text-sm">
                               NUMBERED
@@ -661,7 +660,7 @@ export default function PrinciplesGenerator() {
                           id="use-custom-colors"
                           checked={useCustomColors}
                           onChange={() => setUseCustomColors(!useCustomColors)}
-                          className="rounded border-zinc-700 text-red-600 focus:ring-red-600" // Tailwind custom checkbox
+                          className="rounded border-zinc-700 text-red-600 focus:ring-red-600"
                         />
                       </div>
                     </div>
@@ -803,13 +802,13 @@ export default function PrinciplesGenerator() {
                           className="flex-1 p-4 rounded-md border border-zinc-700 flex items-center justify-center"
                           style={{
                             background: `linear-gradient(to bottom right, ${gradientStart}, ${gradientMiddle}, ${gradientEnd})`,
-                            borderColor: customAccentColor,
+                            borderColor: customAccentColor, // Ini seharusnya border color
                           }}
                         >
                           <span style={{ color: customTextColor }}>TEXT PREVIEW</span>
                         </div>
                         <div
-                          className="flex-1 p-4 rounded-md border-4 flex items-center justify-center"
+                          className="flex-1 p-4 rounded-md border-4 flex items-center justify-center" // Ini sudah benar border-4
                           style={{
                             borderColor: customAccentColor,
                           }}
@@ -1018,8 +1017,8 @@ export default function PrinciplesGenerator() {
                 className="relative transition-all duration-300"
                 style={{
                   transform: `scale(${previewScale})`,
-                  width: `${currentWidth}px`, // Pastikan ini diterapkan
-                  height: `${currentHeight}px`, // Pastikan ini diterapkan
+                  width: `${currentWidth}px`, 
+                  height: `${currentHeight}px`,
                 }}
               >
                 <div
@@ -1029,20 +1028,20 @@ export default function PrinciplesGenerator() {
                   data-font={selectedFont}
                   className={cn(
                     "w-full h-full rounded-lg overflow-hidden shadow-lg flex flex-col",
-                    activeGradient, // Ini menerapkan gradient
+                    activeGradient, 
                     font.fontFamily,
                     !fontLoaded && "opacity-80", 
                   )}
                   style={{
-                    width: `${currentWidth}px`, // Penting untuk html-to-image
-                    height: `${currentHeight}px`, // Penting untuk html-to-image
+                    width: `${currentWidth}px`, 
+                    height: `${currentHeight}px`,
                   }}
                 >
                   {/* Header section */}
                   <div
                     className={cn(
                       "flex-shrink-0 flex items-center justify-between",
-                      activeBorderStyle, // Menggunakan activeBorderStyle yang sudah memperhitungkan useCustomColors
+                      activeBorderStyle, 
                       paddingScale.header,
                     )}
                   >
@@ -1073,7 +1072,7 @@ export default function PrinciplesGenerator() {
                                 <span
                                   className={cn(
                                     "font-bold",
-                                    useCustomColors ? `text-[${customAccentColor}]` : template.numberStyle, // Perbaikan untuk warna nomor kustom
+                                    useCustomColors ? `text-[${customAccentColor}]` : template.numberStyle,
                                     fontScale.number,
                                   )}
                                 >
@@ -1106,7 +1105,7 @@ export default function PrinciplesGenerator() {
                               <span
                                 className={cn(
                                   "font-bold",
-                                   useCustomColors ? `text-[${customAccentColor}]` : template.numberStyle, // Perbaikan untuk warna nomor kustom
+                                   useCustomColors ? `text-[${customAccentColor}]` : template.numberStyle,
                                   fontScale.number,
                                 )}
                               >
@@ -1120,7 +1119,7 @@ export default function PrinciplesGenerator() {
                               <span
                                 className={cn(
                                   "font-bold",
-                                   useCustomColors ? `text-[${customAccentColor}]` : template.numberStyle, // Perbaikan untuk warna nomor kustom
+                                   useCustomColors ? `text-[${customAccentColor}]` : template.numberStyle,
                                   fontScale.number,
                                 )}
                               >
@@ -1134,7 +1133,7 @@ export default function PrinciplesGenerator() {
                               <span
                                 className={cn(
                                   "font-bold",
-                                   useCustomColors ? `text-[${customAccentColor}]` : template.numberStyle, // Perbaikan untuk warna nomor kustom
+                                   useCustomColors ? `text-[${customAccentColor}]` : template.numberStyle,
                                   fontScale.number,
                                 )}
                               >
@@ -1192,7 +1191,7 @@ export default function PrinciplesGenerator() {
                   <div
                     className={cn(
                       "flex-shrink-0 flex items-center justify-center",
-                       activeBorderStyle, // Menggunakan activeBorderStyle yang sudah memperhitungkan useCustomColors
+                       activeBorderStyle, 
                       paddingScale.footer,
                     )}
                   >
