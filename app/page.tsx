@@ -199,7 +199,7 @@ export default function Home() {
             className="border-primary text-primary hover:bg-primary/10 w-full mt-4"
           >
             <Link
-              href="/project/scp-card-generator"
+              href="/projects/scp-card-generator"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center"
