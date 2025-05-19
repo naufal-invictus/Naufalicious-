@@ -153,6 +153,67 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Experience Section */}
+<section className="py-16 bg-gray-100">
+  <div className="container mx-auto px-4">
+    <div className="max-w-3xl mx-auto">
+      <h2 className="text-3xl font-bold text-primary mb-8 text-center">Experience</h2>
+
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">Lightning Technician & Graphic Designer</h3>
+        <p className="text-gray-700 mb-1"><span className="font-semibold">PT. Lini Kreatif Indonesia</span></p>
+        <ul className="list-disc list-inside text-gray-600">
+          <li>Learned and collaborated with the graphic designer team, developing visual design skills and product content creation.</li>
+          <li>Collaborated with the technical team to ensure events ran smoothly.</li>
+        </ul>
+      </div>
+
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">HR & Personnel Administrator</h3>
+        <p className="text-gray-700 mb-1"><span className="font-semibold">PT. Sinar Jaya Megah Langgeng</span></p>
+        <ul className="list-disc list-inside text-gray-600">
+          <li>Managed and reviewed employee salary and BPJS (Social Security Agency) data.</li>
+          <li>Supported the HR team in the recruitment process, including candidate screening.</li>
+          <li>Managed personnel document archives and ensured the completeness of personal data.</li>
+          <li>Utilized Microsoft Excel to process attendance, salary, and allowance data, as well as compile necessary reports.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Skills Section */}
+<section className="py-16">
+  <div className="container mx-auto px-4">
+    <div className="max-w-3xl mx-auto">
+      <h2 className="text-3xl font-bold text-primary mb-8 text-center">Skills</h2>
+
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">Technical Skills</h3>
+        <p className="text-gray-700">
+          Router installation and configuration (Mercusys, TP Link), LAN; LAN/WAN network administration, network topology; OS installation (Windows, Linux), troubleshooting; FTP server configuration, remote printing; Virtualization (VMware, VirtualBox); Basic programming language (Python), understanding BIOS/UEFI; Front-End (Svelte, Tailwind).
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">Soft Skills</h3>
+        <p className="text-gray-700">
+          Possesses teamwork abilities, can manage stress and remain productive in high-pressure situations. Quickly adapts to new environments and is capable of critically filtering information.
+        </p>
+      </div>
+
+      <div className="mt-6">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">Awards</h3>
+        <ul className="list-disc list-inside text-gray-600">
+          <li>Internship Participant Certificate with Good/Satisfactory Grade from PT. Sinar Jaya Megah Langgeng | No. 001/SDM/PKL/III/2023 | 2023</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+      
  {/* Certificates Section */}
 <section className="py-16">
   <div className="container mx-auto px-4">
