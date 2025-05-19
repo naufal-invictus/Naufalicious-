@@ -147,5 +147,58 @@
 .font-loaded {
   opacity: 1;
 }
+.prose h2 {
+    @apply text-2xl font-semibold mt-10 mb-4 text-gray-800;
+  }
+
+  .prose h3 {
+    @apply text-xl font-medium mt-8 mb-3 text-gray-800;
+  }
+
+  .prose p {
+    @apply text-base leading-7 mb-6 text-gray-700;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply my-6 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose a {
+    @apply text-primary font-medium transition-colors hover:text-primary/80;
+  }
+
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-gray-200 italic my-6 text-gray-700;
+  }
+
+  .prose code {
+    @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800;
+  }
+
+  .prose pre {
+    @apply bg-gray-100 p-4 rounded-md overflow-x-auto my-6;
+  }
+
+  .prose img {
+    @apply rounded-lg my-8 mx-auto;
+  }
+
+  .prose hr {
+    @apply my-10 border-t border-gray-200;
+  }
+
+  .prose strong {
+    @apply font-semibold text-gray-900;
+  }
+
+  .prose-lg p {
+    @apply text-lg leading-relaxed;
+  }
+}
 
 
