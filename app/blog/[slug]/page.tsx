@@ -145,10 +145,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 <span>{post.date}</span>
               </div>
               <div className="flex items-center">
-                <User className="h-4 w-4 mr-1" />
-                <span>Naufal</span>
-              </div>
-              <div className="flex items-center">
                 <BookOpen className="h-4 w-4 mr-1" />
                 <span>5 min read</span>
               </div>
@@ -165,18 +161,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
 
-          {/* Share buttons */}
-          <div className="mt-12 pt-8 border-t">
-            <div className="flex items-center justify-between">
-              <h3 className="font-medium text-gray-900">Share this summary</h3>
-              <div className="flex space-x-2">
-                <Button variant="outline" size="icon" className="rounded-full">
-                  <Share2 className="h-4 w-4" />
-                </Button>
-                {/* Add more social share buttons here */}
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
