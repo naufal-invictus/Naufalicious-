@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -39,8 +39,8 @@ export default function Home() {
                   also an aspiring writer.
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
-                  Driven by my passion for personality psychology, I've created an card generator to make self-discovery
-                  enjoyable.
+                  Driven by my passion for personality psychology, I've created
+                  an card generator to make self-discovery enjoyable.
                 </p>
               </div>
             </div>
@@ -55,10 +55,13 @@ export default function Home() {
             More Than Just a Developer
           </h2>
           <p className="text-gray-700 mb-4 leading-relaxed text-center">
-            My skills extend beyond the realm of coding. I possess an eye for design and a creative mindset that allows me to approach projects with both technical proficiency and aesthetic sensibility.
+            My skills extend beyond the realm of coding. I possess an eye for
+            design and a creative mindset that allows me to approach projects
+            with both technical proficiency and aesthetic sensibility.
           </p>
           <p className="text-gray-600 leading-relaxed text-center">
-            Furthermore, I bring a unique perspective by sharing philosophical insights from Islamic, Stoic, and Chinese traditions.
+            Furthermore, I bring a unique perspective by sharing philosophical
+            insights from Islamic, Stoic, and Chinese traditions.
           </p>
         </div>
       </section>
@@ -69,78 +72,464 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-primary mb-4">My Core Values</h2>
             <p className="text-gray-700 mb-10">
-              These values drive everything I do, both personally and professionally.
+              These values drive everything I do, both personally and
+              professionally.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Integrity and Wisdom</h3>
+                <h3 className="font-semibold text-lg text-primary mb-2">
+                  Integrity and Wisdom
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Guided by principles of honesty, ethical conduct, and the timeless wisdom found in diverse philosophical traditions.
+                  Guided by principles of honesty, ethical conduct, and the
+                  timeless wisdom found in diverse philosophical traditions.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Emphaty and Service</h3>
+                <h3 className="font-semibold text-lg text-primary mb-2">
+                  Emphaty and Service
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  A deep-seated belief in the importance of understanding and supporting others.
+                  A deep-seated belief in the importance of understanding and
+                  supporting others.
                 </p>
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-primary mb-2">Continuous Growth</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  A commitment to lifelong learning, self-improvement, and the pursuit of knowledge.
+                  A commitment to lifelong learning, self-improvement, and the
+                  pursuit of knowledge.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-<section className="py-16 bg-gray-50">
-  <div className="container mx-auto px-4">
-    <div className="max-w-4xl mx-auto text-left">
-      <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">
-        My Principles
-      </Badge>
-      <h2 className="text-3xl font-bold text-primary mb-4">The Noble Wound</h2>
-      <p className="text-gray-700 mb-8 italic">
-        I find a strange solace in the consistent presence of my solitude and suffering.
-      </p>
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-left">
+            <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">
+              My Principles
+            </Badge>
+            <h2 className="text-3xl font-bold text-primary mb-4">The Noble Wound</h2>
+            <p className="text-gray-700 mb-8 italic">
+              I find a strange solace in the consistent presence of my solitude
+              and suffering.
+            </p>
 
-      <div className="space-y-8 text-gray-800 leading-relaxed text-base md:text-lg">
-        <div className="space-y-1">
-          <p>I suffer, yet I utter no sound,</p>
-          <p>For this wound is solely mine, unbound.</p>
-          <p>I let not the world taste my sacred pain,</p>
-          <p>For this sorrow is a holy reign.</p>
+            <div className="space-y-8 text-gray-800 leading-relaxed text-base md:text-lg">
+              <div className="space-y-1">
+                <p>I suffer, yet I utter no sound,</p>
+                <p>For this wound is solely mine, unbound.</p>
+                <p>I let not the world taste my sacred pain,</p>
+                <p>For this sorrow is a holy reign.</p>
+              </div>
+
+              <div className="space-y-1">
+                <p>I am lonely, yet I seek no replacement,</p>
+                <p>No soul I invite to my spirit's vacant space.</p>
+                <p>It never departs though the world may fall,</p>
+                <p>Faithful as a shadow without a body's thrall.</p>
+              </div>
+
+              <div className="space-y-1">
+                <p>Suffering will never demand of anyone,</p>
+                <p>It only wishes to be remembered in silence spun.</p>
+                <p>Suffering never betrays or takes its flight,</p>
+                <p>It remains when even laughter bids goodnight.</p>
+              </div>
+
+              <div className="space-y-1">
+                <p>Loneliness is no foe, but a steadfast friend,</p>
+                <p>In solitude, I learn to love this unending trend.</p>
+                <p>It stays when all others disappear,</p>
+                <p>As if it's the only one truly held dear.</p>
+              </div>
+            </div>
+
+            <div className="mt-10 text-right text-sm text-gray-500 italic">
+              — Naufalicious
+            </div>
+          </div>
         </div>
+      </section>
+      {/* Certificates Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                Certificates
+              </h2>
+              <div className="w-20 h-1 bg-primary mx-auto"></div>
+              <p className="text-gray-700 mt-4">
+                Here are some of the certificates I've earned.
+              </p>
+            </div>
 
-        <div className="space-y-1">
-          <p>I am lonely, yet I seek no replacement,</p>
-          <p>No soul I invite to my spirit's vacant space.</p>
-          <p>It never departs though the world may fall,</p>
-          <p>Faithful as a shadow without a body's thrall.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Example Certificate 1 */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/1RLLbYCSULJ0O28b5yEHzN8eaJgG3TQT4/preview" // Replace with your image path
+                    alt="Mikrotik MTCNA"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    MikroTik Certified Network Associate (MTCNA)
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Mikrotik
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      13-04-2023
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Example Certificate 2 */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/1aKH6yGBnP6Y4D7cyrEW1Nw3K6qLoMUJq/preview" // Replace with your image path
+                    alt="R4S"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    Ready For Security Training
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Microsoft & InfraDigital
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      August-September - 2023
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Example Certificate 3 */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/1hK1qQpRjXBupLYOK_VaJrBO8rdaWZ5cq/preview" // Replace with your image path
+                    alt="Certificate 3"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    Foundations of Cybersecurity
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Coursera 
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      Completion Date
+                    </Badge>
+                    <Button size="sm" variant="outline">
+                      View <ArrowUpRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+
+                <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~2CFEK8S2NCJZ/CERTIFICATE_LANDING_PAGE~2CFEK8S2NCJZ.jpeg" // Replace with your image path
+                    alt="IT SUPPORT"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    Technical Support
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Coursera
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2023
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+                <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~8Y7ZERKKP3XV/CERTIFICATE_LANDING_PAGE~8Y7ZERKKP3XV.jpeg" // Replace with your image path
+                    alt="IT SUPP"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    IT Infrastructure Services and Systems Administration
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Coursera 
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2023
+                    </Badge>
+        
+                  </div>
+                </div>
+              </motion.div>
+
+                <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/16mar834r__fZotvn4ulM4rSd5tTNEOFQ/preview" // Replace with your image path
+                    alt="IT SUPP"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    Dev OPS- Basics
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Dicoding
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2023
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+                              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/1M1dPvR7EKizUegjI2ZHJGotCWHHcSwyV/preview" // Replace with your image path
+                    alt="IT SUPP"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    Introduction to Information Security Course
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                     Cyber Academy
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2022
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+                              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/1wVl55DS6iIp3qAOIAiwo37LLjQcDu87m/preview" // Replace with your image path
+                    alt="Samsung"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    Samsung Innovation Campuss
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Samsung
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2022
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+                 <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/12siCnZgSFVtjIhZdZr-DR1TpV-ytJlQQ/preview" // Replace with your image path
+                    alt="Kemenakre"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    Mechanical Engineer CAD ASEAN
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    BBPVP Bandung & Kemenaker
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2022
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+                 <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/1j5g0Bnqhg3NS29uXgRE2vvmRVs-tSyD6/preview" // Replace with your image path
+                    alt="IT"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    IT Support Google
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Coursera & Google
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2022
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+                              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~NP73SLXYZ79C/CERTIFICATE_LANDING_PAGE~NP73SLXYZ79C.jpeg" // Replace with your image path
+                    alt="IT"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    The Ins and Outs of Computer Networking.
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Coursera & Google
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2023
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+                              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/1h0p7zh_wdJtUgdsXZ5QRfPxd95wRwaVb/preview" // Replace with your image path
+                    alt="IT"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    Web Development Wizardry
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Udemy
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2024
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+
+                              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src="https://drive.google.com/file/d/1NGmyvXwrZUiT8nMaGKsQFmtR_8Bd_16E/preview" // Replace with your image path
+                    alt="IT"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    Bootcamp Quality Assurance
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Gits ID
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      2024
+                    </Badge>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="space-y-1">
-          <p>Suffering will never demand of anyone,</p>
-          <p>It only wishes to be remembered in silence spun.</p>
-          <p>Suffering never betrays or takes its flight,</p>
-          <p>It remains when even laughter bids goodnight.</p>
-        </div>
-
-        <div className="space-y-1">
-          <p>Loneliness is no foe, but a steadfast friend,</p>
-          <p>In solitude, I learn to love this unending trend.</p>
-          <p>It stays when all others disappear,</p>
-          <p>As if it's the only one truly held dear.</p>
-        </div>
-      </div>
-
-      <div className="mt-10 text-right text-sm text-gray-500 italic">
-        — Naufalicious
-      </div>
-    </div>
-  </div>
-</section>
       {/* My Design Collection Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -164,9 +553,13 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">PI-1</h3>
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    PI-1
+                  </h3>
                   <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      Web Design
+                    </Badge>
                   </div>
                 </div>
               </motion.div>
@@ -183,9 +576,13 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">PI-2</h3>
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    PI-2
+                  </h3>
                   <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      Web Design
+                    </Badge>
                   </div>
                 </div>
               </motion.div>
@@ -202,9 +599,13 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">PI-3</h3>
+                  <h3 className="font-semibold text-lg text-primary mb-2">
+                    PI-3
+                  </h3>
                   <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      Web Design
+                    </Badge>
                   </div>
                 </div>
               </motion.div>
@@ -223,7 +624,9 @@ export default function Home() {
                 <div className="p-4">
                   <h3 className="font-semibold text-lg text-primary mb-2">PI-4</h3>
                   <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">Web Design</Badge>
+                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      Web Design
+                    </Badge>
                   </div>
                 </div>
               </motion.div>
