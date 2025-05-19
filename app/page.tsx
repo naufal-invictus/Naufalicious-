@@ -68,7 +68,73 @@ export default function Home() {
           </div>
         </div>
       </section>
-   
+   {/* Featured Projects Section */}
+<section className="py-16">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-primary mb-8 text-center">Featured Projects</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Featured Project 1 */}
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <img
+          src="https://i.ibb.co/hJSnRrWf/facebook-cover-TANKY-TENSHI-2.png"
+          alt="Facebook Cover Generator"
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-6">
+          <h3 className="font-semibold text-lg text-gray-800 mb-2">Facebook Cover Generator</h3>
+          <p className="text-gray-600 text-sm mb-4">
+            Generate personalized Facebook covers with custom colors or based on your MBTI personality.
+          </p>
+          <Link href="https://fb-cover-generator.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <Button variant="secondary" size="md">
+              View Project
+            </Button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Featured Project 2 */}
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <img
+          src="https://i.ibb.co/M5xSLmqz/TANKY-TENSHI-ID-Card.png"
+          alt="SCP ID Card Generator"
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-6">
+          <h3 className="font-semibold text-lg text-gray-800 mb-2">SCP ID Card Generator</h3>
+          <p className="text-gray-600 text-sm mb-4">
+            A fun project to create your own SCP Foundation-style identification card.
+          </p>
+          <Link href="/project/scp-card-generator" target="_blank" rel="noopener noreferrer">
+            <Button variant="secondary" size="md">
+              View Project
+            </Button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Featured Project 3 */}
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <img
+          src="https://i.ibb.co/FqKmGgBc/TANKY-TENSHI-MBTI-Card.png"
+          alt="MBTI ID Card Generator"
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-6">
+          <h3 className="font-semibold text-lg text-gray-800 mb-2">MBTI ID Card Generator</h3>
+          <p className="text-gray-600 text-sm mb-4">
+            Design a unique ID card showcasing your Myers-Briggs Type Indicator personality type.
+          </p>
+          <Link href="https://idcard-generator-lyart.vercel.app/mbti" target="_blank" rel="noopener noreferrer">
+            <Button variant="secondary" size="md">
+              View Project
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Features Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
