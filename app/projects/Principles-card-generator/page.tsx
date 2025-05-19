@@ -27,7 +27,7 @@ import {
 import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
 
-// Komponen untuk memuat font
+// Komponen Font Loader
 const FontLoader = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     // Memuat font kustom
@@ -81,7 +81,7 @@ const designTemplates = [
     gradient: "from-red-950 via-red-900 to-black",
     textColor: "text-red-50",
     accent: "border-red-600",
-    description: "Brutal, penuh perintah, dan tanpa kompromi",
+    description: "Brutal, berkuasa, dan tanpa kompromi",
     icon: <Swords className="h-6 w-6 text-red-500" />,
     borderStyle: "border-t-4 border-red-600",
     numberStyle: "text-red-600 font-bold",
@@ -125,7 +125,7 @@ const designTemplates = [
     gradient: "from-stone-950 via-amber-950 to-stone-900",
     textColor: "text-amber-100",
     accent: "border-amber-600",
-    description: "Ditempa dalam api, dikeraskan oleh perjuangan",
+    description: "Ditempa dalam api, ditempa oleh perjuangan",
     icon: <Hammer className="h-6 w-6 text-amber-600" />,
     borderStyle: "border-y-4 border-amber-600",
     numberStyle: "text-amber-600 font-bold",
@@ -255,17 +255,18 @@ export default function PrinciplesGenerator() {
   const [fontLoaded, setFontLoaded] = useState(false)
   const [displayMode, setDisplayMode] = useState<"single" | "numbered">("numbered")
 
-  // State opsi ukuran
+  // Opsi ukuran state
   const [selectedSize, setSelectedSize] = useState("medium")
   const [customWidth, setCustomWidth] = useState(600)
   const [customHeight, setCustomHeight] = useState(800)
   const [previewScale, setPreviewScale] = useState(1)
 
-  // State pemilihan font
+  // Font selection state
   const [selectedFont, setSelectedFont] = useState("bebas")
 
   // State overflow konten
   const [contentOverflow, setContentOverflow] = useState(false)
+
   const [useCustomColors, setUseCustomColors] = useState(false)
   const [gradientStart, setGradientStart] = useState("#1a0505")
   const [gradientMiddle, setGradientMiddle] = useState("#7a1e1e")
@@ -304,10 +305,10 @@ export default function PrinciplesGenerator() {
   const principlesArray =
     displayMode === "numbered" ? principles.split("\n").filter((line) => line.trim() !== "") : [principles]
 
-  // Memeriksa apakah font sudah dimuat
+  // Memeriksa apakah font dimuat
   useEffect(() => {
     if (typeof document !== "undefined" && "fonts" in document) {
-      // Membuat elemen uji untuk memeriksa apakah font sudah dimuat
+      // Membuat elemen uji untuk memeriksa apakah font dimuat
       const testFont = async () => {
         try {
           await document.fonts.ready
@@ -337,7 +338,7 @@ export default function PrinciplesGenerator() {
         const containerWidth = previewContainerRef.current.clientWidth
         const cardWidth = currentWidth
 
-        // Hitung skala agar sesuai dengan kontainer pratinjau (dengan margin)
+        // Hitung skala agar pas dengan kontainer pratinjau (dengan margin)
         const newScale = Math.min(1, (containerWidth - 40) / cardWidth)
         setPreviewScale(newScale)
       }
@@ -345,12 +346,12 @@ export default function PrinciplesGenerator() {
 
     updatePreviewScale()
 
-    // Tambahkan listener resize
+    // Tambahkan resize listener
     window.addEventListener("resize", updatePreviewScale)
     return () => window.removeEventListener("resize", updatePreviewScale)
   }, [currentWidth, selectedLayout, selectedSize])
 
-  // Tambahkan efek untuk memeriksa overflow konten
+  // Menambahkan efek untuk memeriksa overflow konten
   useEffect(() => {
     const checkOverflow = () => {
       if (contentRef.current) {
@@ -392,7 +393,7 @@ export default function PrinciplesGenerator() {
     return true
   }
 
-  // Tangani perubahan tata letak
+  // Menangani perubahan tata letak
   const handleLayoutChange = (newLayout: string) => {
     setSelectedLayout(newLayout)
 
@@ -407,11 +408,11 @@ export default function PrinciplesGenerator() {
     }
   }
 
-  // Tangani perubahan font dengan verifikasi
+  // Menangani perubahan font dengan verifikasi
   const handleFontChange = (fontId: string) => {
     setSelectedFont(fontId)
 
-    // Verifikasi font telah dimuat
+    // Verifikasi font dimuat
     const selectedFontOption = fontOptions.find((f) => f.id === fontId)
     if (selectedFontOption) {
       // Untuk font kustom, tampilkan toast pemuatan
@@ -437,9 +438,9 @@ export default function PrinciplesGenerator() {
       try {
         setIsGenerating(true)
 
-        // Pastikan font dimuat sebelum membuat gambar
+        // Pastikan font dimuat sebelum menghasilkan gambar
         if (typeof document !== "undefined" && "fonts" in document) {
-          await document.fonts.ready;
+          await document.fonts.ready
         }
 
         const dataUrl = await toPng(cardRef.current, {
@@ -448,11 +449,8 @@ export default function PrinciplesGenerator() {
           skipFonts: false,
           width: currentWidth,
           height: currentHeight,
-          fontEmbedCSS: Array.from(document.styleSheets)
-            .map(sheet => sheet.href)
-            .filter(href => href) // Remove null or undefined hrefs
-            .join(' '), // Join all CSS URLs
-        });
+           // Tanpa fontEmbedCSS, ini dapat menyebabkan masalah pada beberapa browser
+        })
 
         const link = document.createElement("a")
         link.download = `${selectedTemplate}-${selectedLayout}-principles.png`
@@ -466,7 +464,7 @@ export default function PrinciplesGenerator() {
       } catch (error) {
         toast({
           title: "Kesalahan",
-          description: "Gagal membuat gambar. Silakan coba lagi.",
+          description: "Gagal menghasilkan gambar. Silakan coba lagi.",
           variant: "destructive",
         })
         console.error("Error generating image:", error)
@@ -485,430 +483,523 @@ export default function PrinciplesGenerator() {
   const activeGradient = useCustomColors ? customGradient : template.gradient
   const activeTextColor = useCustomColors ? customTextColorClass : template.textColor
   const activeAccent = useCustomColors ? customAccentBorder : template.accent
-  const activeBorderStyle = useCustomColors
+    const activeBorderStyle = useCustomColors
     ? `border-${["t", "l", "b", "r", "y", "x"][Math.floor(Math.random() * 6)]}-4 ${customAccentBorder}`
-    : template.borderStyle
+    : template.borderStyle;
 
   return (
     <FontLoader>
       <div className="container mx-auto px-4 py-8 bg-zinc-950 text-zinc-100 min-h-screen">
-        <h1 className="text-4xl font-bold text-center mb-8 font-bebas tracking-wider">PRINCIPLES GENERATOR</h1>
+        <h1 className="text-4xl font-bold text-center mb-8 font-bebas tracking-wider">
+          PENCETAK PRINSIP
+        </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-6">
             <Card className="bg-zinc-900 border-zinc-800 text-zinc-100">
               <CardHeader className="border-b border-zinc-800">
-                <CardTitle className="text-2xl font-bebas tracking-wider">FORGE YOUR PRINCIPLES</CardTitle>
+                <CardTitle className="text-2xl font-bebas tracking-wider">
+                  TEMPA PRINSIP ANDA
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 pt-6">
                 <Tabs defaultValue="content" className="w-full">
                   <TabsList className="grid grid-cols-4 mb-4 bg-zinc-800">
-                    <TabsTrigger value="content" className="flex items-center gap-2 data-[state=active]:bg-zinc-700">
+                    <TabsTrigger
+                      value="content"
+                      className="flex items-center gap-2 data-[state=active]:bg-zinc-700"
+                    >
                       <Type className="h-4 w-4" />
-                      <span className="hidden sm:inline">CONTENT</span>
+                      <span className="hidden sm:inline">KONTEN</span>
                     </TabsTrigger>
-                    <TabsTrigger value="design" className="flex items-center gap-2 data-[state=active]:bg-zinc-700">
+                    <TabsTrigger
+                      value="design"
+                      className="flex items-center gap-2 data-[state=active]:bg-zinc-700"
+                    >
                       <Palette className="h-4 w-4" />
-                      <span className="hidden sm:inline">DESIGN</span>
+                      <span className="hidden sm:inline">DESAIN</span>
                     </TabsTrigger>
-                    <TabsTrigger value="colors" className="flex items-center gap-2 data-[state=active]:bg-zinc-700">
+                    <TabsTrigger
+                      value="colors"
+                      className="flex items-center gap-2 data-[state=active]:bg-zinc-700"
+                    >
                       <Droplets className="h-4 w-4" />
-                      <span className="hidden sm:inline">COLORS</span>
+                      <span className="hidden sm:inline">WARNA</span>
                     </TabsTrigger>
-                    <TabsTrigger value="layout" className="flex items-center gap-2 data-[state=active]:bg-zinc-700">
+                    <TabsTrigger
+                      value="layout"
+                      className="flex items-center gap-2 data-[state=active]:bg-zinc-700"
+                    >
                       <LayoutTemplate className="h-4 w-4" />
-                      <span className="hidden sm:inline">LAYOUT</span>
+                      <span className="hidden sm:inline">TATA LETAK</span>
                     </TabsTrigger>
                   </TabsList>
                   <TabsContent value="content" className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="card-title">TITLE</Label>
-                      <Input id="card-title" value={cardTitle} onChange={(e) => setCardTitle(e.target.value)} placeholder="MY PRINCIPLES" className="bg-zinc-800 border-zinc-700 focus:border-zinc-600" />
+                      <Label htmlFor="card-title">JUDUL</Label>
+                      <Input
+                        id="card-title"
+                        value={cardTitle}
+                        onChange={(e) => setCardTitle(e.target.value)}
+                        placeholder="PRINSIP SAYA"
+                        className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
+                      />
                     </div>
                     <div className="space-y-2">
                       <div className="flex justify-between items-center">
-                        <Label htmlFor="display-mode">DISPLAY MODE</Label>
+                        <Label htmlFor="display-mode">MODE TAMPILAN</Label>
                         <div className="flex items-center space-x-4">
                           <div className="flex items-center space-x-2">
-                            <input type="radio" id="single-mode" checked={displayMode === "single"} onChange={() => setDisplayMode("single")} className="text-red-600 focus:ring-red-600" />
-                            <Label htmlFor="single-mode" className="cursor-pointer text-sm"> SINGLE </Label>
+                            <input
+                              type="radio"
+                              id="single-mode"
+                              checked={displayMode === "single"}
+                              onChange={() => setDisplayMode("single")}
+                              className="text-red-600 focus:ring-red-600"
+                            />
+                            <Label htmlFor="single-mode" className="cursor-pointer text-sm">
+                              {" "}
+                              TUNGGAL{" "}
+                            </Label>
                           </div>
                           <div className="flex items-center space-x-2">
-                            <input type="radio" id="numbered-mode" checked={displayMode === "numbered"} onChange={() => setDisplayMode("numbered")} className="text-red-600 focus:ring-red-600" />
-                            <Label htmlFor="numbered-mode" className="cursor-pointer text-sm"> NUMBERED </Label>
+                            <input
+                              type="radio"
+                              id="numbered-mode"
+                              checked={displayMode === "numbered"}
+                              onChange={() => setDisplayMode("numbered")}
+                              className="text-red-600 focus:ring-red-600"
+                            />
+                            <Label htmlFor="numbered-mode" className="cursor-pointer text-sm">
+                              {" "}
+                              BERNOMOR{" "}
+                            </Label>
                           </div>
                         </div>
                       </div>
                       <Label htmlFor="principles" className="text-sm text-zinc-400">
+                        {" "}
                         {displayMode === "numbered"
-                          ? "ENTER EACH PRINCIPLE ON A NEW LINE"
-                          : "ENTER YOUR PRINCIPLE"}
+                          ? "MASUKKAN SETIAP PRINSIP PADA BARIS BARU"
+                          : "MASUKKAN PRINSIP ANDA"}{" "}
                       </Label>
-                      <Textarea id="principles" value={principles} onChange={(e) => setPrinciples(e.target.value)} placeholder={
-                        displayMode === "numbered"
-                          ? "NEVER BACK DOWN.\nSHOW NO WEAKNESS.\nTRUST NO ONE."
-                          : "STRENGTH THROUGH DISCIPLINE. DISCIPLINE THROUGH WILL. WILL THROUGH POWER."
-                      } className="min-h-[150px] bg-zinc-800 border-zinc-700 focus:border-zinc-600" />
+                      <Textarea
+                        id="principles"
+                        value={principles}
+                        onChange={(e) => setPrinciples(e.target.value)}
+                        placeholder={
+                          displayMode === "numbered"
+                            ? "JANGAN PERNAH MUNDUR.\nJANGAN TUNJUKKAN KELEMAHAN.\nJANGAN PERCAYA SIAPAPUN."
+                            : "KEKUATAN MELALUI DISIPLIN. DISIPLIN MELALUI KEMAUAN. KEMAUAN MELALUI KEKUATAN."
+                        }
+                        className="min-h-[150px] bg-zinc-800 border-zinc-700 focus:border-zinc-600"
+                      />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="author">AUTHOR (OPTIONAL)</Label>
-                      <Input id="author" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="YOUR NAME" className="bg-zinc-800 border-zinc-700 focus:border-zinc-600" />
+                      <Label htmlFor="author">PENULIS (OPSIONAL)</Label>
+                      <Input
+                        id="author"
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
+                        placeholder="NAMA ANDA"
+                        className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="footer-text">
                         {" "}
-                        FOOTER TEXT {selectedLayout === "creed" ? "(MAX 6 WORDS)" : "(MAX 20 WORDS)"}
+                        TEKS FOOTER {selectedLayout === "creed"
+                          ? "(MAKS 6 KATA)"
+                          : "(MAKS 20 KATA)"}{" "}
                       </Label>
-                      <Input id="footer-text" value={footerText} onChange={(e) => {
-                        const newValue = e.target.value
-                        if (validateFooterText(newValue)) {
-                          setFooterText(newValue)
-                        }
-                      }} placeholder="NO MERCY. NO SURRENDER." className="bg-zinc-800 border-zinc-700 focus:border-zinc-600" />
+                      <Input
+                        id="footer-text"
+                        value={footerText}
+                        onChange={(e) => {
+                          const newValue = e.target.value
+                          if (validateFooterText(newValue)) {
+                            setFooterText(newValue)
+                          }
+                        }}
+                        placeholder="TANPA AMPUN. TANPA MENYERAH."
+                        className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
+                      />
                     </div>
                   </TabsContent>
                   <TabsContent value="design" className="space-y-4">
                     <div className="space-y-2">
-                      <Label>DESIGN TEMPLATE</Label>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-[400px] overflow-y-auto p-2">
-                        {designTemplates.map((template) => (
-                          <div
-                            key={template.id}
+                      <Label>TEMPLAT DESAIN</Label>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-[200px] overflow-y-auto">
+                        {designTemplates.map((temp) => (
+                          <Button
+                            key={temp.id}
+                            variant="outline"
+                            onClick={() => setSelectedTemplate(temp.id)}
                             className={cn(
-                              "flex flex-col items-center justify-center p-3 rounded-lg cursor-pointer transition-all duration-200",
-                              "border-2 border-transparent",
-                              selectedTemplate === template.id
-                                ? "ring-2 ring-offset-2 ring-zinc-500 bg-zinc-800/80"
-                                : "bg-zinc-900/90 hover:bg-zinc-800/50 hover:border-zinc-700",
+                              "flex flex-col items-center justify-center h-24",
+                              "transition-colors duration-200",
+                              selectedTemplate === temp.id
+                                ? "ring-2 ring-offset-2 ring-zinc-500 bg-zinc-800/80 text-zinc-100"
+                                : "hover:bg-zinc-800/50 text-zinc-400",
+                              "border-zinc-700",
                             )}
-                            onClick={() => setSelectedTemplate(template.id)}
                           >
-                            <div className="mb-2">{template.icon}</div>
-                            <p className="text-sm font-medium text-center">{template.name}</p>
-                          </div>
+                            <div className="mb-2">{temp.icon}</div>
+                            <span className="text-sm font-medium">{temp.name}</span>
+                          </Button>
                         ))}
                       </div>
                     </div>
-
                     <div className="space-y-2">
                       <Label>FONT</Label>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-[400px] overflow-y-auto p-2">
-                        {fontOptions.map((fontOption) => (
-                          <div
-                            key={fontOption.id}
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        {fontOptions.map((f) => (
+                          <Button
+                            key={f.id}
+                            variant="outline"
+                            onClick={() => handleFontChange(f.id)}
                             className={cn(
-                              "flex items-center justify-center p-3 rounded-lg cursor-pointer transition-all duration-200",
-                              "border-2 border-transparent",
-                              selectedFont === fontOption.id
-                                ? "ring-2 ring-offset-2 ring-zinc-500 bg-zinc-800/80"
-                                : "bg-zinc-900/90 hover:bg-zinc-800/50 hover:border-zinc-700",
+                              "text-sm font-medium",
+                              "transition-colors duration-200",
+                              selectedFont === f.id
+                                ? "ring-2 ring-offset-2 ring-zinc-500 bg-zinc-800/80 text-zinc-100"
+                                : "hover:bg-zinc-800/50 text-zinc-400",
+                              "border-zinc-700",
+                              f.fontFamily,
                             )}
-                            onClick={() => handleFontChange(fontOption.id)}
                           >
-                            <p className={cn("text-sm font-medium", fontOption.fontFamily)}>
-                              {fontOption.name}
-                            </p>
-                          </div>
+                            {f.name}
+                          </Button>
                         ))}
                       </div>
                     </div>
-                  </TabsContent>
-                  <TabsContent value="colors" className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <input
-                        type="checkbox"
-                        id="use-custom-colors"
-                        checked={useCustomColors}
-                        onChange={(e) => setUseCustomColors(e.target.checked)}
-                        className="h-5 w-5 text-red-600 focus:ring-red-600 rounded border-zinc-700"
-                      />
-                      <Label htmlFor="use-custom-colors">USE CUSTOM COLORS</Label>
-                    </div>
-                    <div className="space-y-4">
-                      <div>
-                        <Label>GRADIENT START</Label>
-                        <Input
-                          type="color"
-                          value={gradientStart}
-                          onChange={(e) => setGradientStart(e.target.value)}
-                          className="w-full h-10 mt-1"
-                          disabled={!useCustomColors}
-                        />
-                      </div>
-                      <div>
-                        <Label>GRADIENT MIDDLE</Label>
-                        <Input
-                          type="color"
-                          value={gradientMiddle}
-                          onChange={(e) => setGradientMiddle(e.target.value)}
-                          className="w-full h-10 mt-1"
-                          disabled={!useCustomColors}
-                        />
-                      </div>
-                      <div>
-                        <Label>GRADIENT END</Label>
-                        <Input
-                          type="color"
-                          value={gradientEnd}
-                          onChange={(e) => setGradientEnd(e.target.value)}
-                          className="w-full h-10 mt-1"
-                          disabled={!useCustomColors}
-                        />
-                      </div>
-                      <div>
-                        <Label>TEXT COLOR</Label>
-                        <Input
-                          type="color"
-                          value={customTextColor}
-                          onChange={(e) => setCustomTextColor(e.target.value)}
-                          className="w-full h-10 mt-1"
-                          disabled={!useCustomColors}
-                        />
-                      </div>
-                      <div>
-                        <Label>ACCENT COLOR</Label>
-                        <Input
-                          type="color"
-                          value={customAccentColor}
-                          onChange={(e) => setCustomAccentColor(e.target.value)}
-                          className="w-full h-10 mt-1"
-                          disabled={!useCustomColors}
-                        />
-                      </div>
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="layout" className="space-y-4">
                     <div className="space-y-2">
-                      <Label>CARD LAYOUT</Label>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-2">
-                        {cardLayouts.map((layoutOption) => (
-                          <div
-                            key={layoutOption.id}
-                            className={cn(
-                              "flex flex-col items-center justify-center p-4 rounded-lg cursor-pointer transition-all duration-200",
-                              "border-2 border-transparent",
-                              selectedLayout === layoutOption.id
-                                ? "ring-2 ring-offset-2 ring-zinc-500 bg-zinc-800/80"
-                                : "bg-zinc-900/90 hover:bg-zinc-800/50 hover:border-zinc-700",
-                            )}
-                            onClick={() => handleLayoutChange(layoutOption.id)}
-                          >
-                            <div
-                              className={cn(
-                                "w-24 h-24 mb-2 rounded-md border-2 border-dashed border-zinc-500",
-                                layoutOption.aspectRatio,
-                              )}
-                            ></div>
-                            <p className="text-sm font-medium text-center">
-                              {layoutOption.name}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label>CARD SIZE</Label>
+                      <Label>UKURAN</Label>
                       <RadioGroup
                         defaultValue={selectedSize}
-                        className="flex items-center space-x-4"
                         onValueChange={(value) => setSelectedSize(value)}
+                        className="flex items-center space-x-4"
                       >
                         {availableSizes.map((size) => (
                           <div key={size.id} className="flex items-center space-x-2">
-                            <RadioGroupItem value={size.id} id={`size-${size.id}`} className="text-red-600 focus:ring-red-600" />
+                            <RadioGroupItem
+                              value={size.id}
+                              id={`size-${size.id}`}
+                              className="text-red-600 focus:ring-red-600"
+                            />
                             <Label htmlFor={`size-${size.id}`} className="cursor-pointer text-sm">
-                              {size.name}
+                              {size.name} ({size.width}x{size.height}px)
                             </Label>
                           </div>
                         ))}
                       </RadioGroup>
                     </div>
-
                     {selectedSize === "custom" && (
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="custom-width">CUSTOM WIDTH (px)</Label>
+                          <Label htmlFor="custom-width">Lebar (px)</Label>
                           <Input
                             id="custom-width"
                             type="number"
                             value={customWidth}
-                            onChange={(e) => setCustomWidth(parseInt(e.target.value, 10))}
+                            onChange={(e) => setCustomWidth(Number(e.target.value))}
                             className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="custom-height">CUSTOM HEIGHT (px)</Label>
+                          <Label htmlFor="custom-height">Tinggi (px)</Label>
                           <Input
                             id="custom-height"
                             type="number"
                             value={customHeight}
-                            onChange={(e) => setCustomHeight(parseInt(e.target.value, 10))}
+                            onChange={(e) => setCustomHeight(Number(e.target.value))}
                             className="bg-zinc-800 border-zinc-700 focus:border-zinc-600"
                           />
                         </div>
                       </div>
                     )}
-                    <div className="space-y-2">
-                      <Label>PREVIEW SCALE</Label>
-                      <Slider
-                        defaultValue={[1]}
-                        max={1}
-                        min={0.2}
-                        step={0.01}
-                        onValueChange={(value) => setPreviewScale(value[0])}
-                        className="w-full"
+                  </TabsContent>
+
+                  <TabsContent value="colors" className="space-y-4">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <input
+                        type="checkbox"
+                        id="use-custom-colors"
+                        checked={useCustomColors}
+                        onChange={() => setUseCustomColors(!useCustomColors)}
+                        className="h-5 w-5 text-red-600 border-zinc-700 focus:ring-red-600"
                       />
-                      <p className="text-sm text-zinc-400 text-center">
-                        {Math.round(previewScale * 100)}%
-                      </p>
+                      <Label htmlFor="use-custom-colors">Gunakan Warna Kustom</Label>
+                    </div>
+                    {useCustomColors && (
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="gradient-start">Mulai Gradien</Label>
+                          <Input
+                            id="gradient-start"
+                            type="color"
+                            value={gradientStart}
+                            onChange={(e) => setGradientStart(e.target.value)}
+                            className="w-full h-10 p-1"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="gradient-middle">Tengah Gradien</Label>
+                          <Input
+                            id="gradient-middle"
+                            type="color"
+                            value={gradientMiddle}
+                            onChange={(e) => setGradientMiddle(e.target.value)}
+                            className="w-full h-10 p-1"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="gradient-end">Akhir Gradien</Label>
+                          <Input
+                            id="gradient-end"
+                            type="color"
+                            value={gradientEnd}
+                            onChange={(e) => setGradientEnd(e.target.value)}
+                            className="w-full h-10 p-1"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="text-color">Warna Teks</Label>
+                          <Input
+                            id="text-color"
+                            type="color"
+                            value={customTextColor}
+                            onChange={(e) => setCustomTextColor(e.target.value)}
+                            className="w-full h-10 p-1"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="accent-color">Warna Aksen</Label>
+                          <Input
+                            id="accent-color"
+                            type="color"
+                            value={customAccentColor}
+                            onChange={(e) => setCustomAccentColor(e.target.value)}
+                            className="w-full h-10 p-1"
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </TabsContent>
+
+                  <TabsContent value="layout" className="space-y-4">
+                    <div className="space-y-2">
+                      <Label>TATA LETAK KARTU</Label>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {cardLayouts.map((cardLayout) => (
+                          <Button
+                            key={cardLayout.id}
+                            variant="outline"
+                            onClick={() => handleLayoutChange(cardLayout.id)}
+                            className={cn(
+                              "flex flex-col items-center justify-center h-24",
+                              "transition-colors duration-200",
+                              selectedLayout === cardLayout.id
+                                ? "ring-2 ring-offset-2 ring-zinc-500 bg-zinc-800/80 text-zinc-100"
+                                : "hover:bg-zinc-800/50 text-zinc-400",
+                              "border-zinc-700",
+                            )}
+                          >
+                            <div
+                              className={cn(
+                                "w-16 h-12 mb-2 rounded-md border border-dashed border-zinc-500",
+                                cardLayout.aspectRatio,
+                              )}
+                            />
+                            <span className="text-sm font-medium">{cardLayout.name}</span>
+                          </Button>
+                        ))}
+                      </div>
                     </div>
                   </TabsContent>
                 </Tabs>
               </CardContent>
-              <CardFooter className="flex justify-between items-center border-t border-zinc-800">
-                <Button variant="outline" className="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 border-zinc-700" onClick={() => {
-                  setPrinciples("")
-                  setAuthor("")
-                  setCardTitle("MY PRINCIPLES")
-                  setFooterText("NO MERCY. NO SURRENDER.")
-                  setSelectedTemplate("warlord")
-                  setSelectedLayout("manifesto")
-                  setSelectedSize("medium")
-                  setCustomWidth(600)
-                  setCustomHeight(800)
-                  setUseCustomColors(false)
-                  setGradientStart("#1a0505")
-                  setGradientMiddle("#7a1e1e")
-                  setGradientEnd("#000000")
-                  setCustomTextColor("#ffffff")
-                  setCustomAccentColor("#ff4040")
-                }}>
+              <CardFooter className="flex justify-between border-t border-zinc-800">
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setPrinciples("")
+                    setAuthor("")
+                    setCardTitle("MY PRINCIPLES")
+                    setFooterText("NO MERCY. NO SURRENDER.")
+                    setSelectedTemplate("warlord")
+                    setSelectedLayout("manifesto")
+                    setSelectedSize("medium")
+                    setCustomWidth(600)
+                    setCustomHeight(800)
+                    setUseCustomColors(false)
+                    setGradientStart("#1a0505")
+                    setGradientMiddle("#7a1e1e")
+                    setGradientEnd("#000000")
+                    setCustomTextColor("#ffffff")
+                    setCustomAccentColor("#ff4040")
+                    setDisplayMode("numbered")
+                    toast({
+                      title: "Reset",
+                      description: "All fields have been reset to their default values.",
+                    })
+                  }}
+                  className="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 border-zinc-700"
+                >
                   <RefreshCw className="mr-2 h-4 w-4" />
                   RESET
                 </Button>
                 <Button
-                  variant="default"
-                  className="bg-red-600 hover:bg-red-700 text-white"
                   onClick={handleDownload}
                   disabled={isGenerating}
+                  className="bg-red-600 hover:bg-red-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isGenerating ? (
-                    <>Generating...</>
-                  ) : (
-                    <>
-                      <Download className="mr-2 h-4 w-4" />
-                      DOWNLOAD
-                    </>
-                  )}
+                  <Download className="mr-2 h-4 w-4" />
+                  {isGenerating ? "GENERATING..." : "DOWNLOAD"}
                 </Button>
               </CardFooter>
             </Card>
           </div>
 
           <div className="space-y-6">
-            <div
-              ref={previewContainerRef}
-              className="w-full flex justify-center items-center"
-            >
-              <div
-                ref={cardRef}
-                style={{
-                  transform: `scale(${previewScale})`,
-                  transformOrigin: "top left",
-                  width: `${currentWidth}px`,
-                  height: `${currentHeight}px`,
-                }}
-                className={cn(
-                  "bg-cover bg-center rounded-xl shadow-2xl transition-all duration-300",
-                  "overflow-hidden flex flex-col justify-between",
-                  layout.className,
-                  activeGradient,
-                  font.fontFamily,
-                  `w-[${currentWidth}px] h-[${currentHeight}px]`,
-                )}
-              >
-                {/* Header section */}
+            <Card className="bg-zinc-900 border-zinc-800 text-zinc-100">
+              <CardHeader className="border-b border-zinc-800">
+                <CardTitle className="text-2xl font-bebas tracking-wider">PRATINJAU</CardTitle>
+              </CardHeader>
+              <CardContent>
                 <div
-                  className={cn(
-                    "flex-shrink-0 flex items-center justify-between",
-                    paddingScale.header,
-                  )}
+                  ref={previewContainerRef}
+                  className="w-full flex justify-center items-center py-4"
                 >
-                  <h2 className={cn("uppercase tracking-wider", activeTextColor, fontScale.title)}>
-                    {cardTitle}
-                  </h2>
-                  <p className={cn("text-xs text-zinc-400")}>{currentDate}</p>
-                </div>
-
-                {/* Main content section */}
-                <div
-                  ref={contentRef}
-                  className={cn(
-                    "flex-grow flex flex-col justify-center items-center text-center",
-                    paddingScale.content,
-                    "relative overflow-hidden",
-                  )}
-                >
-                  {displayMode === "numbered" ? (
-                    principlesArray.map((principle, index) => (
-                      <div
-                        key={index}
+                  <div
+                    ref={cardRef}
+                    style={{
+                      width: currentWidth,
+                      height: currentHeight,
+                      transform: `scale(${previewScale})`,
+                      transformOrigin: "top left",
+                    }}
+                    className={cn(
+                      "relative rounded-xl shadow-2xl overflow-hidden transition-all duration-300",
+                      layout.className,
+                      activeGradient,
+                      font.fontFamily,
+                      `aspect-[${currentWidth}/${currentHeight}]`, // Mempertahankan rasio aspek
+                    )}
+                  >
+                    {/* Header section */}
+                    <div
+                      className={cn(
+                        "flex items-center justify-center",
+                        useCustomColors ? `border-t-4 ${customAccentBorder}` : template.borderStyle,
+                        paddingScale.header,
+                      )}
+                    >
+                      <h2
                         className={cn(
-                          "mb-4 last:mb-0 flex items-start gap-3",
-                          "w-full",
+                          "text-center uppercase tracking-wider break-words",
                           activeTextColor,
-                          fontScale.principle,
+                          fontScale.title,
                         )}
                       >
-                        <span className={cn(template.numberStyle, fontScale.number)}>
-                          {index + 1}.
-                        </span>
-                        <p className="text-left">{principle.trim()}</p>
-                      </div>
-                    ))
-                  ) : (
-                    <p className={cn("leading-relaxed", activeTextColor, fontScale.principle)}>
-                      {principles}
-                    </p>
-                  )}
-
-                  {author && (
-                    <p className={cn("absolute bottom-4 right-4 text-sm italic", activeTextColor, fontScale.author)}>
-                      - {author}
-                    </p>
-                  )}
-
-                  {/* Overflow indicator */}
-                  {contentOverflow && (
-                    <div className="absolute bottom-1 right-1 bg-white/10 backdrop-blur-sm rounded-full p-1 animate-bounce">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={cn("h-4 w-4", activeTextColor)}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                        {cardTitle}
+                      </h2>
                     </div>
-                  )}
-                </div>
 
-                {/* Bagian footer */}
-                <div
-                  className={cn(
-                    "flex-shrink-0 flex items-center justify-center",
-                    useCustomColors ? `border-b-4 ${customAccentBorder}` : template.borderStyle,
-                    paddingScale.footer,
-                  )}
-                >
-                  <p className={cn("text-center uppercase tracking-wider", activeTextColor, fontScale.footer)}>
-                    {footerText}
-                  </p>
+                    {/* Main content section */}
+                    <div
+                      ref={contentRef}
+                      className={cn(
+                        "flex-1 flex flex-col justify-center items-center p-4 overflow-y-auto",
+                        paddingScale.content,
+                      )}
+                    >
+                      {displayMode === "numbered" ? (
+                        <ol className="list-decimal list-inside space-y-4 w-full">
+                          {principlesArray.map((principle, index) => (
+                            <li
+                              key={index}
+                              className={cn(
+                                "text-left leading-relaxed",
+                                activeTextColor,
+                                fontScale.principle,
+                              )}
+                            >
+                              <span className={cn(template.numberStyle, fontScale.number)}>
+                                {index + 1}.{" "}
+                              </span>
+                              {principle.trim()}
+                            </li>
+                          ))}
+                        </ol>
+                      ) : (
+                        <p
+                          className={cn(
+                            "text-center leading-relaxed whitespace-pre-wrap",
+                            activeTextColor,
+                            fontScale.principle,
+                          )}
+                        >
+                          {principles}
+                        </p>
+                      )}
+                      {author && (
+                        <p
+                          className={cn(
+                            "absolute bottom-4 right-4 text-right italic",
+                            activeTextColor,
+                            fontScale.author,
+                          )}
+                        >
+                          - {author}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Indikator overflow konten */}
+                    {contentOverflow && (
+                      <div className="absolute bottom-1 right-1 bg-white/10 backdrop-blur-sm rounded-full p-1 animate-bounce">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={cn("h-4 w-4", activeTextColor)}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Bagian footer */}
+                  <div
+                    className={cn(
+                      "flex-shrink-0 flex items-center justify-center",
+                      useCustomColors
+                        ? `border-b-4 ${customAccentBorder}`
+                        : template.borderStyle,
+                      paddingScale.footer,
+                    )}
+                  >
+                    <p
+                      className={cn(
+                        "text-center uppercase tracking-wider",
+                        activeTextColor,
+                        fontScale.footer,
+                      )}
+                    >
+                      {footerText}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>
