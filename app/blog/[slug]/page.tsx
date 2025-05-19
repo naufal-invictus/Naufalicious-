@@ -130,113 +130,38 @@ const blogPosts: BlogPost[] = [
     `,
   },
   {
-    id: 3,
-    title: "Understanding MBTI: The 16 Personality Types Explained",
-    excerpt:
-      "A deep dive into the Myers-Briggs Type Indicator and how it can help you understand yourself and others better.",
-    date: "April 10, 2025",
-    category: "Psychology",
-    slug: "understanding-mbti",
-    author: "Sarah",
-    readTime: "7 min read",
-    content: `
-      <h2>Introduction to MBTI</h2>
-      <p>The Myers-Briggs Type Indicator (MBTI) is one of the most widely used personality assessments in the world. Developed by Isabel Briggs Myers and her mother, Katharine Briggs, based on Carl Jung's theory of psychological types, the MBTI categorizes people into 16 distinct personality types based on four dichotomies.</p>
-      
-      <h2>The Four Dichotomies</h2>
-      
-      <h3>1. Extraversion (E) vs. Introversion (I)</h3>
-      <p>This dimension reflects where you focus your attention and get your energy:</p>
-      <ul>
-        <li><strong>Extraversion (E):</strong> Focus on the outer world of people and activities. Energized by social interaction.</li>
-        <li><strong>Introversion (I):</strong> Focus on the inner world of ideas and impressions. Energized by quiet reflection and time alone.</li>
-      </ul>
-      
-      <h3>2. Sensing (S) vs. Intuition (N)</h3>
-      <p>This dimension describes how you take in information:</p>
-      <ul>
-        <li><strong>Sensing (S):</strong> Focus on concrete, tangible facts and details that can be observed directly.</li>
-        <li><strong>Intuition (N):</strong> Focus on patterns, possibilities, and meanings beyond the immediate data.</li>
-      </ul>
-      
-      <h3>3. Thinking (T) vs. Feeling (F)</h3>
-      <p>This dimension reflects how you make decisions:</p>
-      <ul>
-        <li><strong>Thinking (T):</strong> Base decisions on logical analysis, consistency, and objective criteria.</li>
-        <li><strong>Feeling (F):</strong> Base decisions on personal values and how actions affect others.</li>
-      </ul>
-      
-      <h3>4. Judging (J) vs. Perceiving (P)</h3>
-      <p>This dimension describes how you orient to the external world:</p>
-      <ul>
-        <li><strong>Judging (J):</strong> Prefer structure, planning, and resolving matters definitively.</li>
-        <li><strong>Perceiving (P):</strong> Prefer flexibility, spontaneity, and keeping options open.</li>
-      </ul>
-      
-      <h2>The 16 MBTI Personality Types</h2>
-      
-      <h3>Analysts (NT)</h3>
-      <ul>
-        <li><strong>INTJ:</strong> The Architect - Strategic, innovative, and driven by a vision for improvement.</li>
-        <li><strong>INTP:</strong> The Logician - Inventive, logical, and fascinated by theoretical possibilities.</li>
-        <li><strong>ENTJ:</strong> The Commander - Decisive, efficient, and natural leaders who implement vision.</li>
-        <li><strong>ENTP:</strong> The Debater - Quick-thinking, curious, and intellectually versatile.</li>
-      </ul>
-      
-      <h3>Diplomats (NF)</h3>
-      <ul>
-        <li><strong>INFJ:</strong> The Advocate - Idealistic, principled, and driven to help others.</li>
-        <li><strong>INFP:</strong> The Mediator - Compassionate, creative, and guided by strong personal values.</li>
-        <li><strong>ENFJ:</strong> The Protagonist - Charismatic, empathetic, and natural mentors.</li>
-        <li><strong>ENFP:</strong> The Campaigner - Enthusiastic, creative, and people-centered.</li>
-      </ul>
-      
-      <h3>Sentinels (SJ)</h3>
-      <ul>
-        <li><strong>ISTJ:</strong> The Logistician - Practical, fact-minded, and reliable.</li>
-        <li><strong>ISFJ:</strong> The Defender - Dedicated, warm, and protective of loved ones.</li>
-        <li><strong>ESTJ:</strong> The Executive - Efficient, outspoken, and traditional.</li>
-        <li><strong>ESFJ:</strong> The Consul - Caring, social, and harmony-seeking.</li>
-      </ul>
-      
-      <h3>Explorers (SP)</h3>
-      <ul>
-        <li><strong>ISTP:</strong> The Virtuoso - Bold, practical, and hands-on problem solvers.</li>
-        <li><strong>ISFP:</strong> The Adventurer - Flexible, charming, and artistic.</li>
-        <li><strong>ESTP:</strong> The Entrepreneur - Energetic, perceptive, and risk-takers.</li>
-        <li><strong>ESFP:</strong> The Entertainer - Spontaneous, energetic, and enthusiastic.</li>
-      </ul>
-      
-      <h2>Applications of MBTI</h2>
-      <p>The MBTI is widely used in various contexts:</p>
-      <ul>
-        <li><strong>Personal Development:</strong> Understanding your preferences can help you leverage strengths and develop areas of growth.</li>
-        <li><strong>Career Guidance:</strong> Different types tend to thrive in different work environments and roles.</li>
-        <li><strong>Team Building:</strong> Understanding type differences can improve communication and collaboration.</li>
-        <li><strong>Relationship Dynamics:</strong> Recognizing how different types interact can enhance personal and professional relationships.</li>
-      </ul>
-      
-      <h2>Limitations and Criticisms</h2>
-      <p>While the MBTI is popular, it has limitations:</p>
-      <ul>
-        <li>It measures preferences, not abilities or skills.</li>
-        <li>The dichotomous nature (either/or) doesn't capture the complexity of human personality.</li>
-        <li>Some psychologists question its scientific validity and reliability.</li>
-        <li>Type can be influenced by context and may change over time.</li>
-      </ul>
-      
-      <h2>Conclusion</h2>
-      <p>The MBTI provides a useful framework for understanding differences in how people perceive the world and make decisions. When used as a tool for self-reflection and appreciating diversity rather than as a rigid categorization system, it can offer valuable insights into personality dynamics and interpersonal relationships.</p>
-      
-      <hr />
-      <p><strong>References:</strong></p>
-      <ol>
-        <li>Myers, I. B., & Myers, P. B. (1995). Gifts Differing: Understanding Personality Type.</li>
-        <li>The Myers & Briggs Foundation - <a href="https://www.myersbriggs.org" target="_blank">myersbriggs.org</a></li>
-        <li>Quenk, N. L. (2009). Essentials of Myers-Briggs Type Indicator Assessment.</li>
-      </ol>
-    `,
-  },
+  id: 3,
+  title: "Flowchart Tujuan Hidup: Panduan Singkat Menemukan Arah",
+  excerpt: "Cara praktis menyusun flowchart tujuan hidup agar lebih terarah dan bermakna.",
+  date: "May 19, 2025",
+  category: "Self-Improvement",
+  slug: "flowchart-tujuan-hidup",
+  author: "Naufalicious",
+  readTime: "3 min read",
+  content: `
+    <h2>Mengapa Flowchart Tujuan Hidup?</h2>
+    <p>Flowchart adalah cara visual untuk merancang arah hidup secara sistematis. Ini membantu kita keluar dari lingkaran overthinking dan mulai melangkah dengan sadar.</p>
+
+    <h2>Langkah Membuat Flowchart Tujuan Hidup</h2>
+    <ol>
+      <li><strong>Tentukan Nilai Utama:</strong> Apa yang paling penting dalam hidupmu? (Contoh: Keluarga, Iman, Keadilan)</li>
+      <li><strong>Pilih Visi Besar:</strong> Hidup seperti apa yang ingin kamu bangun? (Contoh: Menjadi guru yang menginspirasi)</li>
+      <li><strong>Turunkan ke Misi Spesifik:</strong> Apa yang harus kamu lakukan untuk mewujudkannya? (Contoh: Lulus kuliah, jadi relawan, ikut pelatihan)</li>
+      <li><strong>Buat Keputusan Cabang:</strong> Jika A gagal, maka lakukan B. Buat skenario.</li>
+      <li><strong>Evaluasi & Adaptasi:</strong> Revisi tiap 6 bulan. Hidup dinamis, arah bisa menyesuaikan tanpa kehilangan kompas.</li>
+    </ol>
+
+    <h2>Tips Visual</h2>
+    <ul>
+      <li>Gunakan <em>shape</em> berbeda: lingkaran untuk nilai, kotak untuk aksi, belah ketupat untuk keputusan.</li>
+      <li>Panah menunjukkan alur. Jangan buat terlalu rumit—cukup logis dan mudah dipahami dirimu sendiri.</li>
+    </ul>
+
+    <h2>Penutup</h2>
+    <p>Flowchart tujuan hidup bukan peta mutlak, tapi kompas sadar. Tanpa arah, langkah kita hanya reaksi. Dengan arah, hidup menjadi keputusan.</p>
+  `,
+},
+
 ]
 
 // Utility function to calculate estimated reading time
