@@ -8,7 +8,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: false,
-    domains: ["i.ibb.co.com"],
+    domains: ["i.ibb.co.com", "i.ibb.co",],
   },
 }
 
