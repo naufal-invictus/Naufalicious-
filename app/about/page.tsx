@@ -293,7 +293,7 @@ export default function Home() {
               Coursera
             </p>
             <p className="text-gray-600 text-sm">
-              Completion Date
+              2023
             </p>
           </div>
         </motion.div>
