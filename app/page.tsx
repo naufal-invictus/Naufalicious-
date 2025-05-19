@@ -77,8 +77,8 @@ export default function Home() {
       <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
         <div className="aspect-w-16 aspect-h-9">
           <img
-            src="https://i.ibb.co/hJSnRrWf/facebook-cover-TANKY-TENSHI-2.png"
-            alt="Facebook Cover Generator"
+            src="https://i.ibb.co/BpZQxTC/winter-frost-horizontal-custom-sans-quote-card.png"
+            alt="Quote Generator"
             className="w-full h-full object-cover"
           />
         </div>
@@ -86,7 +86,7 @@ export default function Home() {
           <div>
             <h3 className="font-semibold text-lg text-gray-800 mb-2">Facebook Cover Generator</h3>
             <p className="text-gray-600 text-sm mb-4">
-              Generate personalized Facebook covers with custom colors or based on your MBTI personality.
+              Generate personalized Quote with custom colors or based on your MBTI personality.
             </p>
           </div>
           <Button
@@ -94,7 +94,7 @@ export default function Home() {
             className="border-primary text-primary hover:bg-primary/10 w-full mt-4"
           >
             <Link
-              href="https://fb-cover-generator.vercel.app/"
+              href="https://naufalicious.vercel.app/projects/quote-generator"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center"
