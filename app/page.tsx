@@ -70,16 +70,7 @@ export default function Home() {
         </div>
       </section>
 
-   <section className="py-8 bg-gray-50">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Want to Know More About Our Web Security and Privacy?</h2>
-        <Link href="/security-info" className="inline-block">
-          <Button variant="secondary" size="lg">
-            <Shield className="mr-2 h-5 w-5" /> Learn More About Security
-          </Button>
-        </Link>
-      </div>
-    </section>
+
       
 {/* Featured Projects Section */}
 <section className="py-16">
@@ -487,6 +478,19 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+         <section className="py-8 bg-gray-50">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-xl font-semibold text-gray-800 mb-4">Want to Know More About Our Web Security and Privacy?</h2>
+        <Link href="/security-info" className="inline-block">
+          <Button variant="secondary" size="lg">
+            <Shield className="mr-2 h-5 w-5" /> Learn More About Security
+          </Button>
+        </Link>
+      </div>
+    </section>
+
+      
     </div>
   )
 }
