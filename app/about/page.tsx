@@ -153,383 +153,274 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Certificates Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Certificates
-              </h2>
-              <div className="w-20 h-1 bg-primary mx-auto"></div>
-              <p className="text-gray-700 mt-4">
-                Here are some of the certificates I've earned.
-              </p>
+    {/* Certificates Section */}
+<section className="py-16">
+  <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          Certificates
+        </h2>
+        <div className="w-20 h-1 bg-primary mx-auto"></div>
+        <p className="text-gray-700 mt-4">
+          Here are some of the certificates I've earned.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Example Certificate 1 */}
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                13-04-2023
+              </Badge>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Example Certificate 1 */}
-              <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/1RLLbYCSULJ0O28b5yEHzN8eaJgG3TQT4/preview" // Replace with your image path
-                    alt="Mikrotik MTCNA"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    MikroTik Certified Network Associate (MTCNA)
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Mikrotik
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      13-04-2023
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Example Certificate 2 */}
-              <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/1aKH6yGBnP6Y4D7cyrEW1Nw3K6qLoMUJq/preview" // Replace with your image path
-                    alt="R4S"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    Ready For Security Training
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Microsoft & InfraDigital
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      August-September - 2023
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Example Certificate 3 */}
-              <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/1hK1qQpRjXBupLYOK_VaJrBO8rdaWZ5cq/preview" // Replace with your image path
-                    alt="Certificate 3"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    Foundations of Cybersecurity
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Coursera 
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      Completion Date
-                    </Badge>
-                    <Button size="sm" variant="outline">
-                      View <ArrowUpRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              </motion.div>
-
-                <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~2CFEK8S2NCJZ/CERTIFICATE_LANDING_PAGE~2CFEK8S2NCJZ.jpeg" // Replace with your image path
-                    alt="IT SUPPORT"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    Technical Support
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Coursera
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2023
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-                <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~8Y7ZERKKP3XV/CERTIFICATE_LANDING_PAGE~8Y7ZERKKP3XV.jpeg" // Replace with your image path
-                    alt="IT SUPP"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    IT Infrastructure Services and Systems Administration
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Coursera 
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2023
-                    </Badge>
-        
-                  </div>
-                </div>
-              </motion.div>
-
-                <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/16mar834r__fZotvn4ulM4rSd5tTNEOFQ/preview" // Replace with your image path
-                    alt="IT SUPP"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    Dev OPS- Basics
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Dicoding
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2023
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-                              <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/1M1dPvR7EKizUegjI2ZHJGotCWHHcSwyV/preview" // Replace with your image path
-                    alt="IT SUPP"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    Introduction to Information Security Course
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                     Cyber Academy
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2022
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-                              <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/1wVl55DS6iIp3qAOIAiwo37LLjQcDu87m/preview" // Replace with your image path
-                    alt="Samsung"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    Samsung Innovation Campuss
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Samsung
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2022
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-                 <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/12siCnZgSFVtjIhZdZr-DR1TpV-ytJlQQ/preview" // Replace with your image path
-                    alt="Kemenakre"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    Mechanical Engineer CAD ASEAN
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    BBPVP Bandung & Kemenaker
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2022
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-                 <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/1j5g0Bnqhg3NS29uXgRE2vvmRVs-tSyD6/preview" // Replace with your image path
-                    alt="IT"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    IT Support Google
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Coursera & Google
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2022
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-                              <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~NP73SLXYZ79C/CERTIFICATE_LANDING_PAGE~NP73SLXYZ79C.jpeg" // Replace with your image path
-                    alt="IT"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    The Ins and Outs of Computer Networking.
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Coursera & Google
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2023
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-                              <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/1h0p7zh_wdJtUgdsXZ5QRfPxd95wRwaVb/preview" // Replace with your image path
-                    alt="IT"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    Web Development Wizardry
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Udemy
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2024
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-
-                              <motion.div
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="https://drive.google.com/file/d/1NGmyvXwrZUiT8nMaGKsQFmtR_8Bd_16E/preview" // Replace with your image path
-                    alt="IT"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-primary mb-2">
-                    Bootcamp Quality Assurance
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-2">
-                    Gits ID
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                      2024
-                    </Badge>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              MikroTik Certified Network Associate (MTCNA)
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Mikrotik
+            </p>
           </div>
-        </div>
-      </section>
+        </motion.div>
 
+        {/* Example Certificate 2 */}
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                August-September - 2023
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              Ready For Security Training
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Microsoft & InfraDigital
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Example Certificate 3 */}
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Completion Date
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              Foundations of Cybersecurity
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Coursera
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2023
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              Technical Support
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Coursera
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2023
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              IT Infrastructure Services and Systems Administration
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Coursera
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2023
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              Dev OPS- Basics
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Dicoding
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2022
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              Introduction to Information Security Course
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Cyber Academy
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2022
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              Samsung Innovation Campuss
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Samsung
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2022
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              Mechanical Engineer CAD ASEAN
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              BBPVP Bandung & Kemenaker
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2022
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              IT Support Google
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Coursera & Google
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2023
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              The Ins and Outs of Computer Networking.
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Coursera & Google
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2024
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              Web Development Wizardry
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Udemy
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          whileHover={{ y: -5 }}
+          className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                2024
+              </Badge>
+            </div>
+            <h3 className="font-semibold text-lg text-primary mb-2">
+              Bootcamp Quality Assurance
+            </h3>
+            <p className="text-gray-600 text-sm mb-2">
+              Gits ID
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </div>
+</section>
       {/* My Design Collection Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
