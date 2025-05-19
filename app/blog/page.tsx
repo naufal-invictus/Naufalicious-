@@ -1,12 +1,26 @@
+"use client"
+
+import { useState, useMemo } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Search } from "lucide-react"
+import { ArrowRight, Search } from 'lucide-react'
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+// Types for better type safety
+interface BlogPost {
+  id: number
+  title: string
+  excerpt: string
+  date: string
+  category: string
+  slug: string
+  author?: string
+}
+
 // Sample blog posts data (in a real app, this would come from an API or database)
-const blogPosts = [
+const blogPosts: BlogPost[] = [
   {
     id: 1,
     title: "Atomic Habits by James Clear",
@@ -14,69 +28,86 @@ const blogPosts = [
     date: "May 2, 2025",
     category: "Self-Improvement",
     slug: "atomic-habits",
-    image: "/placeholder.svg?height=300&width=500",
+    author: "Naufalicious",
   },
   {
     id: 2,
-    title: "Deep Work by Cal Newport",
-    excerpt: "How to develop the superpower of deep focus and concentration in a distracted world.",
-    date: "April 15, 2025",
-    category: "Productivity",
-    slug: "deep-work",
-    image: "/placeholder.svg?height=300&width=500",
+    title: "Mengenal Pengelompokkan Enneagram: Harmonic, Hornevian, dan Objek Relasi",
+    excerpt: "Pemetaan kepribadian dari tiga perspektif yang menyibak pola tersembunyi dalam dinamika Enneagram.",
+    date: "May 19, 2025",
+    category: "Psychology",
+    slug: "pengelompokkan-enneagram",
+    author: "Rifa",
   },
   {
     id: 3,
-    title: "Thinking, Fast and Slow by Daniel Kahneman",
-    excerpt: "Understanding the two systems that drive the way we think and make decisions.",
-    date: "March 28, 2025",
+    title: "Understanding MBTI: The 16 Personality Types Explained",
+    excerpt: "A deep dive into the Myers-Briggs Type Indicator and how it can help you understand yourself and others better.",
+    date: "April 10, 2025",
     category: "Psychology",
-    slug: "thinking-fast-and-slow",
-    image: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    id: 4,
-    title: "The Psychology of Money by Morgan Housel",
-    excerpt: "Timeless lessons on wealth, greed, and happiness that explore the strange ways people think about money.",
-    date: "March 10, 2025",
-    category: "Finance",
-    slug: "psychology-of-money",
-    image: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    id: 5,
-    title: "Sapiens by Yuval Noah Harari",
-    excerpt: "A brief history of humankind, exploring how Homo sapiens came to dominate the planet.",
-    date: "February 22, 2025",
-    category: "History",
-    slug: "sapiens",
-    image: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    id: 6,
-    title: "The Four Agreements by Don Miguel Ruiz",
-    excerpt: "A practical guide to personal freedom based on ancient Toltec wisdom.",
-    date: "February 5, 2025",
-    category: "Self-Improvement",
-    slug: "four-agreements",
-    image: "/placeholder.svg?height=300&width=500",
-  },
+    slug: "understanding-mbti",
+    author: "Sarah",
+  }
 ]
 
-// Categories
-const categories = ["All", "Self-Improvement", "Productivity", "Psychology", "Finance", "History", "Business"]
+// Categories - derived from blog posts to ensure consistency
+const allCategories = ["All", ...Array.from(new Set(blogPosts.map((post) => post.category)))].sort()
+
+// BlogCard component for better organization
+function BlogCard({ post }: { post: BlogPost }) {
+  return (
+    <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+      <div className="p-6">
+        <Badge className="mb-3 bg-primary/10 text-primary hover:bg-primary/20 border-none">{post.category}</Badge>
+        <h3 className="text-xl font-bold mb-2 text-gray-800 line-clamp-2">{post.title}</h3>
+        <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+        <div className="flex justify-between items-center">
+          <span className="text-sm text-gray-500">
+            by {post.author || "Anonymous"} • {post.date}
+          </span>
+          <Button variant="ghost" size="sm" className="text-primary hover:text-primary/90 p-0" asChild>
+            <Link href={`/blog/${post.slug}`} className="flex items-center">
+              Read Summary <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function BlogPage() {
+  const [searchQuery, setSearchQuery] = useState("")
+  const [activeCategory, setActiveCategory] = useState("All")
+
+  // Filter posts based on search query and active category
+  const filteredPosts = useMemo(() => {
+    return blogPosts.filter((post) => {
+      const matchesSearch =
+        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+
+      const matchesCategory = activeCategory === "All" || post.category === activeCategory
+
+      return matchesSearch && matchesCategory
+    })
+  }, [searchQuery, activeCategory])
+
+  // Handle category change
+  const handleCategoryChange = (value: string) => {
+    setActiveCategory(value)
+  }
+
   return (
-    <div className="bg-white">
+    <div className="bg-white min-h-screen">
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
-        <div className="max-w-4xl mx-auto text-center mb-12">
+        <header className="max-w-4xl mx-auto text-center mb-12">
           <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20 border-none">
             Book Summaries
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Book Summary Blog</h1>
-          <div className="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-secondary mx-auto mb-6" aria-hidden="true"></div>
           <p className="text-lg text-gray-700 mb-8">
             Concise summaries of the best books on psychology, self-improvement, and personal growth.
           </p>
@@ -87,59 +118,42 @@ export default function BlogPage() {
               type="text"
               placeholder="Search book summaries..."
               className="pl-10 border-gray-300 focus-visible:ring-primary"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              aria-label="Search book summaries"
             />
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Search
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400"
+              aria-hidden="true"
+            />
           </div>
-        </div>
+        </header>
 
         {/* Categories */}
         <div className="max-w-4xl mx-auto mb-12">
-          <Tabs defaultValue="All" className="w-full">
+          <Tabs defaultValue="All" value={activeCategory} onValueChange={handleCategoryChange} className="w-full">
             <TabsList className="w-full flex overflow-x-auto pb-2 justify-start md:justify-center">
-              {categories.map((category) => (
+              {allCategories.map((category) => (
                 <TabsTrigger key={category} value={category} className="flex-shrink-0">
                   {category}
                 </TabsTrigger>
               ))}
             </TabsList>
 
-            {categories.map((category) => (
-              <TabsContent key={category} value={category}>
+            <TabsContent value={activeCategory}>
+              {filteredPosts.length > 0 ? (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                  {blogPosts
-                    .filter((post) => category === "All" || post.category === category)
-                    .map((post) => (
-                      <div
-                        key={post.id}
-                        className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all"
-                      >
-                        <div className="h-48 overflow-hidden">
-                          <img
-                            src={post.image || "/placeholder.svg"}
-                            alt={post.title}
-                            className="w-full h-full object-cover transition-transform hover:scale-105"
-                          />
-                        </div>
-                        <div className="p-6">
-                          <Badge className="mb-3 bg-primary/10 text-primary hover:bg-primary/20 border-none">
-                            {post.category}
-                          </Badge>
-                          <h3 className="text-xl font-bold mb-2 text-gray-800 line-clamp-2">{post.title}</h3>
-                          <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
-                          <div className="flex justify-between items-center">
-                            <span className="text-sm text-gray-500">by Naufal • {post.date}</span>
-                            <Button variant="ghost" size="sm" className="text-primary hover:text-primary/90 p-0">
-                              <Link href={`/blog/${post.slug}`} className="flex items-center">
-                                Read Summary <ArrowRight className="ml-1 h-4 w-4" />
-                              </Link>
-                            </Button>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                  {filteredPosts.map((post) => (
+                    <BlogCard key={post.id} post={post} />
+                  ))}
                 </div>
-              </TabsContent>
-            ))}
+              ) : (
+                <div className="text-center py-12">
+                  <h3 className="text-xl font-medium text-gray-700 mb-2">No posts found</h3>
+                  <p className="text-gray-500">Try adjusting your search or filter to find what you're looking for.</p>
+                </div>
+              )}
+            </TabsContent>
           </Tabs>
         </div>
       </div>
