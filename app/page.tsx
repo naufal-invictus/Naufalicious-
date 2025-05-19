@@ -84,7 +84,7 @@ export default function Home() {
         </div>
         <div className="p-6 flex flex-col justify-between flex-grow">
           <div>
-            <h3 className="font-semibold text-lg text-gray-800 mb-2">Facebook Cover Generator</h3>
+            <h3 className="font-semibold text-lg text-gray-800 mb-2">Quote Generator</h3>
             <p className="text-gray-600 text-sm mb-4">
               Generate personalized Quote with custom colors or based on your MBTI personality.
             </p>
