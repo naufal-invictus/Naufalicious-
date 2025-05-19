@@ -75,7 +75,7 @@ export default function Home() {
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Want to Know More About Our Web Security and Privacy?</h2>
         <Link href="/security-info" className="inline-block">
           <Button variant="secondary" size="lg">
-            <ShieldCheck className="mr-2 h-5 w-5" /> Learn More About Security
+            <Shield className="mr-2 h-5 w-5" /> Learn More About Security
           </Button>
         </Link>
       </div>
