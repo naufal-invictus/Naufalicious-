@@ -153,7 +153,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    {/* Certificates Section */}
+ {/* Certificates Section */}
 <section className="py-16">
   <div className="container mx-auto px-4">
     <div className="max-w-6xl mx-auto">
@@ -174,16 +174,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                13-04-2023
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               MikroTik Certified Network Associate (MTCNA)
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                MTCNA
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Mikrotik
+            </p>
+            <p className="text-gray-600 text-sm">
+              13-04-2023
             </p>
           </div>
         </motion.div>
@@ -194,16 +197,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                August-September - 2023
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               Ready For Security Training
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Training
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Microsoft & InfraDigital
+            </p>
+            <p className="text-gray-600 text-sm">
+              August-September - 2023
             </p>
           </div>
         </motion.div>
@@ -214,16 +220,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                Completion Date
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               Foundations of Cybersecurity
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Course
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Coursera
+            </p>
+            <p className="text-gray-600 text-sm">
+              Completion Date
             </p>
           </div>
         </motion.div>
@@ -233,16 +242,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2023
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               Technical Support
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Certificate
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Coursera
+            </p>
+            <p className="text-gray-600 text-sm">
+              2023
             </p>
           </div>
         </motion.div>
@@ -252,16 +264,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2023
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               IT Infrastructure Services and Systems Administration
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Certificate
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Coursera
+            </p>
+            <p className="text-gray-600 text-sm">
+              2023
             </p>
           </div>
         </motion.div>
@@ -271,16 +286,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2023
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               Dev OPS- Basics
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Certificate
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Dicoding
+            </p>
+            <p className="text-gray-600 text-sm">
+              2023
             </p>
           </div>
         </motion.div>
@@ -290,16 +308,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2022
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               Introduction to Information Security Course
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Course
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Cyber Academy
+            </p>
+            <p className="text-gray-600 text-sm">
+              2022
             </p>
           </div>
         </motion.div>
@@ -309,16 +330,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2022
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               Samsung Innovation Campuss
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Campuss
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Samsung
+            </p>
+            <p className="text-gray-600 text-sm">
+              2022
             </p>
           </div>
         </motion.div>
@@ -328,16 +352,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2022
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               Mechanical Engineer CAD ASEAN
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                ASEAN
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               BBPVP Bandung & Kemenaker
+            </p>
+            <p className="text-gray-600 text-sm">
+              2022
             </p>
           </div>
         </motion.div>
@@ -347,16 +374,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2022
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               IT Support Google
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Support
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Coursera & Google
+            </p>
+            <p className="text-gray-600 text-sm">
+              2022
             </p>
           </div>
         </motion.div>
@@ -366,16 +396,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2023
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               The Ins and Outs of Computer Networking.
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Networking
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Coursera & Google
+            </p>
+            <p className="text-gray-600 text-sm">
+              2023
             </p>
           </div>
         </motion.div>
@@ -385,16 +418,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2024
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               Web Development Wizardry
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Development
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Udemy
+            </p>
+            <p className="text-gray-600 text-sm">
+              2024
             </p>
           </div>
         </motion.div>
@@ -404,16 +440,19 @@ export default function Home() {
           className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <div className="p-4">
-            <div className="flex items-center justify-between mb-2">
-              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
-                2024
-              </Badge>
-            </div>
             <h3 className="font-semibold text-lg text-primary mb-2">
               Bootcamp Quality Assurance
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <div className="flex items-center justify-start mb-2">
+              <Badge className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                Bootcamp
+              </Badge>
+            </div>
+            <p className="text-gray-600 text-sm mb-1">
               Gits ID
+            </p>
+            <p className="text-gray-600 text-sm">
+              2024
             </p>
           </div>
         </motion.div>
