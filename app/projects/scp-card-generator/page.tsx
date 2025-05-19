@@ -2212,7 +2212,6 @@ export default function SCPIDCardGenerator() {
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid grid-cols-5 mb-4 bg-gray-800">
               <TabsTrigger value="test" className="flex items-center gap-2 data-[state=active]:bg-gray-700">
-                <FileText className="h-4 w-4" />
                 <span>Test</span>
               </TabsTrigger>
               <TabsTrigger value="content" className="flex items-center gap-2 data-[state=active]:bg-gray-700">
@@ -2224,7 +2223,7 @@ export default function SCPIDCardGenerator() {
               </TabsTrigger>
               <TabsTrigger value="style" className="flex items-center gap-2 data-[state=active]:bg-gray-700">
                 <Type className="h-4 w-4" />
-                <span>Typography</span>
+                <span>Text</span>
               </TabsTrigger>
       
             </TabsList>
