@@ -28,7 +28,7 @@ export default function Projects() {
       id: "scp-Card-generator",
       title: "SCP ID Card Generator",
       description: "Create personalized SCP ID cards with custom templates and styling options.",
-      gradient: "from-black to-to orange 800",
+      gradient: "from-black to to-orange-800",
       textColor: "text-white",
       borderColor: "border-primary",
       hoverBg: "hover:bg-primary/10",
