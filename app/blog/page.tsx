@@ -23,15 +23,6 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Atomic Habits by James Clear",
-    excerpt: "A comprehensive summary of how small changes can lead to remarkable results.",
-    date: "May 2, 2025",
-    category: "Self-Improvement",
-    slug: "atomic-habits",
-    author: "Naufalicious",
-  },
-  {
-    id: 2,
     title: "Mengenal Pengelompokkan Enneagram: Harmonic, Hornevian, dan Objek Relasi",
     excerpt: "Pemetaan kepribadian dari tiga perspektif yang menyibak pola tersembunyi dalam dinamika Enneagram.",
     date: "May 19, 2025",
@@ -40,13 +31,13 @@ const blogPosts: BlogPost[] = [
     author: "Rifa",
   },
   {
-    id: 3,
-    title: "Understanding MBTI: The 16 Personality Types Explained",
-    excerpt: "A deep dive into the Myers-Briggs Type Indicator and how it can help you understand yourself and others better.",
-    date: "April 10, 2025",
-    category: "Psychology",
-    slug: "understanding-mbti",
-    author: "Sarah",
+    id: 2,
+    title: "Flowchart Tujuan Hidup: Panduan Singkat Menemukan Arah",
+    excerpt: "Cara praktis menyusun flowchart tujuan hidup agar lebih terarah",
+    date: "May 20, 2025",
+    category: "Self-Development",
+    slug: "flowchart-tujuan-hidup",
+    author: "Naufal",
   }
 ]
 
