@@ -24,6 +24,16 @@ export default function Projects() {
       hoverBg: "hover:bg-primary/10",
       link: "/projects/quote-generator",
     },
+        {
+      id: "scp-Card-generator",
+      title: "SCP ID Card Generator",
+      description: "Create personalized SCP ID cards with custom templates and styling options.",
+      gradient: "from-black to-to orange 800",
+      textColor: "text-white",
+      borderColor: "border-primary",
+      hoverBg: "hover:bg-primary/10",
+      link: "/projects/scp-card-generator",
+    },
     {
       id: "enneagram-generator",
       title: "Enneagram Card Generator",
