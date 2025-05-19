@@ -317,6 +317,61 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Changelog Section */}
+<section className="py-16 bg-gray-100">
+  <div className="container mx-auto px-4">
+    <div className="max-w-3xl mx-auto">
+      <h2 className="text-3xl font-bold text-primary mb-8 text-center">Changelog</h2>
+      <p className="text-gray-700 mb-6 text-center">Recent updates and improvements to the portfolio.</p>
+
+      <div className="space-y-4">
+        <div className="bg-white rounded-md shadow-sm p-4">
+          <h4 className="text-lg font-semibold text-gray-800 mb-1">May 19, 2025</h4>
+          <ul className="list-disc list-inside text-gray-600">
+            <li><span className="font-semibold">Project SCP ID Card Generator:</span> Implemented bug fixes and expanded the project list.</li>
+          </ul>
+        </div>
+
+        <div className="bg-white rounded-md shadow-sm p-4">
+          <h4 className="text-lg font-semibold text-gray-800 mb-1">May 18, 2025</h4>
+          <ul className="list-disc list-inside text-gray-600">
+            <li><span className="font-semibold">About Me Section:</span> Restructured into multiple distinct sections for improved readability and organization.</li>
+            <li><span className="font-semibold">Project SCP ID Card Generator:</span> Introduced as a new project.</li>
+          </ul>
+        </div>
+
+        <div className="bg-white rounded-md shadow-sm p-4">
+          <h4 className="text-lg font-semibold text-gray-800 mb-1">May 15, 2025</h4>
+          <ul className="list-disc list-inside text-gray-600">
+            <li><span className="font-semibold">Home Section:</span> Modularized into several sections to enhance content flow and user experience.</li>
+          </ul>
+        </div>
+
+        <div className="bg-white rounded-md shadow-sm p-4">
+          <h4 className="text-lg font-semibold text-gray-800 mb-1">May 14, 2025</h4>
+          <ul className="list-disc list-inside text-gray-600">
+            <li><span className="font-semibold">Project Quote Card Generator:</span> Added as a new portfolio item.</li>
+          </ul>
+        </div>
+
+        <div className="bg-white rounded-md shadow-sm p-4">
+          <h4 className="text-lg font-semibold text-gray-800 mb-1">May 13, 2025</h4>
+          <ul className="list-disc list-inside text-gray-600">
+            <li>Consolidated all individual project pages into a single, comprehensive <code className="font-mono text-sm bg-gray-200 rounded px-1">page.tsx</code> file.</li>
+          </ul>
+        </div>
+
+        <div className="bg-white rounded-md shadow-sm p-4">
+          <h4 className="text-lg font-semibold text-gray-800 mb-1">May 12, 2025</h4>
+          <ul className="list-disc list-inside text-gray-600">
+            <li><span className="font-semibold">Project MBTI ID Card Generator:</span> Addressed color inconsistencies and applied fixes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   )
 }
