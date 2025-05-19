@@ -79,7 +79,8 @@ const designTemplates = [
   {
     id: "warlord",
     name: "Warlord",
-    gradient: "from-red-950 via-red-900 to-black",
+    gradientClasses: "from-red-950 via-red-900 to-black", // Diganti dari gradient
+    gradientColors: { start: "#3b0a0a", middle: "#7f1d1d", end: "#000000" }, // Perkiraan warna dari kelas Tailwind
     textColor: "text-red-50",
     accent: "border-red-600",
     description: "Brutal, commanding, and uncompromising",
@@ -90,7 +91,8 @@ const designTemplates = [
   {
     id: "cyber",
     name: "Cyberpunk",
-    gradient: "from-cyan-950 via-purple-900 to-black",
+    gradientClasses: "from-cyan-950 via-purple-900 to-black",
+    gradientColors: { start: "#083344", middle: "#581c87", end: "#000000" },
     textColor: "text-cyan-50",
     accent: "border-cyan-400",
     description: "Digital, futuristic, and rebellious",
@@ -101,7 +103,8 @@ const designTemplates = [
   {
     id: "inferno",
     name: "Inferno",
-    gradient: "from-orange-950 via-amber-900 to-red-950",
+    gradientClasses: "from-orange-950 via-amber-900 to-red-950",
+    gradientColors: { start: "#431407", middle: "#7c2d12", end: "#450a0a" },
     textColor: "text-orange-50",
     accent: "border-orange-500",
     description: "Fiery, intense, and unstoppable",
@@ -112,7 +115,8 @@ const designTemplates = [
   {
     id: "shadow",
     name: "Shadow",
-    gradient: "from-zinc-950 via-zinc-900 to-black",
+    gradientClasses: "from-zinc-950 via-zinc-900 to-black",
+    gradientColors: { start: "#18181b", middle: "#27272a", end: "#000000" },
     textColor: "text-zinc-200",
     accent: "border-zinc-500",
     description: "Stealthy, mysterious, and unforgiving",
@@ -123,7 +127,8 @@ const designTemplates = [
   {
     id: "forge",
     name: "Forge",
-    gradient: "from-stone-950 via-amber-950 to-stone-900",
+    gradientClasses: "from-stone-950 via-amber-950 to-stone-900",
+    gradientColors: { start: "#1c1917", middle: "#451a03", end: "#292524" },
     textColor: "text-amber-100",
     accent: "border-amber-600",
     description: "Forged in fire, hardened by struggle",
@@ -265,13 +270,12 @@ export default function PrinciplesGenerator() {
   const [contentOverflow, setContentOverflow] = useState(false)
 
   const [useCustomColors, setUseCustomColors] = useState(false)
-  const [gradientStart, setGradientStart] = useState("#1a0505")
-  const [gradientMiddle, setGradientMiddle] = useState("#7a1e1e")
-  const [gradientEnd, setGradientEnd] = useState("#000000")
+  const [gradientStart, setGradientStart] = useState("#1a0505") // Warna default untuk kustom
+  const [gradientMiddle, setGradientMiddle] = useState("#7a1e1e") // Warna default untuk kustom
+  const [gradientEnd, setGradientEnd] = useState("#000000") // Warna default untuk kustom
   const [customTextColor, setCustomTextColor] = useState("#ffffff")
   const [customAccentColor, setCustomAccentColor] = useState("#ff4040")
 
-  // const { toast } = useToast() // Dihapus
   const cardRef = useRef<HTMLDivElement>(null)
   const previewContainerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
@@ -356,11 +360,6 @@ export default function PrinciplesGenerator() {
     const wordCount = text.trim().split(/\s+/).filter(Boolean).length
     const wordLimit = selectedLayout === "creed" ? 6 : 20
     if (wordCount > wordLimit) {
-      // toast({ // Dihapus
-      //   title: `Word limit exceeded`,
-      //   description: `Please limit your footer text to ${wordLimit} words for this layout.`,
-      //   variant: "destructive",
-      // })
       console.warn(`Word limit exceeded for footer text. Limit is ${wordLimit} words.`);
       return false
     }
@@ -382,23 +381,14 @@ export default function PrinciplesGenerator() {
     const selectedFontOption = fontOptions.find((f) => f.id === fontId)
     if (selectedFontOption) {
       const fontName = selectedFontOption.name
-      // toast({ // Dihapus
-      //   title: `Loading ${fontName} font...`,
-      //   description: "Please wait while we prepare your selected font.",
-      // })
       console.log(`Loading ${fontName} font...`);
     }
   }
 
   const handleDownload = async () => {
     if (!principles.trim()) {
-      // toast({ // Dihapus
-      //   title: "Validation Error",
-      //   description: "Please enter your principles before downloading.",
-      //   variant: "destructive",
-      // })
       console.error("Validation Error: Please enter your principles before downloading.");
-      alert("Validation Error: Please enter your principles before downloading."); // Menggunakan alert sebagai pengganti toast
+      alert("Validation Error: Please enter your principles before downloading.");
       return
     }
 
@@ -409,13 +399,36 @@ export default function PrinciplesGenerator() {
         if (typeof document !== "undefined" && "fonts" in document) {
           await document.fonts.ready
         }
+        
+        // Tentukan warna gradien yang akan digunakan
+        let gStart, gMiddle, gEnd;
+        if (useCustomColors) {
+          gStart = gradientStart;
+          gMiddle = gradientMiddle;
+          gEnd = gradientEnd;
+        } else {
+          gStart = template.gradientColors.start;
+          gMiddle = template.gradientColors.middle;
+          gEnd = template.gradientColors.end;
+        }
+
+        // Buat string CSS untuk linear-gradient
+        const gradientCssString = `linear-gradient(to bottom right, ${gStart}, ${gMiddle}, ${gEnd})`;
 
         const dataUrl = await toPng(cardRef.current, {
           pixelRatio: 2, 
           width: currentWidth, 
           height: currentHeight, 
-          backgroundColor: 'rgba(0,0,0,0)', 
-          cacheBust: true, 
+          // backgroundColor: 'rgba(0,0,0,0)', // Kita akan mengandalkan style background dari elemen
+          cacheBust: true,
+          style: {
+            // Terapkan gradien secara eksplisit sebagai backgroundImage
+            // Ini akan menimpa kelas Tailwind untuk proses rendering gambar
+            backgroundImage: gradientCssString,
+            // Pastikan properti lain yang mungkin relevan juga ada di sini jika diperlukan
+            // Misalnya, jika ada warna solid di belakang gradien (meskipun seharusnya tidak jika gradien menutupi)
+            // backgroundColor: 'transparent', // Atau warna solid jika gradien tidak penuh
+          }
         })
 
         const link = document.createElement("a")
@@ -423,36 +436,28 @@ export default function PrinciplesGenerator() {
         link.href = dataUrl
         link.click()
 
-        // toast({ // Dihapus
-        //   title: "Success!",
-        //   description: "Your principles have been downloaded.",
-        // })
         console.log("Success! Your principles have been downloaded.");
-        alert("Success! Your principles have been downloaded."); // Menggunakan alert sebagai pengganti toast
+        alert("Success! Your principles have been downloaded.");
 
       } catch (error) {
-        // toast({ // Dihapus
-        //   title: "Error",
-        //   description: "Failed to generate image. Please try again.",
-        //   variant: "destructive",
-        // })
         console.error("Error generating image:", error)
-        alert("Error: Failed to generate image. Please try again."); // Menggunakan alert sebagai pengganti toast
+        alert("Error: Failed to generate image. Please try again.");
       } finally {
         setIsGenerating(false)
       }
     }
   }
 
-  const customGradient = `bg-gradient-to-br from-[${gradientStart}] via-[${gradientMiddle}] to-[${gradientEnd}]`
-  const customTextColorClass = `text-[${customTextColor}]`
-  const customAccentBorder = `border-[${customAccentColor}]`
+  // Logika untuk menentukan kelas gradien aktif untuk pratinjau di browser
+  const activeGradientClasses = useCustomColors 
+    ? `bg-gradient-to-br from-[${gradientStart}] via-[${gradientMiddle}] to-[${gradientEnd}]` 
+    : template.gradientClasses;
 
-  const activeGradient = useCustomColors ? customGradient : template.gradient
-  const activeTextColor = useCustomColors ? customTextColorClass : template.textColor
+  const activeTextColor = useCustomColors ? `text-[${customTextColor}]` : template.textColor;
+  const customAccentBorder = `border-[${customAccentColor}]`; // Untuk border kustom
   const activeBorderStyle = useCustomColors
     ? `border-${["t", "l", "b", "r", "y", "x"][Math.floor(Math.random() * 6)]}-4 ${customAccentBorder}` 
-    : template.borderStyle
+    : template.borderStyle;
 
   return (
     <FontLoader>
@@ -594,7 +599,7 @@ export default function PrinciplesGenerator() {
                             <div
                               className={cn(
                                 "flex-1 bg-gradient-to-br w-full h-full flex flex-col items-center justify-center gap-2",
-                                templateItem.gradient,
+                                templateItem.gradientClasses, // Menggunakan kelas untuk pratinjau
                               )}
                             >
                               {templateItem.icon}
@@ -1020,13 +1025,17 @@ export default function PrinciplesGenerator() {
                   data-font={selectedFont}
                   className={cn(
                     "w-full h-full rounded-lg overflow-hidden shadow-lg flex flex-col",
-                    activeGradient, 
+                    activeGradientClasses, // Menggunakan kelas Tailwind untuk pratinjau
                     font.fontFamily,
                     !fontLoaded && "opacity-80", 
                   )}
                   style={{
                     width: `${currentWidth}px`, 
                     height: `${currentHeight}px`,
+                    // Untuk pratinjau, kita tetap menggunakan kelas Tailwind atau style inline jika kustom.
+                    // `activeGradientClasses` akan menangani ini.
+                    // Jika useCustomColors, activeGradientClasses akan menjadi `bg-gradient-to-br from-[${gradientStart}] ...`
+                    // Jika tidak, akan menjadi template.gradientClasses
                   }}
                 >
                   {/* Header section */}
