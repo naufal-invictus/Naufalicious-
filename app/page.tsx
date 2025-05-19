@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronRight, Sparkles, Users, Lightbulb, Zap } from "lucide-react"
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
-import { Shield, Lock, Eye, Database, Server, CheckCircle } from "lucide-react"
+import { Shield,ShieldCheck, Lock, Eye, Database, Server, CheckCircle } from "lucide-react"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
