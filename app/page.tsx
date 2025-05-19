@@ -1,5 +1,5 @@
 "use client"
-
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -55,7 +55,7 @@ export default function Home() {
                 className="relative"
               >
                 <div className="relative z-10 rounded-lg overflow-hidden">
-                  <img
+                  <Image
                     src="https://i.ibb.co.com/Qjcw4yjw/wallpaperflare-com-wallpaper-removebg-preview.png?height=400&width=600"
                     alt="Personality Cards"
                     className="w-full h-auto"
@@ -80,7 +80,7 @@ export default function Home() {
       {/* Featured Project 1 */}
       <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
         <div className="aspect-w-16 aspect-h-9">
-          <img
+          <Image
             src="https://i.ibb.co/zhc2RRyh/TANKY-TENSHI-Dev-Card.png"
             alt="Quote Generator"
             className="w-full h-full object-cover"
@@ -112,7 +112,7 @@ export default function Home() {
       {/* Featured Project 2 */}
       <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
         <div className="aspect-w-16 aspect-h-9">
-          <img
+          <Image
             src="https://i.ibb.co/M5xSLmqz/TANKY-TENSHI-ID-Card.png"
             alt="SCP ID Card Generator"
             className="w-full h-full object-cover"
@@ -144,7 +144,7 @@ export default function Home() {
       {/* Featured Project 3 */}
       <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
         <div className="aspect-w-16 aspect-h-9">
-          <img
+          <Image
             src="https://i.ibb.co/FqKmGgBc/TANKY-TENSHI-MBTI-Card.png"
             alt="MBTI ID Card Generator"
             className="w-full h-full object-cover"
