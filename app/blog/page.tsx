@@ -28,7 +28,7 @@ const blogPosts: BlogPost[] = [
     date: "May 19, 2025",
     category: "Psychology",
     slug: "pengelompokkan-enneagram",
-    author: "Rifa",
+    author: "Ritsu",
   },
   {
     id: 2,
@@ -38,7 +38,16 @@ const blogPosts: BlogPost[] = [
     category: "Self-Development",
     slug: "flowchart-tujuan-hidup",
     author: "Naufal",
-  }
+  },
+    {
+    id: 3,
+    title: "6 Kunci Membangkitkan Semangat Belajar: Dari Kemalasan Menuju Prestasi Gemilang",
+    excerpt: "Motivasi bukan tujuan akhir, tapi pemicu awal. Temukan 6 strategi jitu untuk mengubah kemalasan menjadi produktivitas dan mencapai tujuan belajar yang luar biasa.",
+    date: "May 20, 2025",
+    category: "Self-Development",
+    slug: "kunci-semangat-belajar-mahasiswa",
+    author: "Naufal",
+  },
 ]
 
 // Categories - derived from blog posts to ensure consistency
