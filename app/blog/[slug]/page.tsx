@@ -1,4 +1,4 @@
-yimport type React from "react"
+import type React from "react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
