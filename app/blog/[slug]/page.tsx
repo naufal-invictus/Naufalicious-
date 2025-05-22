@@ -196,7 +196,7 @@ const blogPosts: BlogPost[] = [
       <li><strong>Skor akhir ditentukan </strong></li>
       <li>(misal: E = 12, I = 8 → hasil = E; N = 15, S = 14 → hasil = N; T = 4, F = 8 → hasil = F; P = 10, J = 6 → hasil = P ).</li>
       <li>Hasil akhir dikombinasikan: misal ENFP.</li>
-      <li>Contoh Lain, Untuk Enneagram: Tipe 4 = 22, Tipe 9 = 18 &rarr; hasil utama = 4 (Individualist) dengan sayap 5 (4w5).</li>
+      <li>Contoh Lain, Untuk Enneagram: Tipe 4 = 22, Tipe 9 = 18 &rarr; hasil utama = 4 (Individualist) dengan sayap 5/3 (4w5/4w3).</li>
 
     </ol>
 
