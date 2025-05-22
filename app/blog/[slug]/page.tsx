@@ -197,6 +197,7 @@ const blogPosts: BlogPost[] = [
       <li>(misal: E = 12, I = 8 → hasil = E; N = 15, S = 14 → hasil = N; T = 4, F = 8 → hasil = F; P = 10, J = 6 → hasil = P ).</li>
       <li>Hasil akhir dikombinasikan: misal ENFP.</li>
       <li>Contoh Lain, Untuk Enneagram: Tipe 4 = 22, Tipe 9 = 18 &rarr; hasil utama = 4 (Individualist) dengan sayap 5/3 (4w5/4w3).</li>
+<p>Namun, bagaimana jika hasil skoring berakhir imbang—misalnya J = 5 dan P = 5? Dalam situasi seperti ini, algoritma memerlukan mekanisme resolusi ambigu. Beberapa sistem menggunakan aturan default yang memilih sisi yang lebih umum dalam populasi (misalnya, P cenderung lebih lazim daripada J). Alternatif lainnya adalah menggunakan heuristik: sistem menganalisis dimensi lain untuk mencari pola dominan yang bisa memberikan konteks (contohnya, jika skor N dan F tinggi, maka P—yang lebih sinkron dengan NF—dapat dipilih). Dalam kasus tertentu, algoritma mungkin melakukan tie-breaker secara acak, meskipun pendekatan ini dipertanyakan dari sisi validitas psikologis. Beberapa platform lebih berhati-hati dan akan memunculkan pertanyaan tambahan untuk menyelesaikan kebuntuan, atau bahkan memilih label netral seperti ‘X’—misalnya hasil akhir ENxP—untuk mencerminkan ketidaktetapan preferensi tersebut. Singkatnya, ketika data berhenti berbicara, sistem mulai menebak, dan saat itulah kehadiran bias perancang algoritma menjadi sangat menentukan.</p>
 
     </ol>
 
@@ -223,6 +224,20 @@ Hasil: ENTP
       <li><a href="https://www.16personalities.com" target="_blank">16Personalities</a></li>
       <li><a href="https://openpsychometrics.org" target="_blank">Open Psychometrics</a></li>
     </ol>
+    <h2>Pros dan Cons Tes Kepribadian Online</h2>
+<h3>✅Kelebihan (Pros)</h3>
+<ul>
+  <li> Dapat diakses kapan saja dan di mana saja selama ada koneksi internet.</li>
+  <li>Hasil diberikan secara instan, memungkinkan pengguna langsung merefleksikan kecenderungan psikologisnya.</li>
+  <li>Banyak platform menyediakan tes tanpa biaya, membuatnya inklusif secara ekonomi.</li>
+</ul>
+
+<h3> Kekurangan (Cons)</h3>
+<ul>
+  <li>Banyak tes hanya menjumlahkan skor tanpa memperhitungkan nuansa psikologis seperti ambiguitas atau ketidakkonsistenan jawaban.</li>
+  <li>Jawaban yang diberikan cenderung dipengaruhi oleh persepsi diri dan mood, bukan realita objektif—bagaimana jika kita menjawab seperti orang yang kita inginkan, bukan siapa kita sebenarnya?</li>
+  <li>Jawaban pilihan ganda membatasi ekspresi kompleksitas kepribadian manusia.</li>
+</ul>
   `,
 },
 
