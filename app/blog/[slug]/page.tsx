@@ -194,7 +194,7 @@ const blogPosts: BlogPost[] = [
       <li>Jawaban disesuaikan dengan skor numerik (misal: "Setuju" = +2).</li>
       <li>Algoritma menghitung total skor untuk setiap kategori (MBTI: E/I, S/N, T/F, J/P).</li>
       <li><strong>Skor akhir ditentukan </strong></li>
-      <li>(misal: E = 12, I = 8 → hasil = E; N = 15, S = 14 → hasil = N; F = 8, S = 4 → hasil = F; P = 10, J = 6 → hasil = P ).</li>
+      <li>(misal: E = 12, I = 8 → hasil = E; N = 15, S = 14 → hasil = N; T = 4, F = 8 → hasil = F; P = 10, J = 6 → hasil = P ).</li>
       <li>Hasil akhir dikombinasikan: misal ENFP.</li>
       <li>Contoh Lain, Untuk Enneagram: Tipe 4 = 22, Tipe 9 = 18 &rarr; hasil utama = 4 (Individualist) dengan sayap 5 (4w5).</li>
 
@@ -229,7 +229,7 @@ function hitungMBTI(jawaban) {
     }
     // Lanjut untuk SN, TF, JP...
   });
-  return `${skor.E > skor.I ? 'E' : 'I'}${skor.S > skor.N ? 'S' : 'N'}${skor.T > skor.F ? 'T' : 'F'}${skor.J > skor.P ? 'J' : 'P'}`;
+  return `{skor.E > skor.I ? 'E' : 'I'}{skor.S > skor.N ? 'S' : 'N'}{skor.T > skor.F ? 'T' : 'F'}{skor.J > skor.P ? 'J' : 'P'}`;
 }
     </code></pre>
 
