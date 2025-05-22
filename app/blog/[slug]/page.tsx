@@ -230,7 +230,7 @@ Hasil: ENTP
       <li><a href="https://openpsychometrics.org" target="_blank">Open Psychometrics</a></li>
     </ol>
     <h2>Pros dan Cons Tes Kepribadian Online</h2>
-<h3>✅Kelebihan (Pros)</h3>
+<h3>Kelebihan (Pros)</h3>
 <ul>
   <li> Dapat diakses kapan saja dan di mana saja selama ada koneksi internet.</li>
   <li>Hasil diberikan secara instan, memungkinkan pengguna langsung merefleksikan kecenderungan psikologisnya.</li>
