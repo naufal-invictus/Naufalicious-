@@ -218,23 +218,6 @@ J: 5, P: 8
 Hasil: ENTP
     </code></pre>
 
-    <h2>Contoh Algoritma Lengkap</h2>
-    <pre><code>// Contoh pseudo-code dasar skoring MBTI
-function hitungMBTI(jawaban) {
-  let skor = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-  jawaban.forEach((item) => {
-    if (item.dimension === 'EI') {
-      if (item.value > 0) skor.E += item.value;
-      else skor.I += Math.abs(item.value);
-    }
-    // Lanjut untuk SN, TF, JP...
-  });
-  return `{skor.E > skor.I ? 'E' : 'I'}{skor.S > skor.N ? 'S' : 'N'}{skor.T > skor.F ? 'T' : 'F'}{skor.J > skor.P ? 'J' : 'P'}`;
-}
-    </code></pre>
-
-    <hr />
-
     <p><strong>Referensi:</strong></p>
     <ol>
       <li><a href="https://www.16personalities.com" target="_blank">16Personalities</a></li>
