@@ -48,6 +48,15 @@ const blogPosts: BlogPost[] = [
     slug: "kunci-semangat-belajar-mahasiswa",
     author: "Naufal",
   },
+      {
+    id: 4,
+    title: "Cara Kerja Tes Kepribadian Online",
+    excerpt: "Mengupas proses di balik layar tes MBTI dan kepribadian online",
+    date: "May 22, 2025",
+    category: "Technology",
+    slug: "cara-kerja-tes-kepribadian",
+    author: "Naufal",
+  },
 ]
 
 // Categories - derived from blog posts to ensure consistency
