@@ -169,6 +169,79 @@ const blogPosts: BlogPost[] = [
       
   `,
 },
+  {
+  id: 4,
+  title: "Cara Kerja Tes Kepribadian Online",
+  excerpt: "Mengupas proses di balik layar tes MBTI dan kepribadian online: bagaimana inputmu diproses, disimpan, dan diterjemahkan menjadi hasil yang akurat.",
+  date: "May 22, 2025",
+  category: "Technology",
+  slug: "cara-kerja-tes-kepribadian",
+  author: "Naufal",
+  readTime: "10 min read",
+  content: `
+    <p>Tes kepribadian online seperti MBTI, Enneagram, atau Big Five adalah instrumen berbasis web yang mengumpulkan jawaban pengguna melalui antarmuka digital, lalu memprosesnya menggunakan algoritma untuk memetakan kecenderungan psikologis seseorang. Tapi apa yang sebenarnya terjadi di balik klik tombol submit itu?</p>
+
+    <h2>Cara Kerja di Sisi Browser (Front-End)</h2>
+    <ul>
+      <li><strong>Input Form:</strong> Pengguna mengisi kuesioner. Biasanya berupa radio button, slider, atau checkbox.</li>
+      <li><strong>JavaScript/React:</strong> Menyimpan jawaban secara sementara (state) lalu mengirimkannya ke server melalui HTTP request (biasanya POST).</li>
+      <li><strong>Validasi Lokal:</strong> Pastikan tidak ada pertanyaan yang kosong sebelum data dikirim.</li>
+    </ul>
+
+    <h2>Server & Skoring (Back-End)</h2>
+    <p>Data jawaban yang masuk diterima oleh server (misal Node.js atau Python Flask). Setelah itu:</p>
+    <ol>
+      <li>Jawaban disesuaikan dengan skor numerik (misal: "Setuju" = +2).</li>
+      <li>Algoritma menghitung total skor untuk setiap kategori (MBTI: E/I, S/N, T/F, J/P).</li>
+      <li><strong>Skor akhir ditentukan </strong></li>
+      <li>(misal: E = 12, I = 8 → hasil = E; N = 15, S = 14 → hasil = N; F = 8, S = 4 → hasil = F; P = 10, J = 6 → hasil = P ).</li>
+      <li>Hasil akhir dikombinasikan: misal ENFP.</li>
+      <li>Contoh Lain, Untuk Enneagram: Tipe 4 = 22, Tipe 9 = 18 &rarr; hasil utama = 4 (Individualist) dengan sayap 5 (4w5).</li>
+
+    </ol>
+
+    <h2>Penyimpanan Akun dan Database</h2>
+    <ul>
+      <li><strong>Autentikasi:</strong> Login/Signup menggunakan email, Google, atau username-password biasa.</li>
+      <li><strong>Database:</strong> Hasil tes disimpan di database (MySQL, PostgreSQL, MongoDB).</li>
+      <li><strong>Model Skema:</strong> Tabel akun, tabel hasil tes, dan timestamp pengambilan tes.</li>
+    </ul>
+
+    <h2>Contoh Skoring Sederhana (MBTI)</h2>
+    <pre><code>{
+E: 10, I: 6,
+S: 8, N: 9,
+T: 7, F: 6,
+J: 5, P: 8
+}
+
+Hasil: ENTP
+    </code></pre>
+
+    <h2>Contoh Algoritma Lengkap</h2>
+    <pre><code>// Contoh pseudo-code dasar skoring MBTI
+function hitungMBTI(jawaban) {
+  let skor = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+  jawaban.forEach((item) => {
+    if (item.dimension === 'EI') {
+      if (item.value > 0) skor.E += item.value;
+      else skor.I += Math.abs(item.value);
+    }
+    // Lanjut untuk SN, TF, JP...
+  });
+  return `${skor.E > skor.I ? 'E' : 'I'}${skor.S > skor.N ? 'S' : 'N'}${skor.T > skor.F ? 'T' : 'F'}${skor.J > skor.P ? 'J' : 'P'}`;
+}
+    </code></pre>
+
+    <hr />
+
+    <p><strong>Referensi:</strong></p>
+    <ol>
+      <li><a href="https://www.16personalities.com" target="_blank">16Personalities</a></li>
+      <li><a href="https://openpsychometrics.org" target="_blank">Open Psychometrics</a></li>
+    </ol>
+  `,
+},
 
 ]
 
